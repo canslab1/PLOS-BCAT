@@ -5,3 +5,25 @@
 *.log
 *.out
 ~$*
+
+# Review correspondence (private)
+_審查意見之回應與修改方案.md
+_Response_to_Reviewers_PONE-D-26-01398.docx
+審查結果信件-PONE-D-26-01398-原稿.md
+審稿者 #1 Report_PONE-D-26-01398-原稿.pdf
+
+# Original NetLogo model (hosted in BCAT repo)
+English - best game no one played.nlogo
+
+# Old manuscript versions
+manuscript-old.docx
+manuscript-old.tex
+
+# Duplicate source screenshots (already copied to fig*.png)
+figures/Figure 2.png
+figures/Figure 4.png
+figures/Figure 5.png
+figures/Figure 6a.png
+figures/Figure 6b.png
+figures/Figure 10.png
+figures/Figure 11.png
