@@ -294,7 +294,7 @@ A screenshot of the graphical user interface for the proposed BCAT model is pres
 
 % Figure 2
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{fig2.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig2.png}\fi
 \caption{\textbf{Graphical user interface of the Python 3 BCAT simulation.}
 Parameter setting area is along the left side. Upper right: attitude, threshold, and degree distribution plots. Middle right: network agent attitude trajectory over time. Pink, red, orange, brown, yellow, green, lime, turquoise, cyan, sky, blue, violet, magenta and black colors indicate low-to-high agent numbers. Lower right: adoption dynamics (red S-shaped curve represents cumulative adoption over time, green inverse S-curve cumulative non-adoption over time) and new adopter dynamics (orange bell-shaped curve). Lower left: social network structure arranged in a two-dimensional grid. Red node represents already-adopted agent, green not-yet-adopted agent. Darker color indicates higher attitude value.}
 \label{fig2}
@@ -403,7 +403,7 @@ Fig~\ref{fig4} illustrates a regular lattice simulation using parameters designe
 
 % Figure 4
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{fig4.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig4.png}\fi
 \caption{\textbf{Simulation result illustrating favorable review and good sales scenario.}}
 \label{fig4}
 \end{figure}
@@ -414,7 +414,7 @@ Fig~\ref{fig5} illustrates a simulated scenario in which agent attitudes toward 
 
 % Figure 5
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{fig5.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig5.png}\fi
 \caption{\textbf{Simulation result illustrating favorable review but poor sales scenario.}}
 \label{fig5}
 \end{figure}
@@ -429,10 +429,9 @@ These findings highlight the challenges of translating positive attitudes into w
 
 Fig~\ref{fig6} shows the two simulations with identical parameter settings that we performed to illustrate BCAT model sensitivity to initial conditions. Despite condition consistency, the two simulations yielded remarkably different results: one with a favorable good sales outcome, one with a best game no one played outcome. As shown in Fig~\ref{fig6}a, agent attitudes converged towards higher values as the simulation progressed. The adoption dynamics plot reveals a clear critical point when the number of adopters reached 46, triggering a cascade of adoption behaviors throughout the network. Consequently, all agents adopted the product by the end of the simulation (i.e., GSI = 1), another example of positive attitudes producing high adoption rates.
 
-\clearpage
 % Figure 6
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{Fig6-combined.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig6-combined.png}\fi
 \caption{\textbf{Two simulation runs with identical parameter settings but different processes and results:}
 (a) favorable review and good sales scenario, (b) favorable review but poor sales scenario.}
 \label{fig6}
@@ -486,7 +485,6 @@ Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.
 \end{adjustwidth}
 \end{table}
 
-\clearpage
 % Figure 7
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{Fig7-combined.png}\fi
@@ -495,7 +493,6 @@ Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.
 \label{fig7}
 \end{figure}
 
-\clearpage
 % Figure 8
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig8-combined.png}\fi
@@ -503,7 +500,6 @@ Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.
 \label{fig8}
 \end{figure}
 
-\clearpage
 % Figure 9
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig9-combined.png}\fi
@@ -530,10 +526,9 @@ As shown in Table~\ref{table2} and Fig~\ref{fig9}, BCAT model parameters exhibit
 
 The BCAT model uses precisely defined parameter configurations to achieve downward compatibility with a bounded confidence-based opinion dynamics model and an adoption threshold model of innovation diffusion. This feature supports context-dependent BCAT simplification to corresponding versions of the two foundational models, while retaining the ability to replicate their core dynamics. Fig~\ref{fig10} shows results from our effort to make the BCAT model downward compatible with an opinion dynamics model, focusing exclusively on public opinion evolution. Adoption-related parameters were initially established to ensure that no adoption behaviors occurred during the simulation---specifically, avg-of-thresholds was set to 100 and std-of-thresholds to 0, setting all agent adoption thresholds at the extremely high value of 100. Number of initial adopters (no-of-pioneers) was set to 0, again with the result of eliminating any possibility of adoption processes occurring so that the sole simulation focus was on opinion dynamics. Among opinion-related parameters, bounded-confidence (the tolerance range for agents to engage in opinion exchanges) was set to 10 and convergence rate (the rate at which agents adjusted their attitudes after each exchange) to 0.4. Initial agent attitudes followed a normal distribution---avg-of-attitudes set to 50 and std-of-attitudes to 20---indicating a highly diverse opinion distribution to start. As the simulation progressed, opinion exchanges and attitude adjustments occurred at the above-defined rates, resulting in a gradual contraction in attitude distribution over time.
 
-\clearpage
 % Figure 10
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{fig10.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig10.png}\fi
 \caption{\textbf{BCAT model configured as a bounded confidence-based opinion dynamics model (adoption dynamics removed).}
 Adoption thresholds are unattainable (avg-of-thresholds = 100, std-of-thresholds = 0) and initial adopters are absent (no-of-pioneers = 0), ensuring a complete model focus on opinion dynamics. Opinions evolve under the influence of a bounded confidence mechanism (bounded-confidence = 10) with a convergence rate of 0.4. The network is a regular lattice generated with a rewiring probability of 0.00. Each of the 400 agents is connected to an average of 8 neighbors. As shown in attitudes trajectory and distribution data, agent attitudes were clustered over 300 time ticks, thus highlighting the bounded confidence effect on opinion clustering in a structured network.}
 \label{fig10}
@@ -545,10 +540,9 @@ The simulation validated the downward compatibility of the BCAT model, demonstra
 
 As shown in Fig~\ref{fig11}, the BCAT model is downward compatible with the adoption thresholds model, which focuses on innovation diffusion. Parameters were set to eliminate the impact of opinion dynamics. Agent attitudes were initially set to 100 by configuring avg-of-attitudes at 100 and std-of-attitudes at 0, thus ensuring that all agents held identically positive opinions about the innovation in question, and removing the need for opinion exchanges. The opinion dynamics mechanism was disabled by setting the bounded-confidence parameter to 0. This allowed the simulation to isolate the adoption process so that all dynamics were driven solely by adoption thresholds.
 
-\clearpage
 % Figure 11
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{fig11.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig11.png}\fi
 \caption{\textbf{BCAT model configured as an adoption threshold model, with opinion dynamics removed by uniform agent attitude parameters (avg-of-attitudes = 100, std-of-attitudes = 0).}
 Simulation consists of a regular lattice network structure with 400 agents and 1600 edges, with each agent connected to an average of 8 neighbors. Adoption process is governed by threshold distribution (avg-of-thresholds = 20, std-of-thresholds = 10). Results indicate complete adoption by all agents within 50 time ticks, highlighting the influence of critical mass, network structure, and threshold heterogeneity on innovation diffusion.}
 \label{fig11}
