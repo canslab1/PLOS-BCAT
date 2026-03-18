@@ -170,8 +170,17 @@
 
 %% Include all user-defined macros below
 
-% Graphics path for figures
-\graphicspath{{figures/}}
+% ---------------------------------------------------------------
+% Preview mode toggle:
+%   \previewtrue  = include figures (for Overleaf / local preview)
+%   \previewfalse = exclude figures (for Editorial Manager submission)
+% ---------------------------------------------------------------
+\newif\ifpreview
+\previewtrue   % <-- change to \previewfalse before Editorial Manager submission
+
+\ifpreview
+  \graphicspath{{figures/}}
+\fi
 
 % Custom Algorithm float environment
 \usepackage{float}
@@ -268,7 +277,7 @@ In network-oriented adoption threshold models, two factors determine when agents
 
 % Figure 1
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{Fig1-combined.png}
+\ifpreview\includegraphics[width=\textwidth]{Fig1-combined.png}\fi
 \caption{\textbf{Schematic diagram of the adoption threshold model used in this study.}
 Black-framed circles indicate not-yet-adopted neighboring agents, red-framed circles already-adopted neighboring agents. Andy makes his decision based on the actions of his neighboring agents. (a) One of Andy's three neighbors has acted, thus meeting the required 0.3 adoption threshold. (b) In this case Andy has four neighbors, of which only one has adopted the product, therefore the 0.3 adoption threshold is not met.}
 \label{fig1}
@@ -285,7 +294,7 @@ A screenshot of the graphical user interface for the proposed BCAT model is pres
 
 % Figure 2
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{fig2.png}
+\ifpreview\includegraphics[width=\textwidth]{fig2.png}\fi
 \caption{\textbf{Screen shot of BCAT graphical user interface.}
 Parameter setting area is in green along left side. Network agent attitude distribution is at bottom left. Upper middle block: network agent attitude trajectory. Pink, red, orange, brown, yellow, green, lime, turquoise, cyan, sky, blue, violet, magenta and black colors indicate low-to-high agent numbers. Lower middle block: red S-shaped curve represents cumulative adoption over time, green inverse S-curve cumulative non-adoption over time, orange bell-shaped curve the number of new adopters along the same timeline. Top right, social network structure arranged in a two-dimensional grid. Red node represents already-adopted agent, green not-yet-adopted agent. Darker color indicates higher attitude value. Lower right, adoption threshold and network node degree distributions.}
 \label{fig2}
@@ -293,7 +302,7 @@ Parameter setting area is in green along left side. Network agent attitude distr
 
 % Figure 3
 \begin{figure}[!ht]
-\includegraphics[width=0.6\textwidth]{fig3.png}
+\ifpreview\includegraphics[width=0.6\textwidth]{fig3.png}\fi
 \caption{\textbf{Simulation process flowchart for proposed BCAT model.}
 Simulation process time complexity is $O(NT)$, where $N$ and $T$ respectively represent the number of agents and number of simulation time steps.}
 \label{fig3}
@@ -326,7 +335,7 @@ According to the BCAT model, abstract forms of societal structures are character
 
 % Algorithm 1
 \begin{algorithm}[!ht]
-\includegraphics[width=\textwidth]{alg1.png}
+\ifpreview\includegraphics[width=\textwidth]{alg1.png}\fi
 \caption{\textbf{Pascal-style pseudo-code for network model construction.}}
 \label{alg1}
 \end{algorithm}
@@ -337,7 +346,7 @@ As shown in Algorithm~\ref{alg2}, each BCAT model agent (network node) has three
 
 % Algorithm 2
 \begin{algorithm}[!ht]
-\includegraphics[width=\textwidth]{alg2.png}
+\ifpreview\includegraphics[width=\textwidth]{alg2.png}\fi
 \caption{\textbf{NetLogo-style pseudo-code creating a pioneer agents group.}}
 \label{alg2}
 \end{algorithm}
@@ -350,7 +359,7 @@ During the opinion exchange phase, each agent randomly decides to communicate wi
 
 % Algorithm 3
 \begin{algorithm}[!ht]
-\includegraphics[width=\textwidth]{alg3.png}
+\ifpreview\includegraphics[width=\textwidth]{alg3.png}\fi
 \caption{\textbf{NetLogo-style pseudo-code for opinion exchange and adoption decision making.}}
 \label{alg3}
 \end{algorithm}
@@ -394,7 +403,7 @@ Fig~\ref{fig4} illustrates a regular lattice simulation using parameters designe
 
 % Figure 4
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{fig4.png}
+\ifpreview\includegraphics[width=\textwidth]{fig4.png}\fi
 \caption{\textbf{Screen shot of simulation case illustrating favorable review and good sales scenarios.}}
 \label{fig4}
 \end{figure}
@@ -405,7 +414,7 @@ Fig~\ref{fig5} illustrates a simulated scenario in which agent attitudes toward 
 
 % Figure 5
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{fig5.png}
+\ifpreview\includegraphics[width=\textwidth]{fig5.png}\fi
 \caption{\textbf{Screen shot of simulation case illustrating favorable review but poor sales scenarios.}}
 \label{fig5}
 \end{figure}
@@ -422,7 +431,7 @@ Fig~\ref{fig6} shows the two simulations with identical parameter settings that 
 
 % Figure 6
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{Fig6-combined.png}
+\ifpreview\includegraphics[width=\textwidth]{Fig6-combined.png}\fi
 \caption{\textbf{Screen shots of two simulation runs with identical parameter settings but different processes and results:}
 (a) favorable review and good sales scenario, (b) favorable review but poor sales scenario.}
 \label{fig6}
@@ -478,7 +487,7 @@ Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.
 
 % Figure 7
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{Fig7-combined.png}
+\ifpreview\includegraphics[width=\textwidth]{Fig7-combined.png}\fi
 \caption{\textbf{Correlation coefficient heatmaps showing various primary model-related parameters and good sales indicator (GSI) values across four network types:}
 (a) regular lattice, (b) small-world, (c) random and (d) scale-free.}
 \label{fig7}
@@ -486,14 +495,14 @@ Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.
 
 % Figure 8
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig8-combined.png}
+\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig8-combined.png}\fi
 \caption{\textbf{Sensitivity analysis results for various primary model-related parameters}---(a) bounded-confidence, (b) avg-of-attitudes, (c) std-of-attitudes, (d) avg-of-thresholds, (e) std-of-thresholds---and good sales indicator (GSI) values across four network types (regular lattice, small-world, random and scale-free).}
 \label{fig8}
 \end{figure}
 
 % Figure 9
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig9-combined.png}
+\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig9-combined.png}\fi
 \caption{\textbf{Statistical analysis results for primary BCAT model parameters.}
 Left plots: Experiment data are grouped according to network type for statistical analysis. Red bar represents regular lattice, yellow bar small-world, green bar random, and blue bar scale-free networks. Right plots: Statistical analysis results for entire body of experimental data.}
 \label{fig9}
@@ -519,7 +528,7 @@ The BCAT model uses precisely defined parameter configurations to achieve downwa
 
 % Figure 10
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{fig10.png}
+\ifpreview\includegraphics[width=\textwidth]{fig10.png}\fi
 \caption{\textbf{Screen shot of BCAT model configuration for operating as a bounded confidence-based opinion dynamics model (adoption dynamics removed).}
 Adoption thresholds are unattainable (avg-of-thresholds = 100, std-of-thresholds = 0) and initial adopters are absent (no-of-pioneers = 0), ensuring a complete model focus on opinion dynamics. Opinions evolve under the influence of a bounded confidence mechanism (bounded-confidence = 10) with a convergence rate of 0.4. The network is a regular lattice generated with a rewiring probability of 0.00. Each of the 400 agents is connected to an average of 8 neighbors. As shown in attitudes trajectory and distribution data, agent attitudes were clustered over 300 time ticks, thus highlighting the bounded confidence effect on opinion clustering in a structured network.}
 \label{fig10}
@@ -533,7 +542,7 @@ As shown in Fig~\ref{fig11}, the BCAT model is downward compatible with the adop
 
 % Figure 11
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{fig11.png}
+\ifpreview\includegraphics[width=\textwidth]{fig11.png}\fi
 \caption{\textbf{Screen shot of BCAT model configuration for operating as an adoption threshold model, with opinion dynamics removed by uniform agent attitude parameters (avg-of-attitudes = 100, std-of-attitudes = 0).}
 Simulation consists of a regular lattice network structure with 400 agents and 1600 edges, with each agent connected to an average of 8 neighbors. Adoption process is governed by threshold distribution (avg-of-thresholds = 20, std-of-thresholds = 10). Results indicate complete adoption by all agents within 50 time ticks, highlighting the influence of critical mass, network structure, and threshold heterogeneity on innovation diffusion.}
 \label{fig11}
