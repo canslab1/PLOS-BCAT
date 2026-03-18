@@ -114,6 +114,7 @@
 
 % array package and thick rules for tables
 \usepackage{array}
+\usepackage{tabularx}
 
 % create "+" rule type for thick vertical lines
 \newcolumntype{+}{!{\vrule width 2pt}}
@@ -313,7 +314,7 @@ Simulation process time complexity is $O(NT)$, where $N$ and $T$ respectively re
 \begin{adjustwidth}{-2.25in}{0in}
 \centering
 \caption{\textbf{BCAT model and simulation system parameters.}}
-\begin{tabular}{|l|p{12cm}|}
+\begin{tabularx}{\linewidth}{|l|X|}
 \hline
 \textbf{Parameter} & \textbf{Description} \\ \thickhline
 \textit{no-of-pioneers} & Number of pioneer agents with highest positive attitude values, therefore first to adopt an idea or purchase a product. Refer to \textbf{chosen-leaders} function in Algorithm 2 for details on parameter usage. \\ \hline
@@ -326,7 +327,7 @@ Simulation process time complexity is $O(NT)$, where $N$ and $T$ respectively re
 \textit{rewiring-probability} & Probability determining degree of randomness for the generated network model. \\ \hline
 \textit{max-time} & Maximum number of time ticks for a single simulation. \\ \hline
 \textit{no-of-experiments} & Number of experiment repetitions. \\ \hline
-\end{tabular}
+\end{tabularx}
 \label{table1}
 \end{adjustwidth}
 \end{table}
@@ -451,7 +452,7 @@ Table~\ref{table2} presents results from our examination of the roles of five mo
 \centering
 \caption{\textbf{Results from statistical analysis of primary model-related parameters.}}
 \footnotesize
-\begin{tabular}{|l|l|c|c|c|c|c|}
+\begin{tabularx}{\linewidth}{|l|l|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
 \hline
 \textbf{Analysis Method} & \textbf{Network Type} & \textbf{bounded-} & \textbf{avg-of-} & \textbf{std-of-} & \textbf{avg-of-} & \textbf{std-of-} \\
  &  & \textbf{confidence} & \textbf{attitudes} & \textbf{attitudes} & \textbf{thresholds} & \textbf{thresholds} \\ \thickhline
@@ -480,7 +481,7 @@ Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.
  & Small-world & 0.26 & 0.25 & 0.03 & $-$0.66 & $-$0.02 \\ \hline
  & Random & 0.15 & 0.29 & 0.06 & $-$0.64 & 0.13 \\ \hline
  & Scale-free & 0.24 & 0.25 & 0.04 & $-$0.67 & 0.02 \\ \hline
-\end{tabular}
+\end{tabularx}
 \label{table2}
 \end{adjustwidth}
 \end{table}
