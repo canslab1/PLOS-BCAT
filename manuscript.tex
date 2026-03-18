@@ -115,6 +115,7 @@
 % array package and thick rules for tables
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{multirow}
 
 % create "+" rule type for thick vertical lines
 \newcolumntype{+}{!{\vrule width 2pt}}
@@ -456,30 +457,30 @@ Table~\ref{table2} presents results from our examination of the roles of five mo
 \hline
 \textbf{Analysis Method} & \textbf{Network Type} & \textbf{bounded-} & \textbf{avg-of-} & \textbf{std-of-} & \textbf{avg-of-} & \textbf{std-of-} \\
  &  & \textbf{confidence} & \textbf{attitudes} & \textbf{attitudes} & \textbf{thresholds} & \textbf{thresholds} \\ \thickhline
-Feature Importance & \textbf{All} & \textbf{0.16} & \textbf{0.20} & \textbf{0.04} & \textbf{0.54} & \textbf{0.05} \\ \hline
- & Regular lattice & 0.21 & 0.18 & 0.05 & 0.55 & 0.01 \\ \hline
- & Small-world & 0.20 & 0.18 & 0.04 & 0.57 & 0.01 \\ \hline
- & Random & 0.15 & 0.16 & 0.04 & 0.53 & 0.11 \\ \hline
+\multirow{5}{*}{Feature Importance} & \textbf{All} & \textbf{0.16} & \textbf{0.20} & \textbf{0.04} & \textbf{0.54} & \textbf{0.05} \\ \cline{2-7}
+ & Regular lattice & 0.21 & 0.18 & 0.05 & 0.55 & 0.01 \\ \cline{2-7}
+ & Small-world & 0.20 & 0.18 & 0.04 & 0.57 & 0.01 \\ \cline{2-7}
+ & Random & 0.15 & 0.16 & 0.04 & 0.53 & 0.11 \\ \cline{2-7}
  & Scale-free & 0.13 & 0.25 & 0.04 & 0.51 & 0.08 \\ \thickhline
-Multivariate Regression & \textbf{All} & \textbf{0.34} & \textbf{0.55} & \textbf{0.23} & \textbf{$-$1.31} & \textbf{0.43} \\ \hline
- & Regular lattice & 0.42 & 0.53 & 0.17 & $-$1.40 & $-$0.11 \\ \hline
- & Small-world & 0.39 & 0.53 & 0.19 & $-$1.40 & 0.11 \\ \hline
- & Random & 0.31 & 0.50 & 0.20 & $-$1.32 & 0.71 \\ \hline
+\multirow{5}{*}{Multivariate Regression} & \textbf{All} & \textbf{0.34} & \textbf{0.55} & \textbf{0.23} & \textbf{$-$1.31} & \textbf{0.43} \\ \cline{2-7}
+ & Regular lattice & 0.42 & 0.53 & 0.17 & $-$1.40 & $-$0.11 \\ \cline{2-7}
+ & Small-world & 0.39 & 0.53 & 0.19 & $-$1.40 & 0.11 \\ \cline{2-7}
+ & Random & 0.31 & 0.50 & 0.20 & $-$1.32 & 0.71 \\ \cline{2-7}
  & Scale-free & 0.30 & 0.58 & 0.27 & $-$1.26 & 0.61 \\ \thickhline
-Partial Correlation & \textbf{All} & \textbf{0.20} & \textbf{0.27} & \textbf{0.05} & \textbf{$-$0.65} & \textbf{0.09} \\ \hline
- & Regular lattice & 0.36 & 0.35 & 0.05 & $-$0.71 & $-$0.03 \\ \hline
- & Small-world & 0.35 & 0.36 & 0.06 & $-$0.72 & 0.04 \\ \hline
- & Random & 0.28 & 0.35 & 0.06 & $-$0.70 & 0.22 \\ \hline
+\multirow{5}{*}{Partial Correlation} & \textbf{All} & \textbf{0.20} & \textbf{0.27} & \textbf{0.05} & \textbf{$-$0.65} & \textbf{0.09} \\ \cline{2-7}
+ & Regular lattice & 0.36 & 0.35 & 0.05 & $-$0.71 & $-$0.03 \\ \cline{2-7}
+ & Small-world & 0.35 & 0.36 & 0.06 & $-$0.72 & 0.04 \\ \cline{2-7}
+ & Random & 0.28 & 0.35 & 0.06 & $-$0.70 & 0.22 \\ \cline{2-7}
  & Scale-free & 0.22 & 0.40 & 0.09 & $-$0.69 & 0.19 \\ \thickhline
-Standardized Regression & \textbf{All} & \textbf{0.20} & \textbf{0.27} & \textbf{0.05} & \textbf{$-$0.65} & \textbf{0.09} \\ \hline
- & Regular lattice & 0.26 & 0.25 & 0.03 & $-$0.66 & $-$0.02 \\ \hline
- & Small-world & 0.24 & 0.25 & 0.04 & $-$0.67 & 0.02 \\ \hline
- & Random & 0.20 & 0.25 & 0.04 & $-$0.65 & 0.15 \\ \hline
+\multirow{5}{*}{\shortstack[l]{Standardized\\Regression}} & \textbf{All} & \textbf{0.20} & \textbf{0.27} & \textbf{0.05} & \textbf{$-$0.65} & \textbf{0.09} \\ \cline{2-7}
+ & Regular lattice & 0.26 & 0.25 & 0.03 & $-$0.66 & $-$0.02 \\ \cline{2-7}
+ & Small-world & 0.24 & 0.25 & 0.04 & $-$0.67 & 0.02 \\ \cline{2-7}
+ & Random & 0.20 & 0.25 & 0.04 & $-$0.65 & 0.15 \\ \cline{2-7}
  & Scale-free & 0.15 & 0.29 & 0.06 & $-$0.64 & 0.13 \\ \thickhline
-Parameter Importance & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.09} & \textbf{0.05} & \textbf{$-$0.65} \\ \hline
- & Regular lattice & 0.20 & 0.25 & 0.04 & $-$0.65 & 0.15 \\ \hline
- & Small-world & 0.26 & 0.25 & 0.03 & $-$0.66 & $-$0.02 \\ \hline
- & Random & 0.15 & 0.29 & 0.06 & $-$0.64 & 0.13 \\ \hline
+\multirow{5}{*}{Parameter Importance} & \textbf{All} & \textbf{0.27} & \textbf{0.20} & \textbf{0.09} & \textbf{0.05} & \textbf{$-$0.65} \\ \cline{2-7}
+ & Regular lattice & 0.20 & 0.25 & 0.04 & $-$0.65 & 0.15 \\ \cline{2-7}
+ & Small-world & 0.26 & 0.25 & 0.03 & $-$0.66 & $-$0.02 \\ \cline{2-7}
+ & Random & 0.15 & 0.29 & 0.06 & $-$0.64 & 0.13 \\ \cline{2-7}
  & Scale-free & 0.24 & 0.25 & 0.04 & $-$0.67 & 0.02 \\ \hline
 \end{tabularx}
 \label{table2}
