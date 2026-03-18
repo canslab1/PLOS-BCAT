@@ -1,0 +1,4 @@
+Data Availability Statement
+(For Editorial Manager submission form)
+
+All simulation source code (NetLogo and Python 3 reimplementation) and parameter configuration files are publicly available under the MIT License at https://github.com/canslab1/BCAT, with a permanent archived copy deposited on Zenodo (DOI: 10.5281/zenodo.19081523). The raw sensitivity analysis output data underlying Table 2 and Figs 7-9 are available in the data/ directory at https://github.com/canslab1/PLOS-BCAT.
