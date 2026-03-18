@@ -295,8 +295,8 @@ A screenshot of the graphical user interface for the proposed BCAT model is pres
 % Figure 2
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{fig2.png}\fi
-\caption{\textbf{Screen shot of BCAT graphical user interface.}
-Parameter setting area is in green along left side. Network agent attitude distribution is at bottom left. Upper middle block: network agent attitude trajectory. Pink, red, orange, brown, yellow, green, lime, turquoise, cyan, sky, blue, violet, magenta and black colors indicate low-to-high agent numbers. Lower middle block: red S-shaped curve represents cumulative adoption over time, green inverse S-curve cumulative non-adoption over time, orange bell-shaped curve the number of new adopters along the same timeline. Top right, social network structure arranged in a two-dimensional grid. Red node represents already-adopted agent, green not-yet-adopted agent. Darker color indicates higher attitude value. Lower right, adoption threshold and network node degree distributions.}
+\caption{\textbf{Graphical user interface of the Python 3 BCAT simulation.}
+Parameter setting area is along the left side. Upper right: attitude, threshold, and degree distribution plots. Middle right: network agent attitude trajectory over time. Pink, red, orange, brown, yellow, green, lime, turquoise, cyan, sky, blue, violet, magenta and black colors indicate low-to-high agent numbers. Lower right: adoption dynamics (red S-shaped curve represents cumulative adoption over time, green inverse S-curve cumulative non-adoption over time) and new adopter dynamics (orange bell-shaped curve). Lower left: social network structure arranged in a two-dimensional grid. Red node represents already-adopted agent, green not-yet-adopted agent. Darker color indicates higher attitude value.}
 \label{fig2}
 \end{figure}
 
@@ -399,23 +399,23 @@ As shown in Algorithm~\ref{alg3}, the relationship between FRI and GSI is based 
 
 \subsection*{Simulating favorable reviews and good/poor sales}
 
-Fig~\ref{fig4} illustrates a regular lattice simulation using parameters designed to establish win-win conditions for high approval and high adoption---in other words, the synergistic effect of a specific parameter configuration. As shown, agent attitudes converged toward higher values over time, indicating widespread product approval. The attitude trajectory graph shows a steady increase in average attitude from an initial mean of 50 to 76.21 by the end of the simulation. Adoption dynamics mirrored this trend, with a critical number of 19 adopting agents emerging early in the simulation, triggering a cross-network cascade effect. This result is in alignment with critical mass theory, in which a small number of adopters generate widespread acceptance under favorable conditions. All agents adopted the product by the end of the simulation (i.e., GSI = 1), an example of a complete in-network adoption diffusion process.
+Fig~\ref{fig4} illustrates a regular lattice simulation using parameters designed to establish win-win conditions for high approval and high adoption---in other words, the synergistic effect of a specific parameter configuration. As shown, agent attitudes converged toward higher values over time, indicating widespread product approval. The attitude trajectory graph shows a steady increase in average attitude from an initial mean of 50 by the end of the simulation. Adoption dynamics mirrored this trend, with a critical number of 17 adopting agents emerging early in the simulation, triggering a cross-network cascade effect. This result is in alignment with critical mass theory, in which a small number of adopters generate widespread acceptance under favorable conditions. All agents adopted the product by the end of the simulation (i.e., GSI = 1), an example of a complete in-network adoption diffusion process.
 
 % Figure 4
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{fig4.png}\fi
-\caption{\textbf{Screen shot of simulation case illustrating favorable review and good sales scenarios.}}
+\caption{\textbf{Simulation result illustrating favorable review and good sales scenario.}}
 \label{fig4}
 \end{figure}
 
 The simulation scenario shown in Fig~\ref{fig4} underscores the importance of parameter interactions in shaping opinion dynamics and adoption behaviors. The relatively high bounded confidence value facilitated extensive opinion exchanges, thus reducing polarization while encouraging collective agreement. The moderate average attitude value ensured a balanced starting point, thus avoiding initial biases that might have skewed the results. Similarly, the low average adoption threshold resulted in early adopters exerting significant influence and creating the necessary conditions for the observed adoption cascade. The regular lattice structure contributed to this outcome by ensuring uniform agent interaction, promoting equitable levels of attitude and adoption behavior diffusion across the network.
 
-Fig~\ref{fig5} illustrates a simulated scenario in which agent attitudes toward a product were in positive alignment, yet the end result was minimal adoption. Simulation initialization began with agent attitude and adoption threshold values drawn from normal distributions, thus dictating each agent's predisposition towards product adoption and susceptibility to social influences. The bounded confidence parameter allowed agents with attitude differences below 50 to engage in opinion exchanges, thereby promoting gradual attitude convergence. During the simulation, average agent attitude increased from an initial value of 50 to a final value of 72.25, indicating a collective movement toward product approval. However, adoption dynamics revealed a starkly different picture: by the end of the simulation, only 9 of 400 agents adopted the product---a meager 2.25\% adoption rate (GSI = 0.0225).
+Fig~\ref{fig5} illustrates a simulated scenario in which agent attitudes toward a product were in positive alignment, yet the end result was minimal adoption. Simulation initialization began with agent attitude and adoption threshold values drawn from normal distributions, thus dictating each agent's predisposition towards product adoption and susceptibility to social influences. The bounded confidence parameter allowed agents with attitude differences below 50 to engage in opinion exchanges, thereby promoting gradual attitude convergence. During the simulation, average agent attitude increased from an initial value of 50, indicating a collective movement toward product approval. However, adoption dynamics revealed a starkly different picture: by the end of the simulation, only 11 of 400 agents adopted the product---a meager 2.75\% adoption rate (GSI = 0.0275).
 
 % Figure 5
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{fig5.png}\fi
-\caption{\textbf{Screen shot of simulation case illustrating favorable review but poor sales scenarios.}}
+\caption{\textbf{Simulation result illustrating favorable review but poor sales scenario.}}
 \label{fig5}
 \end{figure}
 
@@ -427,17 +427,17 @@ These findings highlight the challenges of translating positive attitudes into w
 
 \subsection*{Two simulations with identical initial conditions}
 
-Fig~\ref{fig6} shows the two simulations with identical parameter settings that we performed to illustrate BCAT model sensitivity to initial conditions. Despite condition consistency, the two simulations yielded remarkably different results: one with a favorable good sales outcome, one with a best game no one played outcome. As shown in Fig~\ref{fig6}a, agent attitudes converged towards higher values as the simulation progressed, with a 76.21 final average attitude value. The adoption dynamics plot reveals a clear critical point when the number of adopters reached 48, triggering a cascade of adoption behaviors throughout the network. Consequently, all agents adopted the product by the end of the simulation (i.e., GSI = 1), another example of positive attitudes producing high adoption rates.
+Fig~\ref{fig6} shows the two simulations with identical parameter settings that we performed to illustrate BCAT model sensitivity to initial conditions. Despite condition consistency, the two simulations yielded remarkably different results: one with a favorable good sales outcome, one with a best game no one played outcome. As shown in Fig~\ref{fig6}a, agent attitudes converged towards higher values as the simulation progressed. The adoption dynamics plot reveals a clear critical point when the number of adopters reached 46, triggering a cascade of adoption behaviors throughout the network. Consequently, all agents adopted the product by the end of the simulation (i.e., GSI = 1), another example of positive attitudes producing high adoption rates.
 
 % Figure 6
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{Fig6-combined.png}\fi
-\caption{\textbf{Screen shots of two simulation runs with identical parameter settings but different processes and results:}
+\caption{\textbf{Two simulation runs with identical parameter settings but different processes and results:}
 (a) favorable review and good sales scenario, (b) favorable review but poor sales scenario.}
 \label{fig6}
 \end{figure}
 
-Fig~\ref{fig6}b shows contrasting outcomes despite identical parameter settings. Although attitudes still converged towards higher values (final average of approximately 72), adoption dynamics were fundamentally different, with the absence of a critical point indicating that early adopters failed to generate the necessary momentum for widespread diffusion. The simulation ended with only a small percentage of agents adopting the product, despite a favorable average attitude. The divergence may be attributed to subtle differences in the initial agent attitude and adoption threshold distributions. Though small, these differences resulted in isolated clusters of adopters that were incapable of propagating network-wide adoption behaviors among their neighbors (GSI = 0.0225).
+Fig~\ref{fig6}b shows contrasting outcomes despite identical parameter settings. Although attitudes still converged towards higher values, adoption dynamics were fundamentally different, with the absence of a critical point indicating that early adopters failed to generate the necessary momentum for widespread diffusion. The simulation ended with only a small percentage of agents adopting the product, despite a favorable average attitude. The divergence may be attributed to subtle differences in the initial agent attitude and adoption threshold distributions. Though small, these differences resulted in isolated clusters of adopters that were incapable of propagating network-wide adoption behaviors among their neighbors (GSI = 0.0125).
 
 In summary, the identical parameter settings were conducive to widespread adoption in theory, but the actual outcomes were shaped by the stochastic nature of agent initialization. This finding reflects the sensitivity of the BCAT model to primary parameters such as attitude and adoption threshold, even within controlled network structures. They also emphasize the dual importance of network topology and critical mass in promoting collective behavior. The two simulation results are a demonstration of how different combinations of model-related parameters, network structure, and initial conditions drive adoption dynamics. Outcome divergence reveals the challenges of achieving both widespread approval and adoption, even under identical conditions.
 
@@ -529,7 +529,7 @@ The BCAT model uses precisely defined parameter configurations to achieve downwa
 % Figure 10
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{fig10.png}\fi
-\caption{\textbf{Screen shot of BCAT model configuration for operating as a bounded confidence-based opinion dynamics model (adoption dynamics removed).}
+\caption{\textbf{BCAT model configured as a bounded confidence-based opinion dynamics model (adoption dynamics removed).}
 Adoption thresholds are unattainable (avg-of-thresholds = 100, std-of-thresholds = 0) and initial adopters are absent (no-of-pioneers = 0), ensuring a complete model focus on opinion dynamics. Opinions evolve under the influence of a bounded confidence mechanism (bounded-confidence = 10) with a convergence rate of 0.4. The network is a regular lattice generated with a rewiring probability of 0.00. Each of the 400 agents is connected to an average of 8 neighbors. As shown in attitudes trajectory and distribution data, agent attitudes were clustered over 300 time ticks, thus highlighting the bounded confidence effect on opinion clustering in a structured network.}
 \label{fig10}
 \end{figure}
@@ -543,7 +543,7 @@ As shown in Fig~\ref{fig11}, the BCAT model is downward compatible with the adop
 % Figure 11
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth]{fig11.png}\fi
-\caption{\textbf{Screen shot of BCAT model configuration for operating as an adoption threshold model, with opinion dynamics removed by uniform agent attitude parameters (avg-of-attitudes = 100, std-of-attitudes = 0).}
+\caption{\textbf{BCAT model configured as an adoption threshold model, with opinion dynamics removed by uniform agent attitude parameters (avg-of-attitudes = 100, std-of-attitudes = 0).}
 Simulation consists of a regular lattice network structure with 400 agents and 1600 edges, with each agent connected to an average of 8 neighbors. Adoption process is governed by threshold distribution (avg-of-thresholds = 20, std-of-thresholds = 10). Results indicate complete adoption by all agents within 50 time ticks, highlighting the influence of critical mass, network structure, and threshold heterogeneity on innovation diffusion.}
 \label{fig11}
 \end{figure}
