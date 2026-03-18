@@ -94,7 +94,17 @@
 
 % ligatures disabled
 \usepackage{iftex}
-\usepackage[nopatch=eqnum]{microtype}
+\usepackage[nopatch={eqnum,item}]{microtype}
+% Fix "Command \showhyphens has changed" warning (microtype + LaTeX 2024+ compatibility)
+% Define old-style inner command so microtype uses \patchcmd instead of \CheckCommand
+\makeatletter
+\gdef\MT@fix@showhyphens#1{\setbox0\vbox{\color@begingroup
+  \everypar{}\parfillskip\z@skip\hsize\maxdimen\normalfont
+  \pretolerance\m@ne\tolerance\m@ne\hbadness\z@\showboxdepth\z@\ #1\color@endgroup}}
+\AddToHook{begindocument/before}{%
+  \expandafter\let\csname showhyphens \endcsname\MT@fix@showhyphens
+}
+\makeatother
 \ifpdftex
   \DisableLigatures[f]{encoding = *, family = * }
 \fi
