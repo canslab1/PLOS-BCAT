@@ -483,7 +483,7 @@ In summary, the identical parameter settings were conducive to widespread adopti
 
 \subsection*{Sensitivity analysis}
 
-Table~\ref{table2} presents results from our examination of the roles of five model-related parameters (bounded-confidence, avg-of-attitudes, std-of-attitudes, avg-of-thresholds and std-of-thresholds) in shaping adoption behaviors in regular lattice, small-world, random, and scale-free networks. The data represent analyses of each parameter's importance, sensitivity, and network-dependent influence. As shown in Table~\ref{table2}, average adoption threshold consistently proved to be the primary determinant of adoption behaviors across all network structures. As an indicator of mean level of within-network conservatism, this parameter is a direct determinant of required thresholds for agent adoption of innovative products or ideas. According to the detailed correlation matrix and analysis results for all four network types shown in Figs~\ref{fig7} and \ref{fig8}, there is a strong negative relationship between avg-of-thresholds and adoption outcome (in this case, sales), underscoring its inhibitory role. As shown in Fig~\ref{fig9}, this negative effect was further identified by multivariate and standardized regression coefficient data, with avg-of-thresholds consistently exhibiting the strongest effect of all examined parameters.
+Table~\ref{table2} presents results from our examination of the roles of five model-related parameters (bounded-confidence, avg-of-attitudes, std-of-attitudes, avg-of-thresholds and std-of-thresholds) in shaping adoption behaviors in regular lattice, small-world, random, and scale-free networks. Five complementary statistical methods were applied: feature importance from a Random Forest regression ensemble (100 trees, mean decrease in impurity criterion, default hyperparameters), ordinary least squares multivariate regression coefficients, partial correlations controlling for co-variation among predictors, standardized regression coefficients (beta weights), and bivariate Pearson correlation coefficients (parameter importance). The data represent analyses of each parameter's importance, sensitivity, and network-dependent influence. As shown in Table~\ref{table2}, average adoption threshold consistently proved to be the primary determinant of adoption behaviors across all network structures. As an indicator of mean level of within-network conservatism, this parameter is a direct determinant of required thresholds for agent adoption of innovative products or ideas. According to the detailed correlation matrix and analysis results for all four network types shown in Figs~\ref{fig7} and \ref{fig8}, there is a strong negative relationship between avg-of-thresholds and adoption outcome (in this case, sales), underscoring its inhibitory role. As shown in Fig~\ref{fig9}, this negative effect was further identified by multivariate and standardized regression coefficient data, with avg-of-thresholds consistently exhibiting the strongest effect of all examined parameters.
 
 % Table 2
 \begin{table}[!ht]
@@ -495,11 +495,11 @@ Table~\ref{table2} presents results from our examination of the roles of five mo
 \hline
 \textbf{Analysis Method} & \textbf{Network Type} & \textbf{bounded-} & \textbf{avg-of-} & \textbf{std-of-} & \textbf{avg-of-} & \textbf{std-of-} \\
  &  & \textbf{confidence} & \textbf{attitudes} & \textbf{attitudes} & \textbf{thresholds} & \textbf{thresholds} \\ \thickhline
-\multirow{5}{*}{Feature Importance} & \textbf{All} & \textbf{0.17} & \textbf{0.20} & \textbf{0.04} & \textbf{0.54} & \textbf{0.05} \\ \cline{2-7}
- & Regular lattice & 0.20 & 0.20 & 0.05 & 0.55 & 0.01 \\ \cline{2-7}
- & Small-world & 0.19 & 0.19 & 0.05 & 0.56 & 0.01 \\ \cline{2-7}
- & Random & 0.16 & 0.16 & 0.04 & 0.53 & 0.11 \\ \cline{2-7}
- & Scale-free & 0.13 & 0.24 & 0.04 & 0.51 & 0.08 \\ \thickhline
+\multirow{5}{*}{Feature Importance\textsuperscript{a}} & \textbf{All} & \textbf{0.17{\footnotesize$\pm$0.00}} & \textbf{0.20{\footnotesize$\pm$0.00}} & \textbf{0.04{\footnotesize$\pm$0.00}} & \textbf{0.54{\footnotesize$\pm$0.00}} & \textbf{0.05{\footnotesize$\pm$0.00}} \\ \cline{2-7}
+ & Regular lattice & 0.20{\footnotesize$\pm$0.00} & 0.20{\footnotesize$\pm$0.00} & 0.05{\footnotesize$\pm$0.00} & 0.55{\footnotesize$\pm$0.00} & 0.01{\footnotesize$\pm$0.00} \\ \cline{2-7}
+ & Small-world & 0.19{\footnotesize$\pm$0.00} & 0.19{\footnotesize$\pm$0.00} & 0.05{\footnotesize$\pm$0.00} & 0.56{\footnotesize$\pm$0.00} & 0.01{\footnotesize$\pm$0.00} \\ \cline{2-7}
+ & Random & 0.16{\footnotesize$\pm$0.00} & 0.16{\footnotesize$\pm$0.00} & 0.04{\footnotesize$\pm$0.00} & 0.53{\footnotesize$\pm$0.00} & 0.11{\footnotesize$\pm$0.00} \\ \cline{2-7}
+ & Scale-free & 0.13{\footnotesize$\pm$0.00} & 0.24{\footnotesize$\pm$0.00} & 0.04{\footnotesize$\pm$0.00} & 0.51{\footnotesize$\pm$0.00} & 0.08{\footnotesize$\pm$0.00} \\ \thickhline
 \multirow{5}{*}{Multivariate Regression} & \textbf{All} & \textbf{0.37} & \textbf{0.53} & \textbf{0.21} & \textbf{$-$1.26} & \textbf{0.47} \\ \cline{2-7}
  & Regular lattice & 0.43 & 0.51 & 0.16 & $-$1.35 & $-$0.05 \\ \cline{2-7}
  & Small-world & 0.41 & 0.51 & 0.17 & $-$1.35 & 0.15 \\ \cline{2-7}
@@ -522,6 +522,8 @@ Table~\ref{table2} presents results from our examination of the roles of five mo
  & Scale-free & 0.17 & 0.30 & 0.06 & $-$0.64 & 0.14 \\ \hline
 \end{tabularx}
 \vspace{4pt}
+{\footnotesize \textsuperscript{a}Feature importance values are reported as mean $\pm$ SE, where SE is the standard deviation of per-tree importances across the 100-tree Random Forest ensemble divided by $\sqrt{100}$. All SE values round to 0.00 at two decimal places (exact values $\leq$ 0.001), reflecting the high stability of importance estimates over the large sample sizes used ($N = 15{,}876$ to $100{,}548$). The remaining four methods---multivariate regression, partial correlation, standardized regression, and parameter importance (Pearson correlation)---produce deterministic analytical results given the input data; standard errors are not applicable.}
+\vspace{2pt}
 {\footnotesize \textit{Note.} All \textit{avg-of-thresholds} values are stored as integers in $[1, 100]$ and are equivalent to fractional adoption thresholds in $[0.01, 1.00]$ via the conversion $\theta = \textit{avg-of-thresholds}\,/\,100$, as implemented in the adoption decision rule of Algorithm~\ref{alg3}. The sensitivity analysis sweeps \textit{avg-of-thresholds} across the range $[10, 70]$, corresponding to fractional thresholds of $[0.10, 0.70]$.}
 \label{table2}
 \end{adjustwidth}
