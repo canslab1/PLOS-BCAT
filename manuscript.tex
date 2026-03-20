@@ -301,20 +301,18 @@ The BCAT opinion component follows the pairwise random interaction structure of 
 \label{table3}
 \begin{adjustwidth}{-2.25in}{0in}
 \centering
-\begin{tabular}{p{3.0cm} p{4.0cm} p{4.0cm} p{5.5cm}}
+\begin{tabularx}{\linewidth}{|l|X|X|X|}
 \hline
-\textbf{Model Feature} & \textbf{HK Model} & \textbf{Deffuant RA Model} & \textbf{BCAT Opinion Component} \\
-\hline
-Interaction structure & All neighbors within $\varepsilon$ simultaneously & Single randomly selected neighbor & Single randomly selected network neighbor \\
-Confidence threshold & Fixed, uniform $\varepsilon$ & Agent-specific, time-varying $u_i$ & Fixed, uniform $\varepsilon$ (= \textit{max-opinion-distance}\,/\,100) \\
-Opinion space & Continuous $[0, 1]$ & Continuous $[-1, +1]$ & Discrete integer $[1, 100]$ $\equiv$ $[0.01, 1.00]$ \\
-Update timing & Synchronous & Sequential pairwise & Pseudo-concurrent (\textit{ask-concurrent}) \\
-Uncertainty dynamics & None & $u_i$ updates after each interaction & None \\
-Convergence parameter & Not explicit & $\mu$ (fixed) & $\mu$ = \textit{convergence-rate} (fixed) \\
-Network structure & None (fully mixed) & None (fully mixed) & Explicit network topology \\
-Adoption-status conditioning & Absent & Absent & Present (4 scenarios, Algorithm~\ref{alg3}) \\
-\hline
-\end{tabular}
+\textbf{Model Feature} & \textbf{HK Model} & \textbf{Deffuant RA Model} & \textbf{BCAT Opinion Component} \\ \thickhline
+Interaction structure & All neighbors within $\varepsilon$ simultaneously & Single randomly selected neighbor & Single randomly selected network neighbor \\ \hline
+Confidence threshold & Fixed, uniform $\varepsilon$ & Agent-specific, time-varying $u_i$ & Fixed, uniform $\varepsilon$ (= \textit{max-opinion-distance}\,/\,100) \\ \hline
+Opinion space & Continuous $[0, 1]$ & Continuous $[-1, +1]$ & Discrete integer $[1, 100]$ $\equiv$ $[0.01, 1.00]$ \\ \hline
+Update timing & Synchronous & Sequential pairwise & Pseudo-concurrent (\textit{ask-concurrent}) \\ \hline
+Uncertainty dynamics & None & $u_i$ updates after each interaction & None \\ \hline
+Convergence parameter & Not explicit & $\mu$ (fixed) & $\mu$ = \textit{convergence-rate} (fixed) \\ \hline
+Network structure & None (fully mixed) & None (fully mixed) & Explicit network topology \\ \hline
+Adoption-status conditioning & Absent & Absent & Present (4 scenarios, Algorithm~\ref{alg3}) \\ \hline
+\end{tabularx}
 \end{adjustwidth}
 \end{table}
 
