@@ -499,11 +499,11 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
 \hline
 \textbf{Analysis Method} & \textbf{Network Type} & \textbf{bounded-} & \textbf{avg-of-} & \textbf{std-of-} & \textbf{avg-of-} & \textbf{std-of-} \\
  &  & \textbf{confidence} & \textbf{attitudes} & \textbf{attitudes} & \textbf{thresholds} & \textbf{thresholds} \\ \thickhline
-\multirow{5}{*}{Feature Importance\textsuperscript{a}} & \textbf{All} & \textbf{0.17{\footnotesize$\pm$0.00}} & \textbf{0.20{\footnotesize$\pm$0.00}} & \textbf{0.04{\footnotesize$\pm$0.00}} & \textbf{0.54{\footnotesize$\pm$0.00}} & \textbf{0.05{\footnotesize$\pm$0.00}} \\ \cline{2-7}
- & Regular lattice & 0.20{\footnotesize$\pm$0.00} & 0.20{\footnotesize$\pm$0.00} & 0.05{\footnotesize$\pm$0.00} & 0.55{\footnotesize$\pm$0.00} & 0.01{\footnotesize$\pm$0.00} \\ \cline{2-7}
- & Small-world & 0.19{\footnotesize$\pm$0.00} & 0.19{\footnotesize$\pm$0.00} & 0.05{\footnotesize$\pm$0.00} & 0.56{\footnotesize$\pm$0.00} & 0.01{\footnotesize$\pm$0.00} \\ \cline{2-7}
- & Random & 0.16{\footnotesize$\pm$0.00} & 0.16{\footnotesize$\pm$0.00} & 0.04{\footnotesize$\pm$0.00} & 0.53{\footnotesize$\pm$0.00} & 0.11{\footnotesize$\pm$0.00} \\ \cline{2-7}
- & Scale-free & 0.13{\footnotesize$\pm$0.00} & 0.24{\footnotesize$\pm$0.00} & 0.04{\footnotesize$\pm$0.00} & 0.51{\footnotesize$\pm$0.00} & 0.08{\footnotesize$\pm$0.00} \\ \thickhline
+\multirow{5}{*}{Feature Importance\textsuperscript{*}} & \textbf{All} & \textbf{0.17} & \textbf{0.20} & \textbf{0.04} & \textbf{0.54} & \textbf{0.05} \\ \cline{2-7}
+ & Regular lattice & 0.20 & 0.20 & 0.05 & 0.55 & 0.01 \\ \cline{2-7}
+ & Small-world & 0.19 & 0.19 & 0.05 & 0.56 & 0.01 \\ \cline{2-7}
+ & Random & 0.16 & 0.16 & 0.04 & 0.53 & 0.11 \\ \cline{2-7}
+ & Scale-free & 0.13 & 0.24 & 0.04 & 0.51 & 0.08 \\ \thickhline
 \multirow{5}{*}{Multivariate Regression} & \textbf{All} & \textbf{0.37} & \textbf{0.53} & \textbf{0.21} & \textbf{$-$1.26} & \textbf{0.47} \\ \cline{2-7}
  & Regular lattice & 0.43 & 0.51 & 0.16 & $-$1.35 & $-$0.05 \\ \cline{2-7}
  & Small-world & 0.41 & 0.51 & 0.17 & $-$1.35 & 0.15 \\ \cline{2-7}
@@ -526,7 +526,7 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
  & Scale-free & 0.17 & 0.30 & 0.06 & $-$0.64 & 0.14 \\ \hline
 \end{tabularx}
 \vspace{4pt}
-{\footnotesize \textsuperscript{a}Feature importance values are reported as mean $\pm$ SE, where SE is the standard deviation of per-tree importances across the 100-tree Random Forest ensemble divided by $\sqrt{100}$. All SE values round to 0.00 at two decimal places (exact values $\leq$ 0.001), reflecting the high stability of importance estimates over the large sample sizes used ($N = 15{,}876$ to $100{,}548$). The remaining four methods---multivariate regression, partial correlation, standardized regression, and parameter importance (Pearson correlation)---produce deterministic analytical results given the input data; standard errors are not applicable.}
+{\footnotesize \textsuperscript{*}SE of per-tree importance estimates $< 0.01$ for all entries (100-tree Random Forest ensemble, $N > 15{,}000$ per network topology). The remaining four methods produce deterministic analytical results; standard errors are not applicable.}
 \vspace{2pt}
 {\footnotesize \textsuperscript{b}Parameter Importance values (Pearson correlations) closely approximate Standardized Regression coefficients because the five input parameters are varied independently in the sensitivity analysis design, making them approximately uncorrelated. Under orthogonal predictors, the two measures are mathematically equivalent.}
 \vspace{2pt}
