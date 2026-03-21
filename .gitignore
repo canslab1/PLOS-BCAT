@@ -19,6 +19,9 @@ English - best game no one played.nlogo
 manuscript-old.docx
 manuscript-old.tex
 
+# Word temp files
+manuscript.docx
+
 # Duplicate source screenshots (already copied to fig*.png)
 figures/Figure 2.png
 figures/Figure 4.png
@@ -27,3 +30,5 @@ figures/Figure 6a.png
 figures/Figure 6b.png
 figures/Figure 10.png
 figures/Figure 11.png
+run_mechanism_decomposition.py
+scripts/
