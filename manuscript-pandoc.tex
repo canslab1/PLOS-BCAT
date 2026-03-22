@@ -1,0 +1,899 @@
+% Template for PLoS
+% Version 3.7 Aug 2025
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended
+% to minimize problems and delays during our production
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% Once your paper is accepted for publication,
+% PLEASE REMOVE ALL TRACKED CHANGES in this file
+% and leave only the final text of your manuscript.
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file.
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission.
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.
+%
+% Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column.
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{iftex}
+\usepackage[nopatch={eqnum,item}]{microtype}
+% Fix "Command \showhyphens has changed" warning (microtype + LaTeX 2024+ compatibility)
+% Define old-style inner command so microtype uses \patchcmd instead of \CheckCommand
+\makeatletter
+\gdef\MT@fix@showhyphens#1{\setbox0\vbox{\color@begingroup
+  \everypar{}\parfillskip\z@skip\hsize\maxdimen\normalfont
+  \pretolerance\m@ne\tolerance\m@ne\hbadness\z@\showboxdepth\z@\ #1\color@endgroup}}
+\AddToHook{begindocument/before}{%
+  \expandafter\let\csname showhyphens \endcsname\MT@fix@showhyphens
+}
+\makeatother
+\ifpdftex
+  \DisableLigatures[f]{encoding = *, family = * }
+\fi
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace}
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Use the plos2025.bst BibTeX style
+\bibliographystyle{plos2025}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\today}
+
+%% Include all user-defined macros below
+
+% ---------------------------------------------------------------
+% Preview mode toggle:
+%   %   \previewfalse = exclude figures (for Editorial Manager submission)
+% ---------------------------------------------------------------
+
+\ifpreview
+  }
+\fi
+
+% Custom Algorithm float environment (plaintop places caption above content)
+\usepackage{float}
+\floatstyle{plaintop}
+\newfloat{algorithm}{htbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+%% END MACROS SECTION
+
+
+\begin{document}
+\vspace*{0.2in}
+
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf{Exploring the `best game no one played' phenomenon using a mixed opinion dynamics and innovation diffusion model}
+}
+\newline
+\\
+Chung-Yuan Huang\textsuperscript{1},
+Sheng-Wen Wang\textsuperscript{2*}
+\\
+\bigskip
+\textbf{1} Department of Computer Science and Information Engineering, Chang Gung University, Taoyuan City, Taiwan, R.O.C.
+\\
+\textbf{2} Department of Finance and Information, National Kaohsiung University of Science and Technology, Kaohsiung City, Taiwan, R.O.C.
+\\
+\bigskip
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+* swwang@nkust.edu.tw
+
+\end{flushleft}
+
+% Please keep the abstract below 300 words
+\section*{Abstract}
+Innovative products that receive favorable reviews but never catch on with consumers belong to a category known as the ``best game no one played.'' We combined an adoption threshold model with an opinion dynamics model to examine reasons why certain high-quality products and ideas never achieve expected levels of success. Many computational social scientists have used opinion dynamics models to analyze consensus formation, and adoption threshold models to study acceptance scenarios. However, the majority of studies based on the first model type focus on opinion exchanges without discussing follow-up actions, and the majority based on the second type only examine ways that individual decisions depend on numbers or proportions of friends and neighbors already engaged in specific behaviors, regardless of opinion differences. We use four kinds of theoretical networks---regular lattice, random, small-world and scale-free---as underlying social network structures, and apply an agent-based simulation approach to analyze opinion exchange dynamics and product acceptance. Computational agents were found to be capable of changing pro/con opinions regarding issues, products, policies, etc. when communicating with neighboring agents via an underlying social network, and of making acceptance/rejection choices based on an individual adoption threshold plus observations of their neighbors' specific behaviors. A series of sensitivity analysis simulation experiments was conducted with the objective of identifying model-related factors, determining non-linear correlations among them, and quantifying degrees of influence. Factors exerting the greatest influence or requiring greater care when applied to cases of innovation diffusion were examined. Sensitivity analysis results indicate that agent adoption threshold mean exerted the greatest influence, followed by agent attitude mean and bounded confidence. Mechanism decomposition experiments revealed that the testimony effect neutralizes opinion clustering, making coordination failure the dominant driver of the opinion--adoption gap. These findings yield predictions distinguishing the model from information cascades, network externalities, and global games.
+
+% Note: Keywords should be entered in the PLOS Editorial Manager submission system, not in the LaTeX file.
+
+\linenumbers
+
+% Use "Eq" instead of "Equation" for equation citations.
+\section*{Introduction}
+
+Innovative products and ideas require careful planning and resource investment prior to release [1], with the potential for product acceptance and profitable sales generally increasing in step with the number of word-of-mouth recommendations [2,3,4]. However, due to the complexities of interpersonal communication and influence, even the most careful planning cannot ensure product success [5,6,7,8,9,10]. For offline friend/acquaintance networks and online social networks, the large majority of interactions occur between individuals who already know each other [11,12]. Depending on timing and attitude strength, opinion exchanges between social network friends may be sufficient for altering an individual's original views---sometimes even reversing prejudices. Two possible results are public conformity and private acceptance [13,14].
+
+Product acceptance and sales success involve innovation diffusion processes and adoption thresholds that have been studied by researchers in computer science, mass communication, and social psychology, among other topics areas (see, for example, [15,16,7,17,18]). Initially created by the American communication theorist and sociologist E.~M.~Rogers (1962) [19], diffusion of innovation theory (sometimes called ``adoption of innovation'') was originally meant to address the evolution of new concepts, products, trends, and technologies introduced to social systems. In \textit{Diffusion of Innovations} (2003) [7] he listed four elements influencing the spread of new ideas as the innovation itself, communication channels, time, and the social system involved, and then described dissemination as consisting of awareness, persuasion, decision making, and confirmation. The innovation diffusion literature contains many examples of large numbers of individuals wanting to participate in discussions of new concepts, products, trends, and technologies, but widespread discussion does not guarantee acceptance. Lack of familiarity and certainty generally results in mixed levels of support based on factors that include cultural, religious, and political beliefs [20,7]; social backgrounds; and social interdependence [21,22,23]. It is important to remember that opinion formation is a gradual process that continually evolves as opinions change according to environmental influences [24,25,26].
+
+A positive attitude does not guarantee action or success beyond a few pioneers willing to accept unpredictable consequences associated with being the first to try something [7,12]. Friends and acquaintances generally observe pioneers before making acceptance/rejection decisions [27,28], with more conservative individuals waiting until visible majorities test new products or ideas. But in the end, strong sales or broad approval can never be guaranteed [7].
+
+There are numerous examples of products and ideas that were considered innovative when released, but never caught on with consumers---all examples of ``the best game no one played'' phenomenon associated with diffusion of innovation [29]. One well-known example is the Palm hand-held computer, released in 1996. It was immediately adopted by a small number of tech-savvy individuals, but never reached the level of popularity its designers had hoped for [30]. Another example comes from Taiwan, where the film ``The Bold, The Corrupt and The Beautiful'' won Best Film and Best Drama audience awards at the 54th Golden Horse Film Festival, but failed at the box office [31]. A third example is the ``service-oriented architecture'' (SOA) concept, a software design feature in which services were provided via network communication protocols. When introduced in 2005, it was perceived as having great benefit for organizations, but its high entry barriers and short-term benefits were difficult to overcome. Resource investment in SOA dried up during the 2008 economic downturn.
+
+Diffusion of innovation studies are found in multiple topic areas. The social psychologists Fishbein \& Ajzen (1975) [32] use rational choice theory to discuss ways that individual decision-making behaviors are affected by internal ideas and external pressures. Ajzen's (2020) [33] theory of planned behavior, an expansion of rational choice theory, contains an additional personal willpower factor. Davis et al.'s (1989) [34] technology acceptance model (another expansion of rational choice theory) addresses ease of use and ways that usability can influence individual decisions to adopt or reject new technology products. In the field of communications, Oliver et al.'s (1985) [35] critical mass theory explains how diffusion speed increases and promotion becomes easier once the number of group pioneers reaches a critical mass.
+
+However, social science research requires large amounts of data collected over long time periods, mostly using questionnaires designed to gather information on inner feelings. Data frequently address specific decision-making behaviors within limited time frames. Since individuals tend to continually adjust their attitudes based on opinion exchanges over time [25], questionnaires and other time point collection methods frequently produce data that do not accurately portray opinion dynamics. To address this shortcoming, researchers such as Deffuant et al. (2002) [36], Hegselmann \& Krause (2002) [6] and Sznajd-Weron \& Sznajd (2000) [37] have applied agent-based and network-oriented simulation approaches to measure the effects of various factors on decision-making behaviors.
+
+Many information science researchers rely on opinion dynamics models of ongoing intra-group interactions and opinion exchanges to analyze consensus evolution [6]. Such models have been applied in studies of mainstream media consumption [38], administrative policies [39], biological organisms [40], microfinance loans [41], and corporate leadership [42,43], among many other topics [44,45,46].
+
+The main assumption underlying adoption threshold models of innovation diffusion is that individual actions are dependent on the number of adjacent or nearby individuals who take the same action [12,10]. Karimi and Holme (2013) [16] used a version of this model to examine how chronological sequences of events and contact periods affect temporal networks. They hypothesized that interaction and idea infection process timing are affected by contacts within a certain time frame. After adding randomness and certainty to Karimi and Holme's temporal network, Backlund et al. (2014) [47] found that the number of contacts between individuals and neighbors during a specific time period affected purchase decisions---that is, when individuals contacted multiple neighbors who had purchased a product, they were more likely to do the same.
+
+Some computational social science researchers have experimented with opinion dynamics models and adoption threshold diffusion of innovation models to examine opinion exchanges and consensus formation. However, many studies using models in the first category emphasize opinion exchanges without discussing follow-up actions, and many using models in the second category only address individual decisions that are completely dependent on proportions of friends and neighbors already engaged in a specific behavior, regardless of opinion differences. To our knowledge, no effort has been made to combine the two model types for purposes of simulating opinion exchanges and observing their effects on decisions and actions. We believe such a combination can support a broader understanding of opinion exchanges and product acceptance.
+
+Our goals in this study are to establish a more complete picture of diffusion of innovation and opinion evolution processes, and to examine the results of their interaction. Our model-merging effort involves several social network models, including regular lattice (CA, two-dimensional toroidal cellular automata with Moore neighborhood and periodic boundary conditions), random (RN), small-world (SWN, with $0 < \text{rewiring rate} < 1$), and scale-free (SFN). We assumed positive/negative polarity in attitudes on controversial issues, with individuals who hold positive attitudes being more likely to accept and purchase innovative products. One advantage of combining opinion dynamics with adoption threshold models is that the first type considers the evolution of opinions in social networks over time, and the second involves factors that affect actions and decisions. Sensitivity analysis simulation experiments were conducted to identify primary model-related factors, determine non-linear correlations among them, and quantify degrees of influence. We investigated which factors exert the greatest influence, and which ones require greater care when applied to cases of innovation diffusion.
+
+
+\section*{Related opinion dynamics and adoption threshold models}
+
+Opinion dynamics models are used to simulate opinion formation following exposure to multiple information sources such as social media and observations of the actions of neighbors. The purposes are to identify detailed aspects of opinion exchanges, speculate on how public consensus might be achieved, determine reasons for opinion polarization, and predict the effects of adding small numbers of outlier opinions. When such models are initialized, random values are assigned to individual agents, each one indicating an original opinion. Opinions are usually coded as real numbers with ranges referred to as \textit{opinion spaces}, continuous in some models and discrete in others. In social network models, agent relationships are expressed as links through which opinions are exchanged. The main feature of Friedkin and Johnsen's (1990) [48] \textit{bounded confidence} model is that exchanges are limited to individuals who have similar opinions---in their words, communication only occurs when opinion differences are below a trust boundary. As a bounded confidence model extension, Hegselmann and Krause's (2002) [6] \textit{HK model} measures opinions as real numbers with ranges of $[0, 1]$. The most important HK model parameter is uncertainty $\varepsilon$, a trust boundary sometimes referred to as ``controversy tolerance.'' During opinion exchanges, randomly selected agents treat the averages of all opinions within $\varepsilon$ ranges as new opinions. In simulations, opinion exchange iterations are repeated until a defined opinion distribution is achieved.
+
+A key task in HK model simulations is controlling parameters $\varepsilon_{l}$ and $\varepsilon_{r}$, whose values are reset for each generation when discussing asymmetric cases. When an agent's opinion is closer to 1, $\varepsilon_{r} > \varepsilon_{l}$; conversely, when $\varepsilon_{l} > \varepsilon_{r}$, an agent's opinion is closer to 0. Since the HK model lacks a social network structure, agents exchange opinions as long as the opinion difference falls within a certain $\varepsilon$ value range. Since the HK model makes full use of bounded confidence features, researchers have used various versions to examine microfinance loans [41], mainstream media [38], administrative agency policies [39], in vivo bioactivity [40], and corporate leadership [42,43], among other topics.
+
+In contrast, Deffuant et al.'s (2002) [36] relative agreement model (sometimes referred to as the RA or D model) considers the circumstances under which extreme opinions evolve into social norms affecting all individuals. The D and HK models are both based on the bounded confidence model, but the D model's opinion space parameter is set to $[-1, +1]$. The biggest difference between the D and HK models is that D model opinion exchanges are bidirectional---that is, two parties can influence each other's opinions. During our experiments, agent pairs were randomly selected and checked to determine whether their opinion distances were below the $\varepsilon$ parameter. When distances were equal to or above $\varepsilon$, agent opinions did not change. Eqs~(1) and (2) were used to determine opinion value adjustments:
+
+
+\begin{center}\textbf{--- Equation (1) about here ---}\end{center}
+
+
+\begin{center}\textbf{--- Equation (2) about here ---}\end{center}
+
+
+\noindent where $x_{i}$, $x_{j}$ and $u_{i}$, $u_{j}$ are the opinions and uncertainties of agents $i$ and $j$, respectively, and $h_{ij}$ is their overlapping confidence interval, expressed as $[x - u,\ x + u]$.
+
+The non-overlapping length for agent $j$ is $2u_{i} - h_{ij}$. The overlapping length minus the non-overlapping length is called \textit{agreement}---the greater the agreement value for two agents, the more consistent their opinions. The \textit{relative consistency} of agent $j$ is defined as the agreement value divided by the length of agent $i$'s confidence interval. Accordingly, the relative consistency of agent $j$ to agent $i$ is $[h_{ij} - (2u_{i} - h_{ij})]/2u_{i}$ (equal to $h_{ij}/u_{i} - 1$), and the relative consistency of agent $i$ to agent $j$ is $[h_{ij} - (2u_{j} - h_{ij})]/2u_{j}$ (equal to $h_{ij}/u_{j} - 1$). Changes in opinions are determined as $\mu \times \text{(relative consistency)} \times \text{(opinion difference between agents } i \text{ and } j\text{)}$. Undecided individuals are more likely to change than individuals who are more confident in their decisions---that is, they are more likely to be affected by opinion exchanges.
+
+As stated, agent opinion exchanges in the D model are bidirectional. Another significant difference from the HK model is that D model uncertainty varies in step with agent opinion exchanges. The D model focuses on differences between extreme and moderate opinions: extreme agents are those with exceptionally low uncertainty, and whose opinions are close to the opinion space boundary; moderate agents are those with uncertainty and opinion values within one standard deviation (SD) of their respective mean values. In contrast, the HK model assumes agent opinion homogeneity. The model we propose in this study does not implement the full RA update rule described in Eqs~(1) and (2); instead, it employs a simplified fixed-rate pairwise update as detailed in the Simulation Model Specifications section and Table~1.
+
+% Table 3: Comparison of bounded confidence models
+
+
+\begin{center}\textbf{--- Table 1 about here ---}\end{center}
+
+
+The opinion update mechanism of our proposed model draws on the bounded confidence tradition established by these two frameworks, but it is a distinct variant that shares features with both. Each agent selects one neighbor at random per time step, following the pairwise random interaction approach of Deffuant [49] rather than the synchronous all-neighbors aggregation of the HK model. The bounded confidence threshold is a globally fixed parameter ($\varepsilon = \textit{bounded-confidence}\,/\,100$, where \textit{bounded-confidence} $\in [10, 90]$) shared by all agents throughout the simulation. It does not vary by agent or over time, as it does in the Deffuant et al.\ (2002) [36] Relative Agreement model. Attitude values are integers in $[1, 100]$, forming a uniform 100-level discretization of the continuous opinion space $[0, 1]$ where each integer unit corresponds to an interval of 0.01. This mapping is exact and preserves all qualitative properties of the continuous-space dynamics. The convergence rate $\mu$ (\textit{convergence-rate} in the implementation) governs the magnitude of attitude adjustment. It plays a role analogous to the $\mu$ parameter in the Deffuant framework, but without the relative-agreement weighting that scales adjustment by the ratio of confidence interval overlap to uncertainty width. Table~1 summarizes the relationships among the HK model, the Deffuant Relative Agreement model, and the opinion update mechanism of the proposed model.
+
+Adoption threshold models are used to address the assumption that an individual's actions and decisions (or lack of) depend on the number and proximity of surrounding friends/acquaintances who take the same actions or make the same decisions [10]---in other words, societal influences. Most individuals refrain from trying new products due to the perceived unpredictability of consequences, and therefore rely on their observations of friend reactions when making their own purchase decisions. Once the number of approving friends exceeds a self-defined adoption threshold value, the odds of making the same decision or taking the same action increase significantly. Compliant individuals with lower adoption thresholds are more likely to take the same actions as their friends.
+
+In network-oriented adoption threshold models, two factors determine when agents (nodes) adopt the opinions of friends: adoption threshold value and number of neighbors. In the example shown in Fig~1, Andy's adoption threshold is 1/3, meaning that when more than 1/3 of his neighbors or friends adopt a new product or opinion, Andy will follow suit. There are two situations that make it easy for individuals to perform actions. In the first, an agent's adoption threshold is very low, meaning that he is easily influenced by friends. In the second the number of neighbors is very small, therefore individual neighbors can wield significant influence with an agent---any action taken by a neighbor increases the likelihood that the agent will do the same. Andy has three neighbors in the Fig~1a example, and if only one takes an action, a 1/3 adoption threshold is immediately achieved. Andy's adoption threshold is also 1/3 in the Fig~1b example, but since there are four neighbors, each one exerts a smaller impact.
+
+% Figure 1
+
+
+\begin{center}\textbf{--- Figure 1 about here ---}\end{center}
+
+
+Past efforts to use an adoption threshold model to analyze innovation diffusion have generally been limited to discussing numbers of nearby agent friends and their influences on agent decision-making, without considering the inner attitudes of agents toward products. Assuming that all individuals have opinions on different topics, we designed the present study based on the basic models proposed in Wang et al. (2014, 2022) [13,14] and Hsieh (2019) [50] to address controversial issue diffusion in combination with opinion dynamics and adoption thresholds. One characteristic of this study's combined model is that explicit behaviors can be used to predict agent opinions. Once an agent adopts a new product, our model deduces the positive attitudes of many of the agents' friends who also use it. However, this is a one-way process: just because an agent has a positive attitude toward a product (and has many friends who also approve of it) does not automatically mean that the agent will purchase and use it---such decisions are based on whether or not an adoption threshold is exceeded. Our model assumes that an agent's opinion of a new product is hidden, yet it is still possible to predict the agent's future action based on how many of its friends are using it.
+
+We chose bounded confidence dynamics as the opinion formation component of our model for theoretical reasons that bear directly on the adoption mechanism introduced above. Alternative opinion update rules---most notably DeGroot-style weighted averaging [51,52,53] and voter model dynamics---lack the property that makes bounded confidence a natural complement to threshold-based adoption. Under DeGroot updating on a strongly connected network, repeated weighted averaging drives all agents toward a single consensus opinion determined by the network's influence centrality structure. The long-run opinion distribution is therefore homogeneous. Any adoption failure in a DeGroot-based model must therefore arise entirely from threshold barriers acting on a population that has already converged to a shared attitude. Opinion fragmentation simply cannot contribute to adoption outcomes, because the model rules it out by design. The voter model similarly converges to absorbing consensus states and operates on discrete opinion values. Neither property is suitable for representing the graded attitude intensities and selective communication boundaries that reflect the well-documented homophily in social networks [54].
+
+The bounded confidence mechanism, by contrast, produces stable, persistent opinion clusters as its defining long-run outcome. These are subpopulations that have converged to local equilibria and stopped communicating across cluster boundaries because their mutual attitude distance exceeds the threshold. This property has a direct and important consequence for adoption dynamics. In the proposed model, adoption eligibility requires a strictly positive attitude (above the midpoint of the opinion scale). Any opinion cluster whose stable equilibrium lies at or below this midpoint therefore permanently excludes its members from adopting, regardless of their local network structure or threshold value. The bounded confidence mechanism thus acts as a built-in first filter on the population of potential adopters. It creates a wedge between the proportion of agents who hold favorable opinions and the proportion who are even eligible to enter the adoption decision process. Neither DeGroot averaging nor voter dynamics can produce this wedge as an emergent equilibrium property.
+
+
+\section*{Simulation model specifications}
+
+To explore the best game no one played phenomenon, we integrated a well explored bounded confidence-based opinion dynamics model with an equally familiar adoption threshold innovation diffusion model to construct a novel agent-based, network-oriented simulation addressing a single issue. Based on the presence of both bounded confidence and adoption threshold factors, we abbreviated the model as BCAT. BCAT was also used to identify model-related factors associated with good sales probabilities, non-linear correlations among them, which factors exerted the greatest influence, and which factors require greater care when applied to instances of innovation diffusion. We believe that policy researchers, government officials, and marketers can use the BCAT model to adjust parameters when creating scenarios for studying opinion dynamics, testing adoption diffusion processes involving novel products or controversial policies, and investigating the effectiveness of marketing or promotional strategies. The remainder of this section describes the model's computational implementation, agent initialization procedures, and algorithmic rules, followed by the evaluation indicators used to quantify simulation outcomes and the emergent properties that arise from the coupling of the two component mechanisms.
+
+The graphical user interface of the BCAT simulation is shown in Fig~2, a simulation process flowchart in Fig~3, and pre-simulation parameters requiring specification in Table~2. The BCAT model was originally implemented using Wilensky's (1999) [55] NetLogo agent-based modeling and simulation platform [56], and has been re-implemented in Python~3 with an equivalent graphical interface to facilitate reproducibility. Both implementations are publicly available at \url{https://github.com/canslab1/BCAT} under the MIT License, with a permanent archived copy on Zenodo (DOI: 10.5281/zenodo.19081523). To attain statistical significance and control experimental error, each simulation was repeated 1,000 times using the same initial conditions and parameter settings [57]. As shown in Fig~3, each run was reset to an initial environment and performed for at least 300 ticks (time steps). Each agent interacts with one randomly chosen neighboring agent one time per tick. Statistical plots are shown in real time until all factors of interest achieve a steady state or meet termination criteria. Upon completion of a simulation run, all relevant initial conditions, parameter settings, and experimental outcomes were stored in external csv format files for further comparisons and sensitivity analyses (Fig~3, Phase 6).
+
+% Figure 2
+
+
+\begin{center}\textbf{--- Figure 2 about here ---}\end{center}
+
+
+% Figure 3
+
+
+\begin{center}\textbf{--- Figure 3 about here ---}\end{center}
+
+
+% Table 1
+
+
+\begin{center}\textbf{--- Table 2 about here ---}\end{center}
+
+
+According to the BCAT model, abstract forms of societal structures are characterized as theoretical networks in which nodes represent individuals (agents) and edges indicate connections between individuals (friendships, family members, bosses, coworkers, etc.). As shown in both the visual network model displayed in the upper-right window of the Fig~2 graphical user interface, and the pseudo-code for network model construction (Algorithm~1), underlying social networks consisting of 400 nodes and 1600 edges correspond to four kinds of theoretical networks: regular lattice, random, small-world and scale-free. Each network node has an average of 8 neighboring agents.
+
+% Algorithm 1
+
+
+\begin{center}\textbf{--- Algorithm 1 about here ---}\end{center}
+
+
+In addition to scale-free networks created with a Barab{\'a}si and Albert (1999) [58] preferential attachment growth algorithm, the BCAT model uses the widely recognized Watts and Strogatz (1998) [59] small-world network construction algorithm (with rewiring probability as its primary parameter) to create the other three networks. When the user-specified rewiring probability = 0, the network construction algorithm creates a toroidal regular lattice with Moore neighborhood and periodic boundary conditions. The resulting network exhibits high degrees of both clustering and separation. According to network theory, the opposite of a completely ordered regular lattice is a random network. When the user-specified rewiring probability = 1, all network edges are rewired randomly. Our network construction algorithm results in random networks that lack clustering, but have low degrees of separation between nodes. When the user-specified rewiring probability is between 0 and 1, the network construction algorithm creates a network exhibiting the small-world characteristics of high degree of clustering and low degree of separation. For ease of visual presentation, we arranged 400 network nodes connected by 1600 edges as a two-dimensional $20 \times 20$ grid.
+
+As shown in Algorithm~2, each BCAT model agent (network node) has three primary attributes: attitude (\textit{att}), adoption threshold (\textit{theta}), and action (\textit{act}). Attitude is defined as an agent's summary evaluation of an external issue, product, or idea with some degree of favor or disfavor. Exposure rate is the proportion of adopters in an agent's personal network at a given time. Since adoption threshold is the proportion of adopters in an agent's personal network, it represents the time-of-adoption exposure rate. From another perspective, adoption threshold refers to agent conformity: when the proportion of neighboring agents accepting or adopting an issue, product, or idea exceeds this threshold, the agent also adopts it. Action is expressed as a binary Boolean value indicating whether an agent has performed an action or purchased a new product.
+
+% Algorithm 2
+
+
+\begin{center}\textbf{--- Algorithm 2 about here ---}\end{center}
+
+
+During phase 1.3 of each simulation run (Fig~3), agent populations must be created and three primary attributes initialized. Each agent's attitude is set to a normally distributed random integer between 1 and 100, with mean (\textit{avg-of-attitudes}) and standard deviation (\textit{std-of-attitude}) values derived from the parameter setting area in the BCAT user interface (Fig~2). Similarly, each agent's adoption threshold is set to a normally distributed random integer between 1 and 100 with a mean (\textit{avg-of-thresholds}) and standard deviation (\textit{std-of-thresholds}). An agent's adoption threshold does not change after initialization, but attitude is variable over time along a 1--100 scale. Values between 1 and 50 indicate negative attitudes toward new issues (1 = strongest disagreement), and values between 51 and 100 indicate positive attitudes (100 = strongest agreement).
+
+After initializing the entire agent population, a small number of agents are selected as opinion leaders and adoption pioneers, based on their having the highest degrees of positive attitude but not achieving the required thresholds for triggering idea adoption or product purchase. Each pioneer's attitude, adoption threshold, and action values are respectively set to 100, 0 and ``true.'' To determine the aggregate effects and impacts of pioneers in different clustering situations on simulation results, the BCAT model allows for the concentration of selected pioneers in specific interconnected network node clusters during initialization phase 1.4 (Fig~3), as well as for their dispersal throughout an entire social network according to the user's specific requirements.
+
+During the opinion exchange phase, each agent randomly selects one neighboring agent for potential communication. Communication occurs only if the absolute difference between the two agents' attitude values falls strictly below the \textit{bounded-confidence} parameter, which serves as the bounded confidence threshold governing opinion exchange eligibility. In continuous-space terms, this condition is equivalent to $|x_i - x_j| < \varepsilon$, where $\varepsilon = \textit{bounded-confidence}\,/\,100$, consistent with the standard Deffuant bounded confidence literature [49]. When the condition is met, one of four interaction scenarios applies depending on the adoption statuses of both agents, as specified in Algorithm~3. The attitude adjustment in each scenario follows a fixed-rate convergence rule. The adjusting agent's attitude moves toward its partner's attitude by a fraction \textit{convergence-rate} ($\mu$) of their difference: $\textit{att}_{\text{new}} = \text{round}(C + \mu \times (B - C))$, where $C$ is the agent's current attitude and $B$ is its neighbor's attitude. Depending on the scenario, the model applies this rule in one direction (one-way persuasion) or both directions (two-way communication). We set the \textit{convergence-rate} parameter to 0.1 in all reported simulations. The model uses no agent-specific uncertainty parameter; the bounded confidence threshold is a fixed global property of the simulation rather than an individually varying attribute.
+
+% Algorithm 3
+
+
+\begin{center}\textbf{--- Algorithm 3 about here ---}\end{center}
+
+
+Opinion exchanges between an agent and a randomly chosen neighboring agent can be divided into four situations based on their adoption statuses. When one agent has already adopted an idea or product and the other has not yet done so, the first is perceived as having a more positive attitude than the second, whose attitude becomes more positive due to a ``user-friendly testimony'' effect. The first agent's positive attitude remains the same during and after the opinion exchange phase. Scenarios 1.1 and 2.2 in Algorithm~3 are both consistent in the use of a one-way persuasion process, indicating that only the not-yet-adopted agent's attitude is affected by the opinion exchange phase.
+
+An interesting situation arises when the second agent's attitude is more positive than the first. Following the opinion exchange phase, the not-yet-adopted agent's attitude becomes less positive and the already-adopted agent's attitude becomes more positive. Scenarios 1.2 and 2.1 both refer to two-way communication, with two key factors involved---the not-yet-adopted agent's adoption threshold is too high, and the not-yet-adopted agent has too many neighboring agents, meaning that the proportion of already-adopted neighbors does not exceed the adoption threshold. When both an agent and its neighboring agent have already adopted an idea or purchased a product during the opinion exchange phase, the already-adopted agent with the lower attitude value is affected by the already-adopted agent with the higher attitude value, thus becoming more positive. Scenarios 3.1 and 3.2 in Algorithm~3 are both consistent with this one-way persuasion process. In the last situation, two not-yet-adopted agents affect each other, with their attitudes moving closer during the opinion exchange phase: the higher attitude value agent experiences a decrease, and the lower attitude value agent experiences an increase.
+
+As shown in Fig~3 and Algorithm~3, the opinion exchange phase is immediately followed by an adoption decision-making phase, during which a not-yet-adopted agent is sufficiently affected to adopt or purchase an idea or product if (a) it has a positive attitude, and (b) the proportion of its neighboring agents who have already done so exceeds the agent's adoption threshold.
+
+A note on the simulation update scheme is warranted. At each time step, all agents execute their communication and adoption decision-making procedures via a pseudo-concurrent update. Agents are processed in a randomly shuffled order within each tick, and each agent's state modifications take effect immediately. We implement this using the \textit{ask-concurrent} command in NetLogo~4.0.5, and the Python~3 reimplementation faithfully reproduces this behavior. This scheme lies between strictly synchronous updating (where all agents read old states before any writes occur) and strictly sequential updating with a fixed order (where position in the queue systematically advantages certain agents).
+
+We chose this scheme because the random reshuffling of execution order at each tick ensures that no agent systematically benefits from its position in the processing sequence. The randomness in the simulation therefore comes from four well-defined stochastic elements: (1)~the random selection of a neighbor for each agent at each tick, (2)~the initial random assignment of attitude and threshold values, (3)~the random or clustered placement of pioneer agents, and (4)~the random execution order within each tick. Because each source is controlled and reproducible given a fixed random seed, the sensitivity analysis results reported in Table~3 reflect model parameter effects rather than systematic scheduling artifacts.
+
+\subsection*{Evaluation indicators}
+
+Having specified the model's input parameters, interaction rules, and update scheme, we define two evaluation indicators---favorable reviews (FRI) and good sales (GSI)---to facilitate assessments and sensitivity analyses of BCAT model simulation processes. By respectively quantifying agent attitudes and adoption behaviors, they provide a comprehensive framework for analyzing innovative product or idea success. The FRI quantifies the proportions of agents in a population holding positive attitudes toward the product or idea being examined, calculated as the percentage of agents whose attitude values (\textit{att}) exceed 50. It is expressed as
+
+
+\begin{center}\textbf{--- Equation (3) about here ---}\end{center}
+
+
+\noindent where $N$ is the total number of agents in the agent population, $\text{att}_{i}$ the attitude value of the $i$-th agent ($i = 1, 2, \ldots, N$), and $\mathbb{I}(\bullet)$ a binary function equal to 1 when $\text{att}_{i} > 50$ and 0 otherwise. The result is a quantitative representation of the agent population's sentiment toward a product or idea---the higher the value, the stronger the sentiment and the more favorable the opinion.
+
+GSI values indicate the proportions of agents in a population who have already adopted an innovative product or idea, calculated as the percentage of agents whose adoption status (\textit{act}) is True. It is mathematically expressed as
+
+
+\begin{center}\textbf{--- Equation (4) about here ---}\end{center}
+
+
+\noindent where $\text{act}_{i}$ denotes the adoption status of the $i$-th agent and $\mathbb{I}(\bullet)$ a binary function equal to 1 if $\text{act}_{i} = \text{True}$, 0 otherwise. This indicator of a product or idea's actual degree of adoption reflects the effectiveness of the diffusion process being examined, with a higher GSI value indicating greater success in convincing agents to take action.
+
+As shown in Algorithm~3, the relationship between FRI and GSI is based on an agent's adoption decision-making logic. Specifically, during a simulation run the agent's adoption status is contingent on achieving a positive \textit{att} ($>$50) toward the product or idea, plus the adoption statuses of its neighboring agents. This requirement ensures that all agents who adopt the product in question represent a subset of all agents holding favorable attitudes, meaning that the proportion of agents with positive attitude values will always be greater than or equal to the proportion of adopters---that is, $0 \leq \text{GSI} \leq \text{FRI} \leq 1$. Accordingly, it is sufficient to only use the easily observable and illustratable GSI to evaluate sales strength when assessing BCAT model simulation processes and outcomes.
+
+One additional quantity is recorded from each simulation trajectory to characterize the collective adoption outcome. The \textit{critical point} ($t^{*}$) is defined as the first time step at which GSI exceeds 0.5---that is, the first $t$ at which adopters form a strict majority of the agent population. This threshold is computed and displayed in real time by the simulation interface and recorded in the output of each run. When $t^{*}$ is reached, it marks the transition from adoption as a minority behavior to adoption as a mainstream social norm, in the sense of Rogers' (2003) [7] diffusion stages. When $t^{*}$ is never reached, it is recorded as zero. This is the defining signature of the ``best game no one played'' outcome: the adoption process failed to achieve majority diffusion regardless of how favorable the opinion climate may have been.
+
+\subsection*{Emergent properties of the combined model}
+
+The BCAT model has two properties that are present in neither component model individually. The first is a dual-filter mechanism on the path from attitude formation to adoption. The bounded confidence component serves as a first-stage filter by partitioning the population into opinion clusters. Agents whose attitudes stabilize below the positive threshold (\textit{att}~$\leq$~50) become permanently ineligible for adoption, shrinking the pool of potential adopters to the FRI subset. The adoption threshold component then serves as a second-stage filter operating within this subset: even agents with positive attitudes fail to adopt if the proportion of their neighbors who have already adopted does not exceed their individual threshold. This sequential filtering underlies the inequality $0 \leq \text{GSI} \leq \text{FRI} \leq 1$ established above. It also gives the inequality a mechanistic interpretation: adoption failure can arise from opinion fragmentation, from coordination failure, or from both mechanisms compounding simultaneously. Neither a pure opinion dynamics model nor a pure adoption threshold model can generate this compound relationship between opinion and adoption outcomes.
+
+The second emergent property is an adoption-to-opinion feedback loop that neither component model exhibits on its own. As specified in Algorithm~3, Scenarios~1.1 and 2.2 implement a user-friendly testimony effect. An already-adopted agent exerts a one-way positive influence on a not-yet-adopted neighbor's attitude, but only when their attitude distance falls within the bounded confidence threshold. Adoption events therefore propagate positive attitude influence selectively. They accelerate convergence among agents within the adopter's opinion neighborhood but cannot reach agents in more distant opinion clusters. The result is a mutual dependence between the two sub-processes. Opinion dynamics governs which agents are eligible for and receptive to adoption, while adoption events in turn reshape opinion trajectories among topologically and attitudinally reachable neighbors. This bidirectional coupling, constrained by the bounded confidence threshold, generates path-dependent and stochastically sensitive adoption dynamics: identical initial parameter distributions can yield qualitatively divergent outcomes depending on the spatial arrangement of early adopters relative to emerging opinion cluster boundaries. This sensitivity is demonstrated in the simulation experiments presented in the Results section.
+
+
+\section*{Results}
+
+This section presents BCAT model simulation results that illustrate the complex interplay of opinion dynamics and innovation adoption diffusion. We begin with two contrasting scenarios---favorable reviews with good sales, and favorable reviews with poor sales---to demonstrate how the dual-filter mechanism and feedback loop described above manifest in simulation trajectories.
+
+\subsection*{Simulating favorable reviews and good/poor sales}
+
+Fig~4 illustrates a regular lattice simulation using parameters designed to establish win-win conditions for high approval and high adoption---in other words, the synergistic effect of a specific parameter configuration. As shown, agent attitudes converged toward higher values over time, indicating widespread product approval. The attitude trajectory graph shows a steady increase in average attitude from an initial mean of 50 by the end of the simulation. Adoption dynamics mirrored this trend, with a critical number of 17 adopting agents emerging early in the simulation, triggering a cross-network cascade effect. This result is in alignment with critical mass theory, in which a small number of adopters generate widespread acceptance under favorable conditions. All agents adopted the product by the end of the simulation (i.e., GSI = 1), an example of a complete in-network adoption diffusion process.
+
+% Figure 4
+
+
+\begin{center}\textbf{--- Figure 4 about here ---}\end{center}
+
+
+The simulation scenario shown in Fig~4 underscores the importance of parameter interactions in shaping opinion dynamics and adoption behaviors. The relatively high bounded confidence value facilitated extensive opinion exchanges, thus reducing polarization while encouraging collective agreement. The moderate average attitude value ensured a balanced starting point, thus avoiding initial biases that might have skewed the results. Similarly, the low average adoption threshold resulted in early adopters exerting significant influence and creating the necessary conditions for the observed adoption cascade. The regular lattice structure contributed to this outcome by ensuring uniform agent interaction, promoting equitable levels of attitude and adoption behavior diffusion across the network.
+
+Fig~5 illustrates a simulated scenario in which agent attitudes toward a product were in positive alignment, yet the end result was minimal adoption. Simulation initialization began with agent attitude and adoption threshold values drawn from normal distributions, thus dictating each agent's predisposition towards product adoption and susceptibility to social influences. The bounded confidence parameter allowed agents with attitude differences below 50 to engage in opinion exchanges, thereby promoting gradual attitude convergence. During the simulation, average agent attitude increased from an initial value of 50, indicating a collective movement toward product approval. However, adoption dynamics revealed a starkly different picture: by the end of the simulation, only 11 of 400 agents adopted the product---a meager 2.75\% adoption rate (GSI = 0.0275).
+
+% Figure 5
+
+
+\begin{center}\textbf{--- Figure 5 about here ---}\end{center}
+
+
+Adoption failure following a positive attitude trajectory can be attributed to a high average adoption threshold. At a mean threshold of 40\%, agents required at least 40\% of their neighbors to adopt a product before making their own adoption decisions. The combination of this threshold and a regular lattice structure established a significant adoption diffusion barrier. The uniform connectivity structure of the lattice ensured consistent connections among agents, but also limited the ability of early adopters to exert their influence beyond their immediate neighborhoods.
+
+This result reflects the absence of a critical mass of early adopters, a key factor in triggering widespread diffusion. Critical mass theory suggests that once a sufficient number of agents adopt a product or idea, their collective influence has greater potential for creating a cross-network adoption cascade. No such critical point emerged in this particular simulation, therefore early adopters remained isolated from their neighbors. This outcome underscores the importance of adoption thresholds and network topologies in determining diffusion process success. While the bounded confidence parameter promoted attitude convergence, it was insufficient for overcoming the network's high adoption thresholds and structural constraints.
+
+These findings highlight the challenges of translating positive attitudes into widespread adoption. Favorable opinions alone are insufficient for adoption diffusion success in the presence of structural and behavioral barriers such as high adoption thresholds and uniform network connectivity. This particular case emphasizes the need for strategies that lower adoption thresholds and/or introduce network randomness to enhance innovation diffusion.
+
+\subsection*{Two simulations with identical initial conditions}
+
+Fig~6 shows the two simulations with identical parameter settings that we performed to illustrate BCAT model sensitivity to initial conditions. Despite condition consistency, the two simulations yielded remarkably different results: one with a favorable good sales outcome, one with a best game no one played outcome. As shown in Fig~6a, agent attitudes converged towards higher values as the simulation progressed. The adoption dynamics plot reveals a clear critical point when the number of adopters reached 46, triggering a cascade of adoption behaviors throughout the network. Consequently, all agents adopted the product by the end of the simulation (i.e., GSI = 1), another example of positive attitudes producing high adoption rates.
+
+% Figure 6
+
+
+\begin{center}\textbf{--- Figure 6 about here ---}\end{center}
+
+
+Fig~6b shows contrasting outcomes despite identical parameter settings. Although attitudes still converged towards higher values, adoption dynamics were fundamentally different, with the absence of a critical point indicating that early adopters failed to generate the necessary momentum for widespread diffusion. The simulation ended with only a small percentage of agents adopting the product, despite a favorable average attitude. The divergence may be attributed to subtle differences in the initial agent attitude and adoption threshold distributions. Though small, these differences resulted in isolated clusters of adopters that were incapable of propagating network-wide adoption behaviors among their neighbors (GSI = 0.0125).
+
+In summary, the identical parameter settings were conducive to widespread adoption in theory, but the actual outcomes were shaped by the stochastic nature of agent initialization. This finding reflects the sensitivity of the BCAT model to primary parameters such as attitude and adoption threshold, even within controlled network structures. They also emphasize the dual importance of network topology and critical mass in promoting collective behavior. The two simulation results are a demonstration of how different combinations of model-related parameters, network structure, and initial conditions drive adoption dynamics. Outcome divergence reveals the challenges of achieving both widespread approval and adoption, even under identical conditions.
+
+\subsection*{Sensitivity analysis}
+
+Table~3 presents results from our examination of the roles of five model-related parameters (bounded-confidence, avg-of-attitudes, std-of-attitudes, avg-of-thresholds and std-of-thresholds) in shaping adoption behaviors in regular lattice, small-world, random, and scale-free networks. Five complementary statistical methods were applied: feature importance from a Random Forest regression ensemble (100 trees, mean decrease in impurity criterion, default hyperparameters), ordinary least squares multivariate regression coefficients, partial correlations controlling for co-variation among predictors, standardized regression coefficients (beta weights), and bivariate Pearson correlation coefficients (parameter importance). The data represent analyses of each parameter's importance, sensitivity, and network-dependent influence. As shown in Table~3, average adoption threshold consistently proved to be the primary determinant of adoption behaviors across all network structures. As an indicator of mean level of within-network conservatism, this parameter is a direct determinant of required thresholds for agent adoption of innovative products or ideas. According to the detailed correlation matrix and analysis results for all four network types shown in Figs~7 and Fig 8, there is a strong negative relationship between avg-of-thresholds and adoption outcome (in this case, sales), underscoring its inhibitory role. As shown in Fig~9, this negative effect was further identified by multivariate and standardized regression coefficient data, with avg-of-thresholds consistently exhibiting the strongest effect of all examined parameters.
+
+% Table 2
+
+
+\begin{center}\textbf{--- Table 3 about here ---}\end{center}
+
+
+% Figure 7
+
+
+\begin{center}\textbf{--- Figure 7 about here ---}\end{center}
+
+
+% Figure 8
+
+
+\begin{center}\textbf{--- Figure 8 about here ---}\end{center}
+
+
+% Figure 9
+
+
+\begin{center}\textbf{--- Figure 9 about here ---}\end{center}
+
+
+The feature importance analysis results shown in Fig~9 indicate a pronounced dominance of avg-of-thresholds in regular lattice and small-world networks, where localized interactions and constrained information flow amplified the effects of higher thresholds on adoption suppression. In contrast, those results show that avg-of-thresholds was the most influential parameter in random and scale-free networks, but its impact was mitigated by the enhanced connectivity. These findings confirm the universal importance of this parameter in governing the speed and extent of innovation diffusion regardless of network topology.
+
+Average attitude plays a pivotal complementary role in influencing adoption behaviors, reflecting the initial predispositions of agents toward innovation while serving as a baseline for subsequent opinion dynamics. Positive correlations between avg-of-attitudes and adoption outcomes were observed across all networks, suggesting that higher average attitudes promote more favorable adoption environments (Figs~7 and Fig 8). This effect was particularly strong in scale-free networks (Fig~7d), where hub nodes amplified favorable initial attitudes and catalyzed rapid innovation diffusion.
+
+The regression coefficient data shown in Fig~9 underscore the consistent yet moderate impact of avg-of-attitudes. In regular lattice and small-world networks (characterized by localized opinion exchanges), the influence of avg-of-attitudes is attenuated, but its role in aligning initial opinions with adoption tendencies remains essential. By establishing favorable initial conditions, this parameter ensures a smoother opinion alignment trajectory that facilitates subsequent adoption behaviors. Also as shown in Fig~9, the standard deviation of adoption thresholds (std-of-thresholds), which reflects diversity in agent conservatism, exhibited significant sensitivity to structural network characteristics. In random and scale-free networks marked by extensive and efficient information flow, std-of-thresholds exhibited a positive correlation with adoption outcome, suggesting that greater threshold diversity encourages dynamic and widespread adoption patterns. In contrast, in regular lattice and small-world networks characterized by limited connectivity, threshold diversity fails to effectively encourage dynamic and widespread adoption patterns, resulting in a minimal impact on adoption outcomes. An analysis of feature importance corroborates these findings---that is, the significance of std-of-thresholds was amplified in high-connectivity networks (Fig~9). The role of this parameter as a sensitivity factor emphasizes its potential for driving heterogeneous adoption behaviors in well-connected systems, while its limited effects in localized networks reflect constraints imposed by topology.
+
+The bounded-confidence parameter, reflecting agent tolerance for opinion differences, showed consistent positive correlations with adoption outcomes across all network structures (Figs~7 and Fig 8). Bounded-confidence supports the interaction dynamics considered essential for adoption decisions by enabling agents to engage in meaningful opinion exchanges. The multivariate regression results shown in Figs~9c and Fig 9d confirm its moderate but stable influence, with slight variation observed across different network types. Its impact was lower in scale-free networks, where hub nodes dominate information flow and opinion exchanges become less critical for adoption (Figs~7d and Fig 8a). In regular lattice (Figs~7a and Fig 8a) and small-world networks (Figs~7b and Fig 8a), bounded-confidence assumed greater significance due to its reliance on localized interactions. As shown in Fig~9, these observations underscored the dual roles of this parameter as a stable facilitator of opinion exchanges, as well as a context-dependent factor influenced by network topology.
+
+The standard deviation of attitudes parameter, an indicator of initial opinion heterogeneity, consistently demonstrated a limited effect on adoption outcomes (Figs~7 and Fig 8e,\,f). The correlation and regression analysis data shown in Figs~7 through Fig 9 show weak associations between std-of-attitudes and adoption results. This marginal impact may be attributable to the dynamic nature of opinion exchanges in the BCAT model, which quickly overrides initial heterogeneity with threshold-driven activity. However, in localized networks (regular lattice, small-world), std-of-attitudes makes a small contribution to diversity in local interactions (Fig~8e), thereby adding a layer of complexity to adoption dynamics. Although its overall influence is minor, its role in shaping early opinion exchanges deserves attention in specific contexts.
+
+The interplay between parameter effects and network topology is of central importance in the BCAT model. As shown in Fig~9b, parameters such as avg-of-thresholds performed uniformly dominant roles across all networks, highlighting their universal importance. In contrast, the influence of std-of-thresholds (Figs~8i and Fig 9i) and bounded-confidence (Figs~8a and Fig 9i) varied significantly depending on network connectivity. High-connectivity networks (random and scale-free) amplified the effects of threshold diversity, resulting in broader adoption. Weaker connectivity in regular lattice and small-world networks limited their impacts, reflecting the primacy of average thresholds and localized interactions.
+
+As shown in Table~3 and Fig~9, BCAT model parameters exhibited distinct roles, sensitivities, and degrees of influence as shaped by network topology. Avg-of-thresholds stands out as the most important determinant of adoption dynamics, with avg-of-attitudes providing essential support in the form of initial opinion alignment. Std-of-thresholds demonstrated high sensitivity to connectivity, with its significance amplified in high-connectivity networks. Although bounded confidence offered a stable interaction foundation, it was influenced by structural constraints. Std-of-attitudes played a minor but contextually relevant role. These findings illustrate the intricate interplay of parameters with network structures, providing valuable information for optimizing the BCAT model to further explore the diffusion phenomenon.
+
+To verify that these findings are robust to system size, we conducted finite-size scaling experiments with $N = 900$ ($30 \times 30$), $N = 1{,}600$ ($40 \times 40$), and $N = 2{,}500$ ($50 \times 50$) agent populations. These experiments confirmed that the qualitative phenomena reported above---including the opinion--adoption gap, the phase transition at intermediate adoption thresholds, and the dominance of \textit{avg-of-thresholds} in sensitivity analysis---are robust to system size and are not artifacts of the $N = 400$ baseline configuration. The scaling data are available in the public repository.
+
+\subsection*{Mechanism decomposition: Coordination failure versus opinion clustering}
+
+The sensitivity analysis demonstrates that avg-of-thresholds is the dominant determinant of adoption outcomes, but it does not distinguish the relative contributions of the two mechanisms through which the BCAT model generates an opinion--adoption gap. To disentangle these channels, we conducted three controlled experiments---MD-A, MD-B, and MD-C---designed to selectively activate or suppress each mechanism on regular lattice and small-world topologies. Each configuration used 1,000 replications and 300 simulation ticks per run.
+
+In Experiment~MD-A, we isolated the coordination failure channel by initializing all non-pioneer agents with a uniform attitude of~81 (avg-of-attitudes~=~80, std-of-attitudes~=~0) and setting bounded-confidence to~10. The attitude distance between pioneers (\textit{att}~=~100) and non-pioneers (\textit{att}~=~81) equals~19, which exceeds the communication threshold, so no opinion exchange occurs. Because all non-pioneers share identical attitudes, peer communication among them also produces no change. Under this configuration, FRI~=~1.0 is guaranteed throughout, and any adoption failure is attributable entirely to threshold-based coordination failure. We swept avg-of-thresholds from~10 to~70 in increments of~10, with std-of-thresholds~=~10 and no-of-pioneers~=~5 (clustered).
+
+In Experiment~MD-B, we isolated the opinion clustering channel by setting no-of-pioneers~=~0, which eliminates all adoption seeds. Because no agent ever adopts, the adoption decision condition is never satisfied and GSI remains at zero throughout. Opinion dynamics therefore operated in complete isolation from adoption feedback. We used avg-of-attitudes~=~50, std-of-attitudes~=~15, and bounded-confidence~=~50, consistent with the representative parameters of the main sensitivity analysis.
+
+In Experiment~MD-C, we ran the full BCAT model with the same opinion and network parameters as MD-B, adding no-of-pioneers~=~5 (clustered) and sweeping avg-of-thresholds from~10 to~70. Recording both FRI and GSI allows a within-model decomposition: the opinion clustering contribution equals $1 - \text{FRI}$, and the coordination failure contribution equals $\text{FRI} - \text{GSI}$.
+
+% Figure 10
+
+
+\begin{center}\textbf{--- Figure 10 about here ---}\end{center}
+
+
+The MD-A results on the regular lattice reveal a sharp phase transition in coordination dynamics between avg-of-thresholds~=~30 (GSI~=~0.976) and~40 (GSI~=~0.026), as shown in Fig~10(a). At low thresholds (10--20), the adoption cascade propagates completely (GSI~=~1.0); at high thresholds (40--70), only the five pioneer agents adopt (GSI~$\approx$~0.013), indicating total coordination failure.
+
+The MD-B results reveal that opinion clustering alone reduces the eligible adopter pool to FRI~=~0.600 on the regular lattice and FRI~=~0.618 on the small-world network, confirming that the bounded confidence mechanism can independently contract the potential adopter population by approximately~40\%.
+
+The MD-C results yield a striking finding: in the full BCAT model, FRI recovers to approximately~1.0 across all threshold values (Fig~10(b)). This recovery occurs because adopted pioneers exert a user-friendly testimony effect on bounded-confidence-reachable neighbors, pulling their attitudes above the eligibility threshold. As a result, the opinion clustering contribution ($1 - \text{FRI}$) to the total adoption gap is negligible, and the coordination failure channel ($\text{FRI} - \text{GSI}$) dominates the gap. We observed qualitatively similar decomposition patterns on the small-world network (rewiring probability~=~0.10), with the phase transition occurring more gradually at avg-of-thresholds~=~30 (GSI~=~0.825 on small-world versus~0.976 on the regular lattice).
+
+The decomposition reveals that the testimony effect acts as a built-in corrective mechanism that counteracts opinion clustering when adoption seeds are present. However, this corrective depends on the adoption cascade itself: when coordination failure prevents the cascade from propagating (high thresholds), the testimony effect cannot reach distant agents, and opinion clustering may persist. This conditional interdependence between the two channels---in which adoption feedback heals opinion fragmentation, but only when coordination succeeds---is an emergent property of the coupled BCAT system that neither component model can exhibit in isolation.
+
+
+\subsection*{Downward compatibility with opinion dynamics and adoption threshold models}
+
+The BCAT model uses precisely defined parameter configurations to achieve downward compatibility with a bounded confidence-based opinion dynamics model and an adoption threshold model of innovation diffusion. This feature supports context-dependent BCAT simplification to corresponding versions of the two foundational models, while retaining the ability to replicate their core dynamics. Fig~11 shows results from our effort to make the BCAT model downward compatible with an opinion dynamics model, focusing exclusively on public opinion evolution. Adoption-related parameters were initially established to ensure that no adoption behaviors occurred during the simulation---specifically, avg-of-thresholds was set to 100 and std-of-thresholds to 0, setting all agent adoption thresholds at the extremely high value of 100. Number of initial adopters (no-of-pioneers) was set to 0, again with the result of eliminating any possibility of adoption processes occurring so that the sole simulation focus was on opinion dynamics. Among opinion-related parameters, bounded-confidence (the tolerance range for agents to engage in opinion exchanges) was set to 10 and convergence rate (the rate at which agents adjusted their attitudes after each exchange) to 0.4. Initial agent attitudes followed a normal distribution---avg-of-attitudes set to 50 and std-of-attitudes to 20---indicating a highly diverse opinion distribution to start. As the simulation progressed, opinion exchanges and attitude adjustments occurred at the above-defined rates, resulting in a gradual contraction in attitude distribution over time.
+
+% Figure 11
+
+
+\begin{center}\textbf{--- Figure 11 about here ---}\end{center}
+
+
+Our results show that the standard deviation of attitudes decreased steadily from the initial value of 20 to approximately 18, indicating increasing stability in public opinion distribution over time. However, the high structural constraints of regular lattice networks and the limited scope of opinion exchanges meant that agents could not achieve global consensus. Instead, they formed several stable opinion clusters---a characteristic feature of the bounded confidence model, and an illustration of opinion clustering dynamics. Since adoption thresholds were set to their highest values and the number of initial adopters was 0, no innovations were adopted by agents during the simulation---both adoption dynamics graphs in Fig~11 remained at zero. This outcome confirmed that the simulation's sole focus was on opinion dynamics, free of any influence from adoption processes.
+
+The simulation validated the downward compatibility of the BCAT model, demonstrating its ability to accurately replicate the opinion dynamics model under specific parameter configurations. The observed public opinion evolution entailed the formation of opinion clusters, the contraction of attitude distributions, and the difficulty of achieving global consensus---all consistent with theoretical predictions associated with a standard bounded confidence model. Further, the complete absence of adoption dynamics confirmed the model's separation of opinion and adoption processes.
+
+As shown in Fig~12, the BCAT model is downward compatible with the adoption thresholds model, which focuses on innovation diffusion. Parameters were set to eliminate the impact of opinion dynamics. Agent attitudes were initially set to 100 by configuring avg-of-attitudes at 100 and std-of-attitudes at 0, thus ensuring that all agents held identically positive opinions about the innovation in question, and removing the need for opinion exchanges. The opinion dynamics mechanism was disabled by setting the bounded-confidence parameter to 0. This allowed the simulation to isolate the adoption process so that all dynamics were driven solely by adoption thresholds.
+
+% Figure 12
+
+
+\begin{center}\textbf{--- Figure 12 about here ---}\end{center}
+
+
+The adoption process was governed by avg-of-thresholds (= 20) and std-of-thresholds (= 10), which defined agent adoption mean and variability. This distribution created a range of thresholds across the agent population, representing diverse sensitivities to peer influence. The number of initial adopters (no-of-pioneers) was set to 3, introducing a small critical mass to initiate the diffusion process. The network structure was set as a regular lattice due to the configuration of network-type = SWN and rewiring-probability = 0.0, ensuring that agents were only connected to a fixed set of neighbors in a highly structured manner.
+
+During the simulation, agents evaluated whether the proportion of adopting neighbors exceeded their individual adoption thresholds. If the threshold was exceeded, the agent adopted the innovation. Over the course of 50 time ticks, the adoption dynamics unfolded rapidly. The simulation data revealed a steep increase in the number of adopters within the first few time steps, reaching a critical point at which the adoption process accelerated significantly. This phenomenon, which is consistent with standard adoption threshold models, reflects the critical mass that drives innovation diffusion. All agents adopted the innovation by the end of the simulation. The adoption dynamics graph depicted a characteristic S-curve, with slow initial growth followed by a rapid increase and eventual saturation. The new adopter dynamics graph showed that the highest number of new adopters emerged at the critical point, in agreement with theoretical predictions from adoption threshold models.
+
+The simulation validated the downward compatibility of the BCAT model with the adoption thresholds model by demonstrating its ability to replicate standard diffusion dynamics. The complete exclusion of opinion dynamics ensured that the results were driven solely by the adoption thresholds, highlighting the separability of the two processes within the BCAT framework.
+
+
+\section*{Discussion and conclusion}
+
+Our mixed-integration BCAT model and sensitivity analysis results make three contributions to the computational social and management science literature. From a social perspective, the proposed model provides insights into collective behaviors, offering possible reasons why certain innovative products and ideas receive approval from experts and potential supporters, yet fail to gain widespread acceptance. Such insights may be useful for policy makers interested in social advocacy campaigns. Second, from an economic perspective the model may assist corporate marketers wanting to identify factors that maximize new product adoption or minimize resistance, especially for controversial and exceptionally innovative products. Last, from an academic perspective the BCAT model addresses an ``innovation management gap'' between positive initial attitudes and subsequent adoption or rejection behaviors. We believe the model can serve as a stimulus for interdisciplinary research in topic areas such as computational management science, innovation diffusion, social networks, and strategies for promoting innovative ideas and products. Further, the BCAT model sensitivity results across four kinds of theoretical networks offer valuable insights for optimizing innovative product or controversial policy success. Decision makers can adjust the five primary parameters to best influence public adoption behaviors.
+
+The mechanism decomposition experiments provide a direct answer to the question of why some products with favorable average attitudes fail to achieve widespread adoption. The opinion clustering channel acts as a natural first screen that reduces the potential adopter pool independently of threshold-based dynamics. Bounded confidence dynamics partition the population into stable attitude groups, some of which settle permanently below the adoption eligibility threshold. However, the user-friendly testimony effect acts as a built-in corrective: when the adoption cascade propagates, adopted agents pull bounded-confidence-reachable neighbors above the attitude threshold, largely neutralizing the opinion clustering gap. The coordination failure channel, by contrast, depends on threshold levels and is the dominant driver of the adoption gap across all tested configurations. This decomposition implies distinct intervention strategies. Reducing opinion-driven gaps requires targeted persuasion of agents in borderline attitude clusters, while reducing coordination-driven gaps requires lowering effective adoption thresholds or increasing the spatial concentration of early adopters. The two strategies operate on different levers and are therefore complementary rather than substitutable.
+
+The opinion--adoption gap documented in this study can in principle be accounted for by several competing theoretical frameworks. Positioning the BCAT model's contribution requires a systematic comparison of the mechanisms and predictions each framework generates. Three alternative accounts deserve explicit consideration: rational herding and information cascades [60], network externalities and coordination games [61], and global games with heterogeneous thresholds [62]. Each framework can generate a divergence between favorable opinions and low adoption. However, the mechanisms, network topology effects, and adoption dynamics they predict differ from those of the BCAT model in ways that are, at least in principle, distinguishable through empirical testing.
+
+Banerjee's [60] information cascade model attributes adoption failure to the rational suppression of private information. Later decision-makers observe only the actions of predecessors, not their private valuations, and rationally imitate the crowd when the inferential weight of observed actions exceeds that of their own private signals. Three predictions follow. First, adoption dynamics should exhibit a near-discontinuous jump at the cascade trigger point rather than a smooth cumulative curve, because no adoption occurs until the cascade condition is met. Second, the cascade is fragile: a single public counter-signal can reverse it instantaneously. Third, final adoption outcomes depend primarily on the action sequence of the earliest few decision-makers rather than on the population-level distribution of private valuations. The BCAT model generates different predictions on all three dimensions. Adoption follows a continuous S-shaped cumulative curve governed by the progressive updating of attitude values through bounded confidence communication (Figs~4 and~Fig 6a), not a step function. The process is not fragile because attitude updates are persistent and do not rest on inferences from early movers. And the final GSI is a systematic and monotone function of five identifiable model parameters (Table~3). Most fundamentally, social influence in the BCAT model operates through direct attitude transmission. Agents communicate their evaluations to one another and mutually adjust their attitude values (Algorithm~3), rather than drawing Bayesian inferences from observed choices. Word-of-mouth in the BCAT framework is genuinely persuasive communication, not a signal about an unknown state of the world. This distinction has direct implications for designing empirical tests and marketing interventions.
+
+Katz and Shapiro's [61] coordination game framework locates adoption failure in the externality structure of product valuation. Each agent's willingness to pay increases with the total adopter pool, and pessimistic beliefs about aggregate adoption are self-fulfilling. The key distinguishing prediction concerns the direction of the network structure effect on the adoption gap. In coordination game models, agents base their decisions on beliefs about the total number of adopters. Sparser networks propagate less information about aggregate adoption levels and should therefore generate larger adoption gaps than denser networks. The BCAT model predicts the opposite. Adoption failure is most pronounced in highly clustered, locally connected networks (regular lattice, small-world), where neighborhood constraints limit early adopters' influence. It is least pronounced in high-connectivity networks (random, scale-free), where long-range links allow cascade propagation to bypass local cluster boundaries. The sensitivity analysis results (Table~3) are consistent with this prediction. The inhibitory effect of avg-of-thresholds on GSI is strongest in regular lattice and small-world networks and moderately attenuated in random and scale-free networks. This confirms that network clustering amplifies adoption suppression in the BCAT framework---the opposite of the coordination game model's prediction. This network-topology signature serves as a testable discriminating prediction between the two frameworks.
+
+Morris and Shin's [62] global games framework introduces strategic uncertainty over higher-order beliefs. Adoption failure can occur even when all agents hold positive first-order beliefs about product quality, if agents are uncertain about whether others believe that others believe the product to be worthwhile. The BCAT model contains no corresponding mechanism. As the mechanism decomposition experiments demonstrate, when FRI~=~1.0 is guaranteed by construction and the adoption threshold is sufficiently low, adoption necessarily occurs. No residual adoption gap attributable to strategic belief uncertainty remains. The BCAT model's channels of adoption failure---opinion clustering and threshold-based coordination failure---are absent from the global games framework, which does not model continuous attitude evolution or communication-mediated opinion change. A further distinction concerns practical measurability. The Morris-Shin framework's central parameter, the precision of agents' private signals, is not directly observable in field settings. In contrast, the BCAT model's key parameters---avg-of-thresholds and bounded-confidence---have direct behavioral counterparts that researchers can in principle measure through stated preference surveys or threshold elicitation experiments.
+
+We emphasize that these three alternative frameworks and the BCAT model are not mutually exclusive accounts of any given empirical episode of adoption failure. Real markets plausibly exhibit features of all four mechanisms simultaneously. The theoretical value of specifying the distinguishing predictions lies in enabling future empirical work to identify which mechanism is dominant in a given market context. This identification problem cannot be addressed without first establishing what each theory uniquely predicts and where their predictions diverge.
+
+We further distinguish BCAT from two classes of coupled dynamical models that researchers have applied to adoption and diffusion phenomena. Voter models with inertia [63] introduce a persistence parameter that makes agents less likely to switch opinions. These models can generate metastable heterogeneous states, but they operate on binary opinion spaces and lack the continuous attitude scale and bounded confidence communication mechanism that allow BCAT to produce graded opinion clusters. In voter models, two connected agents can always influence each other regardless of attitude distance; in the BCAT model, communication occurs only within the bounded confidence threshold, creating the selective interaction structure that drives opinion fragmentation. SIS/SIR epidemic frameworks model adoption as a contagion process in which contact with an adopter probabilistically ``infects'' non-adopters. While these models naturally generate S-shaped adoption curves and can incorporate heterogeneous transmission rates across network topologies, they treat adoption as a purely mechanical transmission event without an underlying attitude dimension. In contrast, the BCAT model requires agents to hold a positive attitude \textit{and} exceed an adoption threshold before adopting, producing the two-channel opinion--adoption gap that single-process contagion models cannot replicate.
+
+However, real-world applications of the BCAT model require a nuanced understanding of how individual parameters influence opinion and adoption dynamics across different network structures. First, avg-of-thresholds is an essential determinant of adoption speed and scope, and decreasing it can significantly enhance adoption likelihood. A simple example of a method to reduce this factor is the offering of free trials or discounts aimed at reducing psychological barriers and encouraging consumer experimentation. Companies launching new technologies can provide demo versions or limited-time offers to ease adoption-related anxiety. In policy contexts, pilot programs showcasing the low-risk and tangible benefits of controversial ideas can mitigate public resistance. This approach is particularly effective in regular lattice and small-world networks, where localized interactions dominate, and where lower avg-of-thresholds values have the potential to initiate early adoption clusters capable of influencing broader networks.
+
+The role of avg-of-thresholds in suppressing adoption cascades despite favorable opinion climates is concretely illustrated by the commercial trajectory of the Palm handheld computer, introduced in 1996 [30]. A small population of technology enthusiasts rapidly adopted Palm devices. Their attitude values were strongly positive, and their mutual reinforcement formed a spatially concentrated early adopter cluster. However, mainstream consumers of that era operated with substantially higher adoption thresholds. Most individuals required visible evidence of widespread peer adoption before committing to an unfamiliar and relatively expensive device category. Endorsement from a few technically knowledgeable acquaintances was not sufficient. The social network relevant to mass-market consumer electronics diffusion in the mid-1990s featured densely clustered local interaction groups, approximating the regular lattice topology in our model. As illustrated in Fig~5, when we set avg-of-thresholds to~40 on a regular lattice with otherwise favorable attitude parameters, agent attitudes converge steadily toward positive values (FRI approaching~1.0) while the adoption curve remains near zero. Only the pioneer cluster and a negligible fraction of immediate neighbors ever reach the adoption threshold. This configuration captures the Palm scenario with reasonable fidelity: a product with genuinely favorable expert opinion, an enthusiastic but spatially contained early adopter base, and a mainstream market whose threshold for peer-visible adoption evidence was never met. The simulation result underscores that reducing average adoption thresholds was the critical lever that Palm's market strategy failed to engage. Strategies such as free trials, subsidized pricing, or highly visible demonstration programs could have lowered this barrier.
+
+Avg-of-attitudes also plays a central role in shaping a network's initial predisposition toward adopting a new product or idea. Marketers and policy makers can benefit from efforts to build favorable public sentiment prior to actual introduction---for example, executing targeted advertising campaigns that highlight the unique value or benefits of a product to establish a positive first impression among potential consumers. For controversial policies and ideas, circulating success stories or supportive data via media outlets can build trust and support. This strategy is especially impactful in scale-free networks in which hub nodes amplify positive attitudes, thus facilitating rapid network diffusion.
+
+The constraint imposed by baseline attitude levels is exemplified by the box office performance of the Taiwanese film \textit{The Bold, The Corrupt and The Beautiful}. The film received the Best Feature Film award at the 54th Golden Horse Film Festival in 2017, yet it attracted a limited general cinema audience relative to its critical standing [31]. The film's reception reveals a bifurcation in the relevant social network. The cinephile and film-critical community---whose members made up the primary early audience and whose attitudes toward the film were strongly and uniformly positive---formed a high-attitude opinion cluster with limited connectivity to the broader moviegoing population. Mainstream audiences, whose initial attitudes toward dark, stylistically demanding Taiwanese drama were considerably more neutral or mixed, represented a population with a substantially lower avg-of-attitudes baseline. In the BCAT model, when we initialize avg-of-attitudes at or below the midpoint, opinion dynamics governed by bounded confidence exchanges can gradually elevate attitudes within reachable clusters. However, the magnitude of this upward shift is constrained by both the initial baseline and the communication boundaries between clusters with large attitude distances. If the gap between the cinephile cluster's attitudes and the general audience's baseline exceeds the bounded confidence threshold, opinion influence from the critical community fails to reach the mainstream audience entirely. This pattern is consistent with Fig~8c and~Fig 8d, where low initial avg-of-attitudes produces a plateau in adoption outcomes that is largely insensitive to further parameter variation. The practical implication is that building favorable general audience sentiment prior to release---rather than relying on post-awards publicity to retroactively elevate a low-attitude baseline---is a more effective diffusion strategy for culturally specific or artistically challenging products. This is particularly true in scale-free media network structures where hub nodes (major media outlets, influential critics with broad reach) can accelerate attitude convergence if engaged early.
+
+The influence of std-of-thresholds, which represents a target population's heterogeneity and adoption tolerance, is most pronounced in random and scale-free networks, where greater diversity promotes broader adoption patterns. Marketers can take advantage of this by tailoring communication strategies to meet the specific characteristics of different audience segments---for instance, a tech company might emphasize product features to tech-savvy consumers, while highlighting ease of use for general audiences. Policymakers can similarly design targeted communication strategies for specific demographic sectors such as urban/rural or high-/low-income, thus improving the odds that diverse audiences believe their specific concerns are being addressed.
+
+Bounded-confidence, a measure of tolerance for opinion differences, denotes stability for opinion exchanges, with enhanced opportunities for open and inclusive dialogue to improve product or idea acceptance. For products, creating online community forums where customers can interact and share experiences supports user engagement with sellers for publicly sharing feedback. For policies, consultation sessions and opinion platforms help to increase transparency and trust. Such strategies are particularly relevant for regular lattice and small-world networks in which localized interactions benefit from expanded dialogue, facilitating greater acceptance through mutual understanding.
+
+The diffusion failure of service-oriented architecture (SOA) in the mid-2000s enterprise software market (see, e.g., [64]) exemplifies the bounded-confidence mechanism with particular clarity. SOA was championed by a community of technical architects and systems integration specialists whose understanding of distributed service design was deep and whose attitudes toward the technology were strongly positive. The potential adopter population, however, consisted primarily of enterprise IT managers and C-suite decision-makers. Their evaluative frameworks centered on return on investment, implementation risk, and short-term operational continuity. The professional vocabulary and organizational concerns of these decision-makers were far removed from the technical discourse through which SOA proponents communicated. In BCAT model terms, two distinct population subgroups occupy positions in attitude space and professional vocabulary that are separated by a distance exceeding the bounded confidence threshold. Opinion exchange between the technical pioneer community and the conservative enterprise management community cannot occur. The reason is not that either group holds antagonistic attitudes, but that the channels through which they would need to communicate are simply not open under the prevailing interaction constraints. As demonstrated in Fig~8a and~Fig 8b, a low bounded-confidence parameter severely limits the reach of positive-attitude agents' influence. It generates stable opinion clusters in which a technically enthusiastic subpopulation fails to shift the attitude distribution of the broader potential adopter pool. The collapse of SOA investment following the 2008 financial crisis is also consistent with the BCAT model's prediction. We can model this event as a sudden exogenous reduction in avg-of-attitudes across the enterprise decision-maker population, reflecting sharply contracted IT budgets and heightened risk aversion. Products whose diffusion depends on attitude transfer across professionally diverse communities are particularly vulnerable to such negative shocks.
+
+Though less influential overall, std-of-attitudes can contribute to product or idea adoption by nurturing opinion diversity. In localized networks (regular lattice, small-world), pursuing diversity among early adopters can enrich opinion exchanges and attract greater attention. Examples include inviting diverse groups of testers to product launch activities to share reviews that highlight product adaptability across different user profiles. For policies this means including a broad range of representatives in discussions to ensure that multiple perspectives are heard, with the same goal of enhancing public engagement and acceptance.
+
+Underlying network structure strongly influences the effects of parameter adjustments. Parameters such as avg-of-thresholds that determine adoption speed and extent are universally important, regardless of network type, whereas the influences of std-of-thresholds and bounded-confidence are more context-dependent, with increased sensitivity noted in high-connectivity networks such as random and scale-free. Conversely, in networks where interactions are more localized (regular lattice, small-world), strategies that emphasize threshold reduction and attitude alignment are considered more effective.
+
+In summary, decision makers interested in optimizing the potential success of innovative products or controversial policies need to strategically adjust the BCAT model's five core parameters of thresholds, positive attitudes, audience diversity, opinion diversity, and agent interaction. They are all actionable factors capable of significantly enhancing public adoption and engagement. When tailored to specific network structures, these approaches are capable of providing robust frameworks for influencing diffusion dynamics and achieving desired outcomes.
+
+\section*{Acknowledgments}
+
+We thank the anonymous reviewers for their constructive comments, which helped us improve the clarity and rigor of this manuscript.
+
+
+\section*{Supporting information}
+
+\paragraph*{S1 File.}
+\label{S1_File}
+{\bf Sensitivity analysis simulation data across four network topologies.} Raw simulation output data underlying Table~3 and Figs~7--Fig 9, covering regular lattice, small-world, random, and scale-free networks ($N = 100{,}548$ total observations across four topologies). File format: XLSX.
+
+\paragraph*{S2 File.}
+\label{S2_File}
+{\bf Mechanism decomposition experiment data (MD-A, MD-B, MD-C).} Raw simulation output for the three controlled experiments on regular lattice and small-world topologies (30,000 total runs), underlying Fig~10 and the mechanism decomposition analysis. File format: CSV.
+
+\paragraph*{S3 File.}
+\label{S3_File}
+{\bf Finite-size scaling experiment data ($N = 400$ to $2{,}500$).} Per-run results and summary statistics for finite-size scaling experiments at $N = 400$ ($20 \times 20$), $N = 900$ ($30 \times 30$), $N = 1{,}600$ ($40 \times 40$), and $N = 2{,}500$ ($50 \times 50$), confirming the robustness of all qualitative phenomena across system sizes. File format: CSV.
+
+\paragraph*{S4 File.}
+\label{S4_File}
+{\bf Python scripts for reproducing all reported statistical analyses and figures.} Analysis and visualization code for generating Table~3, Figs~7--Fig 10, and finite-size scaling results from the raw data in S1--S3 Files. File format: ZIP (contains four Python scripts).
+
+\section*{References}
+
+\begin{enumerate}
+\item Mahajan V, Muller E.
+Timing, diffusion, and substitution of successive generations of
+  technological innovations: The {IBM} mainframe case.
+Technol Forecast Soc Change. 1996;51(2):109-32.
+
+\item Galam S.
+Social paradoxes of majority rule voting and renormalization group.
+J Stat Phys. 1990;61(3--4):943-51.
+
+\item Liu R.
+Reappraising effects of word-of-mouth communication on the innovation
+  diffusion process: An abstract.
+In: Wu S, Pantoja F, Krey N, editors. Marketing Opportunities and
+  Challenges in a Changing Global Marketplace. AMSAC 2019. Developments in
+  Marketing Science: Proceedings of the Academy of Marketing Science. Cham:
+  Springer; 2020. p. 287-8.
+
+\item Mazzarol T.
+The role of word of mouth in the diffusion of innovation.
+In: H{\"u}lsmann M, Pfeffermann N, editors. Strategies and
+  Communications for Innovations. Berlin, Heidelberg: Springer; 2011. p.
+  191-212.
+
+\item Bhukya R, Paul J.
+Social influence research in consumer behavior: What we learned and
+  what we need to learn? -- A hybrid systematic literature review.
+J Bus Res. 2023;162:113870.
+
+\item Hegselmann R, Krause U.
+Opinion dynamics and bounded confidence models: Analysis, and
+  simulation.
+J Artif Soc Soc Simul. 2002;5(3).
+
+\item Rogers EM.
+The Diffusion of Innovation.
+5th ed. Glencoe: Free Press; 2003.
+
+\item Melnyk V, Carrillat FA, Melnyk V.
+The influence of social norms on consumer behavior: A meta-analysis.
+J Mark. 2022;86(3):98-120.
+
+\item Miranda M, Pereda M, Sanchez A, Estrada E.
+Indirect social influence and diffusion of innovations: An
+  experimental approach.
+PNAS Nexus. 2024;3(10):pgae409.
+
+\item Watts DJ.
+Six Degrees: The Science of a Connected Age.
+New York: WW Norton; 2004.
+
+\item Mutlu E{\c{C}}, Garibay I.
+The degree-dependent threshold model: Towards a better understanding
+  of opinion dynamics on online social networks.
+In: Yang Z, von Briesen E, editors. Proceedings of the 2019
+  International Conference of the Computational Social Science Society of the
+  Americas. CSSSA 2020. Springer Proceedings in Complexity. Cham: Springer;
+  2021. p. 89-103.
+
+\item Valente TW.
+Network models of the diffusion of innovations.
+Comput Math Organ Theory. 1996;2(2):163-4.
+
+\item Wang SW, Huang CY, Sun CT.
+Modeling self-perception agents in an opinion dynamics propagation
+  society.
+Simulation. 2014;90(3):238-48.
+
+\item Wang SW, Huang CY, Sun CT.
+Multiagent diffusion and opinion dynamics model: Interaction effects
+  on controversial products.
+IEEE Access. 2022;10:115252-70.
+
+\item Ghaderi J, Srikant R.
+Opinion dynamics in social networks with stubborn agents: Equilibrium
+  and convergence rate.
+Automatica. 2014;50(12):3209-15.
+
+\item Karimi F, Holme P.
+Threshold model of cascades in empirical temporal networks.
+Phys A Stat Mech Appl. 2013;392(16):3476-83.
+
+\item He S, Xu X.
+Social capital and market performance: New interpretation of film box
+  office.
+J Manag Sci. 2021;34(5):41-52.
+
+\item Zhang H, Yao Y, Tang W, Zhu J.
+A {H}egselmann-{K}rause model with social influence-aware bounded
+  confidence threshold in social networks.
+In: 2022 5th International Conference on Data Science and Information
+  Technology (DSIT). Shanghai, China; 2022. p. 1-6.
+
+\item Rogers EM.
+The Diffusion of Innovation.
+Glencoe: Free Press; 1962.
+
+\item Peres R, Muller E, Mahajan V.
+Innovation diffusion and new product growth models: A critical review
+  and research directions.
+Int J Res Mark. 2010;27(2):91-106.
+
+\item Durlauf S.
+A framework for the study of individual behavior and social
+  interactions.
+Sociol Methodol. 2001;31(1):47-87.
+
+\item Etesami SR, Ba{\c{s}}ar T.
+Game-theoretic analysis of the {H}egselmann-{K}rause model for
+  opinion dynamics in finite dimensions.
+IEEE Trans Automat Contr. 2015;60(7):1886-97.
+
+\item Luo S, Du Y, Liu P, Xuan Z, Wang Y.
+A study on coevolutionary dynamics of knowledge diffusion and social
+  network structure.
+Expert Syst Appl. 2015;42(7):3619-33.
+
+\item Buechel B, Hellmann T, Kl{\"o}{\ss}ner S.
+Opinion dynamics and wisdom under conformity.
+J Econ Dyn Control. 2015;52:240-57.
+
+\item Chacoma A, Zanette DH.
+Opinion formation by social influence: From experiments to modeling.
+PLoS One. 2015;10(10):e0140406.
+
+\item Kan U, Feng M, Porter MA.
+An adaptive bounded-confidence model of opinion dynamics on networks.
+J Complex Netw. 2023;11(1):415-44.
+
+\item Centola D, Becker J, Brackbill D, Baronchelli A.
+Experimental evidence for tipping point in social convention.
+Science. 2018;360(6393):1116-9.
+
+\item Granovetter M, Soong R.
+Threshold models of interpersonal effects in consumer demand.
+J Econ Behav Organ. 1986;7(1):83-99.
+
+\item Gong S, Li Q, Jiang B.
+A loud but harsh voice: The impact of celebrity endorsement on online
+  {WOM}.
+J Manag Sci. 2020;33(2):114-26.
+
+\item Zheng P, Ni LM.
+Spotlight: The rise of the smartphone.
+IEEE Distrib Syst Online. 2006;7(3):3-3.
+
+\item De Vany A, Lee C.
+Quality signals in information cascades and the dynamics of the
+  distribution of motion picture box office revenues.
+J Econ Dyn Control. 2001;25(3--4):593-614.
+
+\item Fishbein M, Ajzen I.
+Belief, Attitude, Intention and Behavior: An Introduction to Theory
+  and Research.
+Reading, MA: Addison-Wesley; 1975.
+
+\item Ajzen I.
+The theory of planned behavior: Frequently asked questions.
+Hum Behav Emerg Technol. 2020;2(4):314-24.
+
+\item Davis FD, Bagozzi RP, Warshaw PR.
+User acceptance of computer technology: A comparison of two
+  theoretical models.
+Manage Sci. 1989;35(8):982-1003.
+
+\item Oliver P, Marwell G, Teixeira R.
+A theory of the critical mass. {I}. {I}nterdependence, group
+  heterogeneity, and the production of collective action.
+Am J Sociol. 1985;91(3):522-56.
+
+\item Deffuant G, Amblard F, Weisbuch G, Faure T.
+How can extremism prevail? {A} study based on the relative agreement
+  interaction model.
+J Artif Soc Soc Simul. 2002;5(4).
+
+\item Sznajd-Weron K, Sznajd J.
+Opinion evolution in closed community.
+Int J Mod Phys C. 2000;11(6):1157-65.
+
+\item Quattrociocchi W, Caldarelli G, Scala A.
+Opinion dynamics on interacting networks: Media competition and
+  social influence.
+Sci Rep. 2014;4:4938.
+
+\item Rai V, Robinson SA.
+Agent-based modeling of energy technology adoption: Empirical
+  integration of social, behavioral, economic, and environmental factors.
+Environ Model Softw. 2015;70:163-77.
+
+\item Vuillon L, Lesieur C.
+From local to global changes in proteins: A network view.
+Curr Opin Struct Biol. 2015;31:1-8.
+
+\item Banerjee A, Chandrasekhar AG, Duflo E, Jackson MO.
+The diffusion of microfinance.
+Science. 2013;341(6144):1236498.
+
+\item Dong Y, Ding Z, Mart{\'i}nez L, Herrera F.
+Managing consensus based on leadership in opinion dynamics.
+Inf Sci. 2017;397:187-205.
+
+\item Dong Y, Zhang Q, Hong WC, Ding R.
+Consensus reaching in social network group decision making: Research
+  paradigms and challenges.
+Knowl Based Syst. 2020;204:106243.
+
+\item Berenbrink P, Hoefer M, Kaaser D, Lenzner P, Rau M, Schmand D.
+Asynchronous opinion dynamics in social networks.
+Distrib Comput. 2024;37(3):207-24.
+
+\item Luo G, Zhang Z, Zhang Z, Mi K.
+Network opinion evolution model incorporating the influence of media
+  heterogeneity.
+IEEE Access. 2020;8:172498-508.
+
+\item Singh P, Sreenivasan S, Szymanski BK, Korniss G.
+Threshold-limited spreading in social networks with multiple
+  initiators.
+Sci Rep. 2013;3:2330.
+
+\item Backlund VP, Saram{\"a}ki J, Pan RK.
+Effects of temporal correlations on cascades: Threshold models on
+  temporal networks.
+Phys Rev E. 2014;89(6):062815.
+
+\item Friedkin NE, Johnsen EC.
+Social influence and opinions.
+J Math Sociol. 1990;15(3--4):193-206.
+
+\item Deffuant G, Neau D, Amblard F, Weisbuch G.
+Mixing beliefs among interacting agents.
+Adv Complex Syst. 2000;3(1--4):87-98.
+
+\item Hsieh YJ.
+Integrating opinion dynamics and innovation diffusion models to
+  analyze the `{B}est game no one played' phenomenon [Master's thesis].
+Department of Computer Science and Information Engineering, Chang
+  Gung University; 2019.
+
+\item Golub B, Jackson MO.
+Na\"{i}ve learning in social networks and the wisdom of crowds.
+Am Econ J Microecon. 2010;2(1):112-49.
+
+\item Golub B, Jackson MO.
+How homophily affects the speed of learning and best-response
+  dynamics.
+Q J Econ. 2012;127(3):1287-338.
+
+\item Cheng C, Han X, Tong X, Wu Y, Xing Y.
+Degree-weighted social learning.
+Am Econ J Microecon. 2026.
+Forthcoming.
+
+\item McPherson M, Smith-Lovin L, Cook JM.
+Birds of a feather: Homophily in social networks.
+Annu Rev Sociol. 2001;27(1):415-44.
+
+\item Wilensky U.
+{NetLogo}.
+Evanston, IL: Center for Connected Learning and Computer-Based
+  Modeling, Northwestern University; 1999.
+
+\item Wilensky U, Reisman K.
+Thinking like a wolf, a sheep or a firefly: Learning biology through
+  constructing and testing computational theories.
+Cogn Instr. 2006;24(2):171-209.
+
+\item Kuikka V, Kaski KK.
+Detailed-level modelling of influence spreading on complex networks.
+Sci Rep. 2024;14:28069.
+
+\item Barab{\'a}si AL, Albert R.
+Emergence of scaling in random networks.
+Science. 1999;286(5439):509-12.
+
+\item Watts DJ, Strogatz SH.
+Collective dynamics of `small-world' networks.
+Nature. 1998;393(6684):440-2.
+
+\item Banerjee AV.
+A simple model of herd behavior.
+Q J Econ. 1992;107(3):797-817.
+
+\item Katz ML, Shapiro C.
+Network externalities, competition, and compatibility.
+Am Econ Rev. 1985;75(3):424-40.
+
+\item Morris S, Shin HS.
+Global games: Theory and applications.
+In: Dewatripont M, Hansen LP, Turnovsky SJ, editors. Advances in
+  Economics and Econometrics: Theory and Applications, Eighth World Congress.
+  vol. 1. Cambridge University Press; 2003. p. 56-114.
+
+\item Stark HU, Tessone CJ, Schweitzer F.
+Decelerating microdynamics can accelerate macrodynamics in the voter
+  model.
+Phys Rev Lett. 2008;101(1):018701.
+
+\item Erl T.
+Service-oriented architecture: Concepts, technology, and design.
+Prentice Hall PTR; 2005.
+
+\end{enumerate}
+
+
+\end{document}
