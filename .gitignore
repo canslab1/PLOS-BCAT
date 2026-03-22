@@ -34,3 +34,9 @@ figures/Figure 10.png
 figures/Figure 11.png
 run_mechanism_decomposition.py
 scripts/
+
+# Pandoc intermediate file (regenerated from manuscript.tex)
+manuscript-pandoc.tex
+
+# Upload staging directory (duplicates supporting_information/)
+supporting_information/upload/
