@@ -35,8 +35,14 @@ figures/Figure 11.png
 run_mechanism_decomposition.py
 scripts/
 
+# Raw simulation data and analysis scripts (hosted in BCAT repo)
+data/
+
 # Pandoc intermediate file (regenerated from manuscript.tex)
 manuscript-pandoc.tex
 
 # Upload staging directory (duplicates supporting_information/)
 supporting_information/upload/
+
+# S4 analysis scripts source (hosted in BCAT repo)
+supporting_information/S4_File_scripts/
