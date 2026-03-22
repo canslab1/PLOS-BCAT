@@ -586,7 +586,7 @@ In Experiment~MD-B, we isolated the opinion clustering channel by setting no-of-
 
 In Experiment~MD-C, we ran the full BCAT model with the same opinion and network parameters as MD-B, adding no-of-pioneers~=~5 (clustered) and sweeping avg-of-thresholds from~10 to~70. Recording both FRI and GSI allows a within-model decomposition: the opinion clustering contribution equals $1 - \text{FRI}$, and the coordination failure contribution equals $\text{FRI} - \text{GSI}$.
 
-% Figure 12
+% Figure 10
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth,keepaspectratio]{fig_mechanism_decomposition_lattice.png}\fi
 \caption{\textbf{Mechanism decomposition on the regular lattice.}
@@ -607,7 +607,7 @@ The decomposition reveals that the testimony effect acts as a built-in correctiv
 
 The BCAT model uses precisely defined parameter configurations to achieve downward compatibility with a bounded confidence-based opinion dynamics model and an adoption threshold model of innovation diffusion. This feature supports context-dependent BCAT simplification to corresponding versions of the two foundational models, while retaining the ability to replicate their core dynamics. Fig~\ref{fig11} shows results from our effort to make the BCAT model downward compatible with an opinion dynamics model, focusing exclusively on public opinion evolution. Adoption-related parameters were initially established to ensure that no adoption behaviors occurred during the simulation---specifically, avg-of-thresholds was set to 100 and std-of-thresholds to 0, setting all agent adoption thresholds at the extremely high value of 100. Number of initial adopters (no-of-pioneers) was set to 0, again with the result of eliminating any possibility of adoption processes occurring so that the sole simulation focus was on opinion dynamics. Among opinion-related parameters, bounded-confidence (the tolerance range for agents to engage in opinion exchanges) was set to 10 and convergence rate (the rate at which agents adjusted their attitudes after each exchange) to 0.4. Initial agent attitudes followed a normal distribution---avg-of-attitudes set to 50 and std-of-attitudes to 20---indicating a highly diverse opinion distribution to start. As the simulation progressed, opinion exchanges and attitude adjustments occurred at the above-defined rates, resulting in a gradual contraction in attitude distribution over time.
 
-% Figure 10
+% Figure 11
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig10.png}\fi
 \caption{\textbf{BCAT model configured as a bounded confidence-based opinion dynamics model (adoption dynamics removed).}
@@ -621,7 +621,7 @@ The simulation validated the downward compatibility of the BCAT model, demonstra
 
 As shown in Fig~\ref{fig12}, the BCAT model is downward compatible with the adoption thresholds model, which focuses on innovation diffusion. Parameters were set to eliminate the impact of opinion dynamics. Agent attitudes were initially set to 100 by configuring avg-of-attitudes at 100 and std-of-attitudes at 0, thus ensuring that all agents held identically positive opinions about the innovation in question, and removing the need for opinion exchanges. The opinion dynamics mechanism was disabled by setting the bounded-confidence parameter to 0. This allowed the simulation to isolate the adoption process so that all dynamics were driven solely by adoption thresholds.
 
-% Figure 11
+% Figure 12
 \begin{figure}[!ht]
 \ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig11.png}\fi
 \caption{\textbf{BCAT model configured as an adoption threshold model, with opinion dynamics removed by uniform agent attitude parameters (avg-of-attitudes = 100, std-of-attitudes = 0).}
