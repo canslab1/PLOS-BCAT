@@ -345,6 +345,7 @@ Simulation process time complexity is $O(NT)$, where $N$ and $T$ respectively re
 \begin{adjustwidth}{-2.25in}{0in}
 \centering
 \caption{\textbf{BCAT model and simulation system parameters.}}
+\label{table2}
 \begin{tabularx}{\linewidth}{|l|X|}
 \hline
 \textbf{Parameter} & \textbf{Description} \\ \thickhline
@@ -359,7 +360,6 @@ Simulation process time complexity is $O(NT)$, where $N$ and $T$ respectively re
 \textit{max-time} & Maximum number of time ticks for a single simulation. \\ \hline
 \textit{no-of-experiments} & Number of experiment repetitions. \\ \hline
 \end{tabularx}
-\label{table2}
 \end{adjustwidth}
 \end{table}
 
@@ -378,7 +378,7 @@ As shown in Algorithm~\ref{alg2}, each BCAT model agent (network node) has three
 
 % Algorithm 2
 \begin{algorithm}[!ht]
-\caption{\textbf{NetLogo-style pseudo-code creating a pioneer agents group.}}
+\caption{\textbf{NetLogo-style pseudo-code for pioneer agent initialization.}}
 \label{alg2}
 \ifpreview\includegraphics[width=\textwidth]{alg2.png}\fi
 \end{algorithm}
@@ -494,6 +494,7 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
 \begin{adjustwidth}{-2.25in}{0in}
 \centering
 \caption{\textbf{Results from statistical analysis of primary model-related parameters.}}
+\label{table3}
 \footnotesize
 \begin{tabularx}{\linewidth}{|l|l|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
 \hline
@@ -528,10 +529,9 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
 \vspace{4pt}
 {\footnotesize \textsuperscript{*}SE of per-tree importance estimates $\leq 0.001$ for all entries (100-tree Random Forest ensemble, $N > 15{,}000$ per network topology). The remaining four methods produce deterministic analytical results; standard errors are not applicable.}
 \vspace{2pt}
-{\footnotesize \textsuperscript{b}Parameter Importance values (Pearson correlations) closely approximate Standardized Regression coefficients because the five input parameters are varied independently in the sensitivity analysis design, making them approximately uncorrelated. Under orthogonal predictors, the two measures are mathematically equivalent.}
+{\footnotesize \textsuperscript{\textdagger}Parameter Importance values (Pearson correlations) closely approximate Standardized Regression coefficients because the five input parameters are varied independently in the sensitivity analysis design, making them approximately uncorrelated. Under orthogonal predictors, the two measures are mathematically equivalent.}
 \vspace{2pt}
 {\footnotesize \textit{Note.} All \textit{avg-of-thresholds} values are stored as integers in $[1, 100]$ and are equivalent to fractional adoption thresholds in $[0.01, 1.00]$ via the conversion $\theta = \textit{avg-of-thresholds}\,/\,100$, as implemented in the adoption decision rule of Algorithm~\ref{alg3}. The sensitivity analysis sweeps \textit{avg-of-thresholds} across the range $[10, 70]$, corresponding to fractional thresholds of $[0.10, 0.70]$.}
-\label{table3}
 \end{adjustwidth}
 \end{table}
 
