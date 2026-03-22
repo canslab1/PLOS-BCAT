@@ -588,7 +588,7 @@ In Experiment~MD-C, we ran the full BCAT model with the same opinion and network
 
 % Figure 10
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth,keepaspectratio]{fig_mechanism_decomposition_lattice.png}\fi
+\ifpreview\includegraphics[width=\textwidth,keepaspectratio]{fig10.png}\fi
 \caption{\textbf{Mechanism decomposition on the regular lattice.}
 (a)~MD-A isolates the coordination failure channel: FRI~=~1.0 by construction, and GSI declines sharply between avg-of-thresholds~=~30 (GSI~=~0.976) and~40 (GSI~=~0.026), indicating a phase transition in coordination dynamics. (b)~MD-C decomposes the total adoption gap ($1 - \text{GSI}$) into opinion clustering ($1 - \text{FRI}$, red) and coordination failure ($\text{FRI} - \text{GSI}$, blue). The opinion clustering contribution is negligible because the user-friendly testimony effect (Algorithm~\ref{alg3}, Scenarios~1.1 and~2.2) restores FRI to approximately~1.0 even though MD-B alone yields FRI~=~0.600 (dotted line). N~=~400 agents, 1,000 runs per point.}
 \label{fig10}
@@ -609,7 +609,7 @@ The BCAT model uses precisely defined parameter configurations to achieve downwa
 
 % Figure 11
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig10.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig11.png}\fi
 \caption{\textbf{BCAT model configured as a bounded confidence-based opinion dynamics model (adoption dynamics removed).}
 Adoption thresholds are unattainable (avg-of-thresholds = 100, std-of-thresholds = 0) and initial adopters are absent (no-of-pioneers = 0), ensuring a complete model focus on opinion dynamics. Opinions evolve under the influence of a bounded confidence mechanism (bounded-confidence = 10) with a convergence rate of 0.4. The network is a regular lattice generated with a rewiring probability of 0.00. Each of the 400 agents is connected to an average of 8 neighbors. As shown in attitudes trajectory and distribution data, agent attitudes were clustered over 300 time ticks, thus highlighting the bounded confidence effect on opinion clustering in a structured network.}
 \label{fig11}
@@ -623,7 +623,7 @@ As shown in Fig~\ref{fig12}, the BCAT model is downward compatible with the adop
 
 % Figure 12
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig11.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{fig12.png}\fi
 \caption{\textbf{BCAT model configured as an adoption threshold model, with opinion dynamics removed by uniform agent attitude parameters (avg-of-attitudes = 100, std-of-attitudes = 0).}
 Simulation consists of a regular lattice network structure with 400 agents and 1600 edges, with each agent connected to an average of 8 neighbors. Adoption process is governed by threshold distribution (avg-of-thresholds = 20, std-of-thresholds = 10). Results indicate complete adoption by all agents within 50 time ticks, highlighting the influence of critical mass, network structure, and threshold heterogeneity on innovation diffusion.}
 \label{fig12}
