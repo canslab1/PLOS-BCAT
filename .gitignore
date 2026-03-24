@@ -4,6 +4,7 @@
 *.blg
 *.log
 *.out
+*.pdf
 ~$*
 
 # Review correspondence (private)
@@ -23,15 +24,10 @@ manuscript-old.tex
 
 # Word temp files
 manuscript.docx
+captions.docx
 
-# Duplicate source screenshots (already copied to fig*.png)
-figures/Figure 2.png
-figures/Figure 4.png
-figures/Figure 5.png
-figures/Figure 6a.png
-figures/Figure 6b.png
-figures/Figure 10.png
-figures/Figure 11.png
+# Duplicate source screenshots (originals already combined/renamed to fig*.png)
+figures/Figure *.png
 run_mechanism_decomposition.py
 scripts/
 

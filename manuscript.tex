@@ -96,14 +96,16 @@
 \usepackage{iftex}
 \usepackage[nopatch={eqnum,item}]{microtype}
 % Fix "Command \showhyphens has changed" warning (microtype + LaTeX 2024+ compatibility)
-% Define old-style inner command so microtype uses \patchcmd instead of \CheckCommand
+% Only applied when LaTeX kernel is 2024-06-01 or later; harmless no-op on older kernels.
 \makeatletter
-\gdef\MT@fix@showhyphens#1{\setbox0\vbox{\color@begingroup
-  \everypar{}\parfillskip\z@skip\hsize\maxdimen\normalfont
-  \pretolerance\m@ne\tolerance\m@ne\hbadness\z@\showboxdepth\z@\ #1\color@endgroup}}
-\AddToHook{begindocument/before}{%
-  \expandafter\let\csname showhyphens \endcsname\MT@fix@showhyphens
-}
+\@ifl@t@r\fmtversion{2024-06-01}{%
+  \gdef\MT@fix@showhyphens#1{\setbox0\vbox{\color@begingroup
+    \everypar{}\parfillskip\z@skip\hsize\maxdimen\normalfont
+    \pretolerance\m@ne\tolerance\m@ne\hbadness\z@\showboxdepth\z@\ #1\color@endgroup}}%
+  \AddToHook{begindocument/before}{%
+    \expandafter\let\csname showhyphens \endcsname\MT@fix@showhyphens
+  }%
+}{}
 \makeatother
 \ifpdftex
   \DisableLigatures[f]{encoding = *, family = * }
@@ -305,7 +307,7 @@ In network-oriented adoption threshold models, two factors determine when agents
 
 % Figure 1
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{Fig1-combined.png}\fi
+\ifpreview\includegraphics[width=\textwidth]{fig1.png}\fi
 \caption{\textbf{Schematic diagram of the adoption threshold model used in this study.}
 Black-framed circles indicate not-yet-adopted neighboring agents, red-framed circles already-adopted neighboring agents. Andy makes his decision based on the actions of his neighboring agents. (a) One of Andy's three neighbors has acted, thus meeting the required 0.3 adoption threshold. (b) In this case Andy has four neighbors, of which only one has adopted the product, therefore the 0.3 adoption threshold is not met.}
 \label{fig1}
@@ -475,7 +477,7 @@ Fig~\ref{fig6} shows the two simulations with identical parameter settings that 
 
 % Figure 6
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig6-combined.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{fig6.png}\fi
 \caption{\textbf{Two simulation runs with identical parameter settings but different processes and results:}
 (a) favorable review and good sales scenario, (b) favorable review but poor sales scenario.}
 \label{fig6}
@@ -539,7 +541,7 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
 
 % Figure 7
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth]{Fig7-combined.png}\fi
+\ifpreview\includegraphics[width=\textwidth]{fig7.png}\fi
 \caption{\textbf{Correlation coefficient heatmaps showing various primary model-related parameters and good sales indicator (GSI) values across four network types:}
 (a) regular lattice, (b) small-world, (c) random and (d) scale-free.}
 \label{fig7}
@@ -547,7 +549,7 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
 
 % Figure 8
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig8-combined.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{fig8.png}\fi
 \caption{\textbf{Sensitivity analysis results for various primary model-related parameters and good sales indicator (GSI) values across four network types (regular lattice, small-world, random and scale-free).}
 (a,\,b) bounded-confidence, (c,\,d) avg-of-attitudes, (e,\,f) std-of-attitudes, (g,\,h) avg-of-thresholds, (i,\,j) std-of-thresholds. Left plots show results grouped by network type; right plots show aggregated results across all networks.}
 \label{fig8}
@@ -555,7 +557,7 @@ Table~\ref{table3} presents results from our examination of the roles of five mo
 
 % Figure 9
 \begin{figure}[!ht]
-\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{Fig9-combined.png}\fi
+\ifpreview\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{fig9.png}\fi
 \caption{\textbf{Statistical analysis results for primary BCAT model parameters.}
 (a,\,b) feature importance, (c,\,d) multivariate regression, (e,\,f) partial correlation, (g,\,h) standardized regression, (i,\,j) parameter importance.
 Left plots: experiment data are grouped according to network type for statistical analysis. Red bar represents regular lattice, yellow bar small-world, green bar random, and blue bar scale-free networks. Right plots: statistical analysis results for entire body of experimental data.}
@@ -682,6 +684,8 @@ We thank the anonymous reviewers for their constructive comments, which helped u
 
 \nolinenumbers
 
+\bibliography{references}
+
 \section*{Supporting information}
 
 \paragraph*{S1 File.}
@@ -699,7 +703,5 @@ We thank the anonymous reviewers for their constructive comments, which helped u
 \paragraph*{S4 File.}
 \label{S4_File}
 {\bf Python scripts for reproducing all reported statistical analyses and figures.} Analysis and visualization code for generating Table~\ref{table3}, Figs~\ref{fig7}--\ref{fig10}, and finite-size scaling results from the raw data in S1--S3 Files. File format: ZIP (contains four Python scripts).
-
-\bibliography{references}
 
 \end{document}
