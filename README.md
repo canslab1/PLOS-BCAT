@@ -9,7 +9,8 @@ Manuscript source files, figures, and supporting information for the paper:
 The BCAT simulation model, raw simulation data, and analysis scripts are hosted separately:
 
 - **Model, Code & Data:** [github.com/canslab1/BCAT](https://github.com/canslab1/BCAT) (MIT License)
-- **Zenodo Archive:** [DOI: 10.5281/zenodo.19081523](https://doi.org/10.5281/zenodo.19081523)
+- **Zenodo Archive:** [DOI: 10.5281/zenodo.19216365](https://doi.org/10.5281/zenodo.19216365)
+- **Reproduction Protocol:** [protocols.io](https://www.protocols.io/view/reproducing-simulation-results-for-the-bcat-model-jwrwcpd7f) (DOI: PENDING_PROTOCOLS_IO_DOI)
 
 To reproduce the simulation results reported in this paper, please visit the [BCAT repository](https://github.com/canslab1/BCAT), which contains the complete simulation system, pre-configured parameter files, raw output data, and analysis scripts.
 
@@ -96,7 +97,8 @@ Requires a LaTeX distribution with the PLOS ONE template packages.
 All simulation source code, raw data, and analysis scripts are publicly available in the companion repository:
 
 - **Source code & data:** [github.com/canslab1/BCAT](https://github.com/canslab1/BCAT) (MIT License)
-- **Archived copy:** [Zenodo DOI: 10.5281/zenodo.19081523](https://doi.org/10.5281/zenodo.19081523)
+- **Archived copy:** [Zenodo DOI: 10.5281/zenodo.19216365](https://doi.org/10.5281/zenodo.19216365)
+- **Reproduction Protocol:** [protocols.io](https://www.protocols.io/view/reproducing-simulation-results-for-the-bcat-model-jwrwcpd7f) (DOI: PENDING_PROTOCOLS_IO_DOI)
 
 ## License
 
