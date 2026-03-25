@@ -5,6 +5,9 @@
 *.log
 *.out
 ~$*
+*.fdb_latexmk
+*.fls
+*.synctex.gz
 
 # Review correspondence (private)
 _Email PONE-D-26-01398.md
