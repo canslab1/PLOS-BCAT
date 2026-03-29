@@ -44,7 +44,8 @@ PLOS-BCAT/
 ├── supporting_information/                 # Supporting Information for PLOS ONE
 │   ├── S1_File.xlsx                        #   Sensitivity analysis data (100,548 obs)
 │   ├── S2_File.csv                         #   Mechanism decomposition data (30,000 runs)
-│   └── S3_File.csv                         #   Finite-size scaling data
+│   ├── S3_File.csv                         #   Finite-size scaling data
+│   └── S4_File.zip                         #   Python analysis scripts (4 scripts)
 ├── _Response to Reviewers PONE-D-26-01398.docx  # Response to reviewers letter
 ├── competing_interests.txt                 # For Editorial Manager submission form
 ├── data_availability_statement.txt         # For Editorial Manager submission form
