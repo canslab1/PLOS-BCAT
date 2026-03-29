@@ -23,15 +23,15 @@ PLOS-BCAT/
 ├── references.bib                          # BibTeX bibliography
 ├── plos2025.bst                            # PLOS ONE bibliography style
 ├── figures/                                # PNG figures (for LaTeX compilation)
-│   ├── Fig1-combined.png                   #   Fig 1: Adoption threshold example
+│   ├── fig1.png                            #   Fig 1: Adoption threshold example
 │   ├── fig2.png                            #   Fig 2: Python GUI screenshot
 │   ├── fig3.png                            #   Fig 3: Simulation process flowchart
 │   ├── fig4.png                            #   Fig 4: Favorable review + good sales
 │   ├── fig5.png                            #   Fig 5: Favorable review + poor sales
-│   ├── Fig6-combined.png                   #   Fig 6: Identical conditions divergence
-│   ├── Fig7-combined.png                   #   Fig 7: Correlation heatmaps
-│   ├── Fig8-combined.png                   #   Fig 8: Sensitivity analysis plots
-│   ├── Fig9-combined.png                   #   Fig 9: Statistical analysis bar charts
+│   ├── fig6.png                            #   Fig 6: Identical conditions divergence
+│   ├── fig7.png                            #   Fig 7: Correlation heatmaps
+│   ├── fig8.png                            #   Fig 8: Sensitivity analysis plots
+│   ├── fig9.png                            #   Fig 9: Statistical analysis bar charts
 │   ├── fig10.png                           #   Fig 10: Mechanism decomposition
 │   ├── fig11.png                           #   Fig 11: Opinion dynamics only
 │   ├── fig12.png                           #   Fig 12: Adoption threshold only
@@ -39,8 +39,8 @@ PLOS-BCAT/
 │   ├── alg2.png                            #   Algorithm 2: Pioneer initialization
 │   └── alg3.png                            #   Algorithm 3: Opinion exchange & adoption
 ├── figures_tif/                            # TIFF figures (300 DPI, for journal upload)
-│   ├── Fig1.tif ... Fig12.tif              #   Figs 1–12
-│   └── Alg1.tif ... Alg3.tif              #   Algorithms 1–3
+│   ├── fig1.tif ... fig12.tif              #   Figs 1–12
+│   └── alg1.tif ... alg3.tif              #   Algorithms 1–3
 ├── supporting_information/                 # Supporting Information for PLOS ONE
 │   ├── S1_File.xlsx                        #   Sensitivity analysis data (100,548 obs)
 │   ├── S2_File.csv                         #   Mechanism decomposition data (30,000 runs)
