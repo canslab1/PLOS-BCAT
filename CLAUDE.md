@@ -131,13 +131,64 @@
 33. L314, L316: "converged with" -> "converged to" (3 occurrences, polisher incorrectly changed original)
 34. L649: Restored original "network clustering amplifies adoption suppression" (polisher's noun-stack was unclear)
 35. L585: "bounded confidence" -> "bounded-confidence" (missing hyphen in parameter name)
+36-61. 26 missed integration items from deep word-by-word comparison (mostly Discussion section)
+62. L647: colon -> em dash ("fragile---a single")
+63. L649: add comma before "and moderately attenuated"
+64. L298: "where...corresponds" -> "with...corresponding" (participial phrase)
+65. L659: add comma before "while"
+66. L659: converge -> converged, remains -> remained, reach -> reached (past tense for completed experiment)
+67. L669: "Fig" -> "Figs" for sub-panel reference consistency with L663
+
+## Deep Word-by-Word Comparison (2026-04-03, multiple passes)
+
+### Round 1: Found 26 missed integration items → all fixed
+### Round 2: Found 23 total differences (including known fixes)
+- 4 critical flags (TEX correct: abstract, Deffuant, parameter names, DOI)
+- 2 TEX-only additions (protocols.io + Zenodo DOI sentences)
+- 7 post-integration grammar fixes (already applied)
+- 5 TEX semantics/grammar better (converged to, It is, network clustering, as part of, rather than on)
+- 3 TEX tense correct for figure descriptions (converge/remains/reach — present tense)
+- 2 adopted from DOCX (#14 fragile em dash, #17 comma before "and moderately")
+
+### Round 3: Found 2 additional differences → fixed
+- L298: "where...corresponds" → "with...corresponding" (participial phrase)
+- L659: comma before "while"
+
+### Round 4: User-requested tense change + Fig/Figs consistency
+- L659: converge → converged, remains → remained, reach → reached (Palm paragraph describes completed experiment, past tense more appropriate)
+- L669: "Fig~\ref{fig8}a and~\ref{fig8}b" → "Figs~\ref{fig8}a and~\ref{fig8}b" (consistency with L663's plural form)
+
+### Final confirmed TEX-vs-DOCX differences (intentional, not to be changed)
+1. Abstract last 3 sentences — TEX clearer
+2. "topic areas" — DOCX has typo "topics areas"
+3. "converged to" × 3 — DOCX wrong "converged with"
+4. Deffuant RA model — DOCX reverses meaning
+5. Parameter names — DOCX has wrong names (avg-of-attitudes)
+6. "falls" — DOCX wrong "fall"
+7. Zenodo DOI — DOCX has old DOI
+8. protocols.io sentence — DOCX missing
+9. Wilensky citation — LaTeX format difference
+10. "These findings" — DOCX wrong "This finding"
+11. attitude=80/distance=20 — DOCX has wrong 81/19
+12. "bounded-confidence" — DOCX missing hyphen
+13. Zenodo DOI in scaling — DOCX missing
+14. "rather than on" — TEX parallel structure correct
+15. "It is" — TEX pronoun correct
+16. "network clustering amplifies adoption suppression" — TEX clearer
+17. "were" — DOCX wrong "was"
+18. "as part of" — TEX preposition correct
+19. Fig vs Figure — PLOS convention
+20. S1--S3 Files — PLOS SI naming
+21. en-dash vs hyphen — LaTeX rendering convention
+22. ~30 citation-stripping spacing artifacts — no actual rendering difference
 
 ## Marked-up PDF (latexdiff)
-- Generated `manuscript-diff.tex` and `manuscript-diff.pdf` (42 pages)
-- Command: `latexdiff manuscript-old.tex manuscript.tex`
-- Uses UNDERLINE type with SAFE subtype
-- Preamble replaced with new manuscript preamble + latexdiff markup definitions
-- BibTeX warnings for Shuangnan2021 and Dong2020 are expected (old keys in deleted text)
+- Generated `manuscript-diff.tex` and `manuscript-diff.pdf` (40 pages)
+- Command: `latexdiff --type=UNDERLINE --subtype=SAFE --disable-citation-markup manuscript-old.tex manuscript.tex`
+- Preamble replaced with new manuscript preamble + minimal handcrafted DIF definitions
+- New text: blue wavy underline; deleted text: red strikethrough
+- BibTeX: no errors or warnings
+- Figure/algorithm/table environments excluded from diff markup to prevent compilation errors
 
 ## LaTeX Syntax Check (2026-04-03, all PASS)
 - Brace balance: perfectly balanced across 703 lines
@@ -182,9 +233,17 @@
 - CITATION.cff, pyproject.toml, CHANGELOG.md: all at v1.4.1
 - README.md: all info consistent with PLOS-BCAT repo
 
+## Final Grammar/Syntax/Info Check (2026-04-03, all PASS)
+- Grammar: no errors found
+- Syntax/style: no doubled words, no missing words, parallel structure correct
+- DOIs: Zenodo ×2, protocols.io ×1, GitHub ×1 — all correct
+- Information: all parameters, acronyms, experimental details complete
+- Minor note: L577 split infinitive "and to not be" (acceptable in modern academic English)
+- Minor note: BCAT acronym used at L273 before definition at L321 (context clear)
+
 ## Next Steps
-1. **Review the integrated PDF** — open manuscript.pdf to visually confirm the polished text reads well
-2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (42 pages)
+1. ~~**Review the integrated PDF**~~ — DONE
+2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (40 pages)
 3. **Before submission:** Change `\previewtrue` to `\previewfalse` on L183 (removes embedded figures from PDF for Editorial Manager)
 4. **Submit to PLOS ONE Editorial Manager:**
    - Upload as "Response to Reviewers": `_Response to Reviewers PONE-D-26-01398.docx`
