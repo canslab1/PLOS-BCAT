@@ -1,23 +1,24 @@
 # PLOS-BCAT Project Memory
 
 ## Project Overview
-- **Paper:** "Exploring the 'Best Game No One Played' Phenomenon Using A Mixed Opinion Dynamics and Innovation Diffusion Model"
+- **Paper:** "Using a mixed opinion dynamics and innovation diffusion model to explore the 'best game no one played' phenomenon"
 - **Journal:** PLOS ONE
 - **Manuscript ID:** PONE-D-26-01398
 - **Authors:** Chung-Yuan Huang (Chang Gung University), Sheng-Wen Wang (NKUST, corresponding: swwang@nkust.edu.tw)
-- **Status:** Awaiting polished manuscript (.txt) from proofreading service (as of 2026-04-03)
+- **Status:** Polished manuscript integrated; ready for revised submission to PLOS ONE (as of 2026-04-03)
 
 ## Key DOIs (verified consistent across all files)
-- **Zenodo:** 10.5281/zenodo.19216365
+- **Zenodo:** 10.5281/zenodo.19216365 (v1.1.0)
 - **protocols.io:** 10.17504/protocols.io.261geykydv47/v1
-- **GitHub:** https://github.com/canslab1/BCAT
+- **GitHub:** https://github.com/canslab1/BCAT (simulation code + data)
+- **GitHub:** https://github.com/canslab1/PLOS-BCAT (manuscript repo)
 
 ## Repository Structure
-- `manuscript.tex` — LaTeX source (PLOS ONE template v3.7, 708 lines)
-- `manuscript.pdf` — Compiled PDF (18 MB, with figures embedded)
-- `references.bib` — 64 entries, perfectly synced with tex and bbl
+- `manuscript.tex` — LaTeX source (PLOS ONE template v3.7), polished English integrated 2026-04-03
+- `manuscript.pdf` — Compiled PDF (38 pages, 18 MB, with figures embedded)
+- `references.bib` — 64 entries, all verified for PLOS ONE compliance
 - `plos2025.bst` — PLOS bibliography style
-- `_Response to Reviewers PONE-D-26-01398.docx` — Response to editor + 2 reviewers
+- `_Response to Reviewers PONE-D-26-01398.docx` — Response to editor + 2 reviewers (15 references, all matching bib)
 - `figures/` — 15 PNG files (fig1-fig12, alg1-alg3) for LaTeX preview
 - `figures_tif/` — 15 TIF files (300 DPI, for journal upload), 1:1 with PNG
 - `supporting_information/` — S1_File.xlsx, S2_File.csv, S3_File.csv, S4_File.zip
@@ -25,28 +26,37 @@
 - `funding_statement.txt` — No specific funding
 - `data_availability_statement.txt` — GitHub + Zenodo + protocols.io + S1-S4
 
-## Manuscript Structure (sections in order)
-1. Abstract
-2. Introduction
-3. Related opinion dynamics and adoption threshold models
-4. Simulation model specifications
-   - Evaluation indicators
-   - Emergent properties of the combined model
-5. Results
-   - Simulating favorable reviews and good/poor sales
-   - Two simulations with identical initial conditions
-   - Sensitivity analysis
-   - Mechanism decomposition: Coordination failure versus opinion clustering
-   - Downward compatibility with opinion dynamics and adoption threshold models
-6. Discussion and conclusion
-7. Acknowledgments
-8. Supporting information (S1-S4 Files)
+## Files NOT in git (on disk only, in .gitignore)
+- `manuscript-backup-before-integration.tex` — backup of pre-polishing manuscript.tex
+- `manuscript-REVISED.docx` — polished manuscript from proofreading service (input file)
+- `manuscript-backup.tex`, `manuscript-backup.pdf` — older backups
+- `manuscript-old.docx`, `manuscript-old.tex`, `manuscript-Jon.docx` — old versions
+- `integrate-polished-manuscript.md` — integration workflow notes
+- LaTeX build artifacts (*.aux, *.bbl, *.blg, *.log, *.out, *.fdb_latexmk, *.fls, *.synctex.gz)
+
+## Manuscript Structure (sections in order, post-integration line numbers)
+1. L220: Title (revised: "Using a mixed...model to explore...")
+2. L224: Abstract
+3. L228: Introduction
+4. L249: Related opinion dynamics and adoption threshold models
+5. L319: Simulation model specifications
+6. L407: Evaluation indicators (subsection)
+7. L431: Emergent properties of the combined model (subsection)
+8. L438: Results
+9. L442: Simulating favorable reviews with good or poor sales (subsection, title revised)
+10. L470: Two simulations with identical initial conditions (subsection)
+11. L486: Sensitivity analysis (subsection)
+12. L579: Mechanism decomposition (subsection)
+13. L606: Downward compatibility (subsection)
+14. L639: Discussion and conclusion
+15. L677: Acknowledgments
+16. L685: Supporting information (S1-S4 Files)
 
 ## Floats
-- **Figures:** fig1-fig12 (12 figures, all referenced)
+- **Figures:** fig1-fig12 (12 figures, all referenced, 15 PNG + 15 TIF files)
 - **Tables:** table1 (model comparison), table2 (parameters), table3 (statistical results)
 - **Algorithms:** alg1-alg3 (all referenced)
-- **Equations:** eq:eq1, eq:eq2 (cross-referenced); eq:fri, eq:gsi (labeled but inline, not cross-referenced)
+- **Equations:** eq:eq1, eq:eq2 (cross-referenced); eq:fri, eq:gsi (labeled)
 
 ## Completed Fixes (2026-04-02)
 1. `manuscript.tex` line 279: comment `% Table 3` -> `% Table 1` (matches \label{table1})
@@ -56,7 +66,7 @@
 5. Response letter: `BCAT Opinion Component` -> `Proposed Model` (consistent with manuscript Table 1)
 6. Response letter item 14: added 4 missing references to summary list (Deffuant 2000, Erl 2005, McPherson 2001, Stark 2008) — now lists all 10 new references
 
-## Completed Fixes (2026-04-03)
+## Completed Fixes (2026-04-03, pre-integration)
 7. `references.bib`: Added DOI for Cheng2026 (10.1257/mic.20240077)
 8. `references.bib`: Added URLs for Deffuant2002 and Hegselmann2002 (JASSS online articles)
 9. `references.bib`: Added address for Erl2005 (Upper Saddle River, NJ) and Morris2003 (Cambridge)
@@ -71,65 +81,64 @@
 18. S4_File.zip: Updated with renamed scripts (table3)
 19. BCAT repo: Bumped version to 1.4.1 in CITATION.cff, pyproject.toml, CHANGELOG.md
 
-## Final Integrity Check Results (2026-04-03, all PASS)
+## Polished Manuscript Integration (2026-04-03)
+20. Integrated professionally polished English text from `manuscript-REVISED.docx` into `manuscript.tex`
+21. Title reordered: "Using a mixed...model to explore the...phenomenon" (per polisher)
+22. Subsection title updated: "Simulating favorable reviews with good or poor sales" (per polisher)
+23. Two Introduction paragraphs merged (original L236+L238 into one, L244+L246 into one)
+24. One emergent properties sentence deleted (original L439 last sentence, per polisher)
+25. 3 minor \textit{} removed on non-parameter terms (relative consistency, critical point, and) — style change by polisher
+
+### 4 Critical Flags handled during integration (polisher errors overridden)
+- **P22 (Deffuant RA model):** Polisher reversed meaning ("Similar to Deffuant...it does not vary" — wrong). Kept ORIGINAL wording that correctly says the proposed model's threshold does NOT vary, unlike Deffuant's which DOES.
+- **P35 (parameter names):** Polisher wrote avg-of-attitudes where it should be avg-of-thresholds. Kept ORIGINAL correct parameter names.
+- **P3 (Abstract last 2 sentences):** Polisher's rewording was less clear ("a neutralizing effect from testimony opinion clustering"). Kept ORIGINAL clearer wording ("testimony effect neutralizes opinion clustering").
+- **P31 (DOI):** Polisher's docx had old DOI 19081523. Kept CORRECT DOI 19216365.
+
+### Integration verification results (all PASS)
+- `\cite{}`: 68 commands, 97 keys — character-identical to original
+- `\ref{}`: 96 commands — character-identical to original
+- `$...$` math: 148 expressions — character-identical to original
+- Display equations (Eq 1, 2, FRI, GSI): character-identical to original
+- `\url{}`: identical
+- `\label{}`: 26 labels — identical
+- `\begin{}`/`\end{}`: 31/31 — identical
+- DOIs: 19216365 correct, no old DOI, no PENDING
+- All 18 figure/table/algorithm captions: character-identical
+- All 3 table data bodies: character-identical
+- PDF compiles: 38 pages, no undefined references
+
+## Final Integrity Check Results (2026-04-03, post-integration, all PASS)
 - No PENDING/TODO/TBD placeholders in any file
-- Citations: 64 keys, perfect 1:1 match between tex and bib
+- Citations: 64 unique keys, perfect 1:1 match between tex and bib
 - DOIs: Zenodo + protocols.io consistent across manuscript.tex, README.md, data_availability_statement.txt, response letter
-- GitHub URLs: all point to canslab1/BCAT for data (no PLOS-BCAT mismatch)
+- GitHub URLs: all point to canslab1/BCAT for data
 - Old DOI (19081523): completely removed from all files
 - Figures: 15 PNG in figures/, 15 TIF in figures_tif/, all referenced in tex
 - S4_File.zip: 4 scripts with correct names (table3)
 - Response letter references: all 15 entries match references.bib
-- Submission form files: competing interests, funding, data availability all correct and complete
+- Submission form files (competing interests, funding, data availability): all correct, complete, and consistent with manuscript.tex
+- README.md: consistent with manuscript.tex (file structure, DOIs, authors, title)
 
-## Manuscript Key Content Reference (for polished .txt integration)
+## BCAT Companion Repo Status (as of 2026-04-03)
+- Version: 1.4.1
+- Zenodo DOI badge: 10.5281/zenodo.19216365 (v1.1.0)
+- protocols.io badge: active (green)
+- Scripts: generate_table3_and_figs.py, reproduce_table3_figs.py, run_mechanism_decomposition.py, finite_size_scaling.py
+- CITATION.cff, pyproject.toml, CHANGELOG.md: all at v1.4.1
+- README.md: all info consistent with PLOS-BCAT repo
 
-### Section line numbers (manuscript.tex)
-- L224: Abstract
-- L232: Introduction
-- L255: Related opinion dynamics and adoption threshold models
-- L323: Simulation model specifications
-- L411: Evaluation indicators (subsection)
-- L435: Emergent properties of the combined model (subsection)
-- L442: Results
-- L446: Simulating favorable reviews and good/poor sales (subsection)
-- L474: Two simulations with identical initial conditions (subsection)
-- L490: Sensitivity analysis (subsection)
-- L583: Mechanism decomposition (subsection)
-- L610: Downward compatibility (subsection)
-- L643: Discussion and conclusion
-- L681: Acknowledgments
-- L689: Supporting information (S1–S4)
+## Next Steps
+1. **Review the integrated PDF** — open manuscript.pdf in VS Code (LaTeX Workshop) or Preview to visually confirm the polished text reads well
+2. **Generate marked-up PDF** — use `latexdiff manuscript-old.tex manuscript.tex` to create a diff PDF showing changes (required for PLOS ONE revised submission as "Revised Article with Changes Highlighted")
+3. **Submit to PLOS ONE Editorial Manager:**
+   - Upload: Response to Reviewers (.docx), Marked-up PDF, Clean PDF
+   - Update figures_tif/ if any figures changed
+   - Fill in: Data Availability Statement, Competing Interests, Funding Statement (from .txt files)
+   - Supporting Information will auto-transfer unless replaced
 
-### Lines containing DOIs (DO NOT modify during integration)
-- L327: Zenodo DOI + protocols.io DOI + GitHub URL
-- L581: Zenodo DOI (scaling data)
-
-### LaTeX-specific content to preserve during integration
-- All `\cite{...}` commands (64 unique keys, 68 occurrences)
-- All `Fig~\ref{fig*}`, `Table~\ref{table*}`, `Algorithm~\ref{alg*}`
-- All `\url{...}` commands
-- All `$...$` math expressions (e.g., `$N = 400$`, `$\varepsilon$`)
-- All `\textit{parameter-name}` (e.g., `\textit{avg-of-thresholds}`)
-- Table/figure/algorithm environments (`\begin{table}` ... `\end{table}`)
-
-### Response letter structure (paragraph numbers)
-- P1: Title
-- P6: Letter to Academic Editor
-- P14–P33: Part I: Journal Requirements (JR-1 to JR-6)
-- P34–P73: Part II: Reviewer #1 (R1-1 to R1-Minor)
-- P75–P135: Part III: Reviewer #2 (R2-1 to R2-8)
-- P137–P155: Part IV: Summary of All Manuscript Changes (17 items)
-- P156–P171: References Cited in This Response (15 entries)
-
-### Response letter references (15 entries, all verified against references.bib)
-Banerjee 1992, Berenbrink 2024, Cheng 2026, Deffuant 2000, Deffuant 2002,
-Erl 2005, Golub & Jackson 2010, Golub & Jackson 2012, Katz & Shapiro 1985,
-McPherson 2001, Morris & Shin 2003, Oliver 1985, Rogers 2003,
-Valente 1996 (CMOT), Watts 2003 (Six Degrees)
-
-## Notes for Proofreading Integration
-- `\previewtrue` is currently ON (figures included) — this is correct for revised submission
+## Notes
+- `\previewtrue` is currently ON (figures included) — correct for revised submission
 - Author Contributions: handled via Editorial Manager form, not in manuscript.tex
-- After proofreading results arrive: integrate polished text into manuscript.tex, then recompile PDF
-- See `integrate-polished-manuscript.md` for integration workflow notes
+- Backup of pre-integration manuscript: `manuscript-backup-before-integration.tex`
+- Integration workflow notes: `integrate-polished-manuscript.md`
