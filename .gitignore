@@ -15,5 +15,13 @@ manuscript-old.tex
 manuscript-Jon.docx
 captions.docx
 
+# Polished manuscript (input file, not for git)
+manuscript-REVISED.docx
+
+# Backups
+manuscript-backup-before-integration.tex
+manuscript-backup.tex
+manuscript-backup.pdf
+
 # Working notes
 integrate-polished-manuscript.md
