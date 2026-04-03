@@ -120,6 +120,60 @@
 - Submission form files (competing interests, funding, data availability): all correct, complete, and consistent with manuscript.tex
 - README.md: consistent with manuscript.tex (file structure, DOIs, authors, title)
 
+## Post-Integration Fixes (2026-04-03)
+26. L236: "topics areas" -> "topic areas" (typo)
+27. L583: attitude=81/distance=19 -> attitude=80/distance=20 (numerical inconsistency with avg-of-attitudes=80, std=0)
+28. L659: ". and endorsements...was" -> ", and endorsements...were" (punctuation + subject-verb agreement)
+29. L388: "difference...fall" -> "falls" (subject-verb agreement)
+30. L484: "This finding...They" -> "These findings...They" (pronoun consistency)
+31. L649: "adoption failure...They are" -> "It is" (pronoun consistency)
+32. L659: "reducing...thresholds to a" -> "as part of a" (correct preposition)
+33. L314, L316: "converged with" -> "converged to" (3 occurrences, polisher incorrectly changed original)
+34. L649: Restored original "network clustering amplifies adoption suppression" (polisher's noun-stack was unclear)
+35. L585: "bounded confidence" -> "bounded-confidence" (missing hyphen in parameter name)
+
+## Marked-up PDF (latexdiff)
+- Generated `manuscript-diff.tex` and `manuscript-diff.pdf` (42 pages)
+- Command: `latexdiff manuscript-old.tex manuscript.tex`
+- Uses UNDERLINE type with SAFE subtype
+- Preamble replaced with new manuscript preamble + latexdiff markup definitions
+- BibTeX warnings for Shuangnan2021 and Dong2020 are expected (old keys in deleted text)
+
+## LaTeX Syntax Check (2026-04-03, all PASS)
+- Brace balance: perfectly balanced across 703 lines
+- Environment pairs: all matched (document, figure×12, table×3, algorithm×3, equation×4, tabularx×3, adjustwidth×3, flushleft×2)
+- Math mode: all _ ^ inside $..$ or equation environments
+- Quotes: correct LaTeX quoting (`` '' and ` ')
+- No \input or \externaldocument (single-file, PLOS requirement)
+- No TODO/FIXME/PENDING comments
+
+## PLOS ONE Template Compliance (2026-04-03, all PASS)
+- Template: Version 3.7 Aug 2025
+- Document class: \documentclass[10pt,letterpaper]{article}
+- Bibliography: \bibliographystyle{plos2025}
+- Figure refs: all use Fig~\ref{} (not "Figure")
+- Sections: all use \section*{} (unnumbered)
+- Line numbering: \linenumbers enabled, \nolinenumbers before references
+- Title: 113 characters (limit 250)
+- Abstract: ~295 words (limit 300)
+- Supporting Information: S1-S4 File format correct
+- NOTE: L183 \previewtrue — change to \previewfalse before Editorial Manager submission
+
+## LaTeX Comments vs Content (2026-04-03, all consistent)
+- 18 float marker comments (% Table 1, % Figure 1, etc.) all match their \label{}
+- No TODO/FIXME/HACK/PENDING/TBD comments found
+
+## Typo/Grammar/Variable Check (2026-04-03, all clear after fixes)
+- No remaining typos or spelling errors
+- All parameter names used correctly in context (no avg-of-attitudes/avg-of-thresholds confusion)
+- All figure/table/algorithm references are forward references (cited before float appears)
+- All citations in ascending order (Fig 1→12, Table 1→3, Alg 1→3)
+
+## manuscript-old.tex vs manuscript-old.docx Correspondence (2026-04-03, confirmed)
+- Both are the same pre-revision manuscript
+- Title, abstract, all sections, 54 citations, 11 figures, 2 tables, 3 algorithms identical in content
+- Minor differences: title capitalization, DOCX has "modified Barabasi", subsection numbering, keywords in DOCX only, Burbach (2020) in DOCX reference list only (uncited)
+
 ## BCAT Companion Repo Status (as of 2026-04-03)
 - Version: 1.4.1
 - Zenodo DOI badge: 10.5281/zenodo.19216365 (v1.1.0)
@@ -129,13 +183,16 @@
 - README.md: all info consistent with PLOS-BCAT repo
 
 ## Next Steps
-1. **Review the integrated PDF** — open manuscript.pdf in VS Code (LaTeX Workshop) or Preview to visually confirm the polished text reads well
-2. **Generate marked-up PDF** — use `latexdiff manuscript-old.tex manuscript.tex` to create a diff PDF showing changes (required for PLOS ONE revised submission as "Revised Article with Changes Highlighted")
-3. **Submit to PLOS ONE Editorial Manager:**
-   - Upload: Response to Reviewers (.docx), Marked-up PDF, Clean PDF
-   - Update figures_tif/ if any figures changed
-   - Fill in: Data Availability Statement, Competing Interests, Funding Statement (from .txt files)
-   - Supporting Information will auto-transfer unless replaced
+1. **Review the integrated PDF** — open manuscript.pdf to visually confirm the polished text reads well
+2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (42 pages)
+3. **Before submission:** Change `\previewtrue` to `\previewfalse` on L183 (removes embedded figures from PDF for Editorial Manager)
+4. **Submit to PLOS ONE Editorial Manager:**
+   - Upload as "Response to Reviewers": `_Response to Reviewers PONE-D-26-01398.docx`
+   - Upload as "Revised Article with Changes Highlighted": `manuscript-diff.pdf`
+   - Upload as "Manuscript": `manuscript.pdf` (clean version)
+   - Upload figures: `figures_tif/*.tif` (15 files, if any changed from original submission)
+   - Fill in form fields from: `data_availability_statement.txt`, `competing_interests.txt`, `funding_statement.txt`
+   - Supporting Information (S1-S4) will auto-transfer unless replaced
 
 ## Notes
 - `\previewtrue` is currently ON (figures included) — correct for revised submission
