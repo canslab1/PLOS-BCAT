@@ -18,6 +18,15 @@ captions.docx
 # Polished manuscript (input file, not for git)
 manuscript-REVISED.docx
 
+# Latexdiff output (regenerable)
+manuscript-diff.tex
+manuscript-diff.pdf
+manuscript-diff.aux
+manuscript-diff.bbl
+manuscript-diff.blg
+manuscript-diff.log
+manuscript-diff.out
+
 # Backups
 manuscript-backup-before-integration.tex
 manuscript-backup.tex
