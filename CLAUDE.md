@@ -368,6 +368,10 @@
 ### Fixes applied
 68. L273: "Our proposed BCAT model" → "Our proposed model" (removed undefined BCAT acronym before its definition at L321)
 69. L244: "affect purchase decisions" → "affects purchase decisions" (subject-verb agreement: "the number" is singular)
+70. Table 1 L287: removed "(= \textit{bounded-confidence}\,/\,100)" from Proposed Model's Confidence threshold cell — Table 2 parameter name should not appear before Section 3
+71. Table 1 L291: removed "= \textit{convergence-rate}" from Proposed Model's Convergence parameter cell — same reason
+72. L298: removed "($\varepsilon = \textit{bounded-confidence}\,/\,100$, where \textit{bounded-confidence} $\in [10, 90]$)" — same reason
+73. L298: removed "(denoted as \textit{convergence-rate} in the implementation)" — same reason
 
 ### Results by section (all checked for: typos, spelling, grammar, terminology consistency, PLOS ONE compliance)
 
