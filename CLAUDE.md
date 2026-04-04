@@ -182,6 +182,128 @@
 21. en-dash vs hyphen — LaTeX rendering convention
 22. ~30 citation-stripping spacing artifacts — no actual rendering difference
 
+## Section-by-Section TEX-vs-DOCX Review (2026-04-03)
+
+### Title
+- DOCX reordered: "Using a mixed...model to explore...phenomenon" (method-first)
+- OLD had: "Exploring...phenomenon using a mixed...model" (phenomenon-first)
+- **Decision: adopt DOCX order** — method-first is standard academic convention, better keyword placement, end-weight on catchy phrase
+
+### Abstract (11 sentences)
+- S1–S8: identical between TEX and DOCX
+- S9: DOCX rearranges "agent adoption threshold mean" → "mean agent adoption threshold" — minor style difference; **keep TEX** for parameter-name consistency with rest of manuscript
+- S10: DOCX garbles causality — "a neutralizing effect from testimony opinion clustering" merges two distinct mechanisms; **keep TEX** ("the testimony effect neutralizes opinion clustering") — correct causal structure (Critical Flag P3)
+- S11: DOCX changes "yield predictions distinguishing the model from" → "support efforts to predict individual distinctions in" — loses core contribution claim; **keep TEX** — distinguishing predictions are a key contribution
+
+### Introduction (8 paragraphs)
+- P1: TEX=DOCX identical; polishing improvements over OLD all positive
+- P2: 1 diff — TEX "topic areas" correct, DOCX retains OLD typo "topics areas"; **keep TEX**
+- P3: 1 diff — TEX retains film title quotes, DOCX lost them (Word formatting); **keep TEX**
+- P4: TEX=DOCX identical
+- P5: TEX=DOCX identical
+- P6: TEX=DOCX identical
+- P7: TEX=DOCX identical
+- P8: TEX=DOCX identical
+
+### Section 2: Related opinion dynamics and adoption threshold models (12 paragraphs)
+- P1: 3 diffs — all math symbol loss in DOCX ($[0,1]$, $\varepsilon$ ×2); **keep TEX**
+- P2: 3 diffs — all math symbol loss ($\varepsilon_l$, $\varepsilon_r$, inequalities); **keep TEX**
+- P3: 3 diffs — all math symbol loss ($[-1,+1]$, $\varepsilon$ ×2); **keep TEX**
+- P4: 1 diff — math symbol loss + "are"/"denote" micro-change; **keep TEX**
+- P5: 4 diffs — all math symbol/formula loss; **keep TEX**
+- P6: TEX=DOCX identical
+- P7: 3 diffs — math loss + **Critical Flag P22** (DOCX reverses "does not vary...as it does in Deffuant" → "Similar to Deffuant...it does not vary"); **keep TEX**
+- P8: TEX=DOCX identical
+- P9: TEX=DOCX=OLD all identical
+- P10: TEX=DOCX identical
+- P11: 2 diffs — DOCX wrong "converged with" × 2, should be "converged to"; **keep TEX**
+- P12: 1 diff — DOCX wrong "converged with" × 1, should be "converged to"; **keep TEX**
+
+### Section 3: Simulation model specifications (19 paragraphs, incl. 2 subsections)
+- P1: TEX=DOCX identical
+- P2: 2 diffs — DOCX has old Zenodo DOI (19081523) + missing protocols.io sentence; **keep TEX** (Critical Flags P31, diff #7 #8)
+- P3: TEX=DOCX identical
+- P4: TEX=DOCX identical (only $\times$ rendering diff)
+- P5: TEX=DOCX identical
+- P6: 1 diff — **Critical Flag P35**: DOCX wrong parameter names (avg-of-attitudes instead of avg-of-thresholds); **keep TEX**
+- P7: TEX=DOCX identical
+- P8: 3 diffs — "falls"/"fall" grammar (diff #6) + math formatting ×2; **keep TEX**
+- P9: TEX=DOCX identical
+- P10: TEX=DOCX identical
+- P11: TEX=DOCX identical
+- P12: TEX=DOCX identical (new in revision)
+- P13: TEX=DOCX identical (new in revision)
+- P14: TEX=DOCX identical (only math spacing rendering diff)
+- P15: TEX=DOCX near-identical (comma + "0 otherwise"/"otherwise 0" micro-diff); **keep TEX**
+- P16: TEX=DOCX=OLD identical (only LaTeX vs Unicode rendering diff)
+- P17: TEX=DOCX identical (new in revision)
+- P18: TEX=DOCX identical (only math spacing rendering diff; new in revision)
+- P19: TEX=DOCX identical (new in revision)
+
+### Section 4: Results (34 paragraphs, incl. 4 subsections)
+- P1: TEX=DOCX identical (new in revision)
+- P2: TEX=DOCX identical
+- P3: TEX=DOCX identical
+- P4: TEX=DOCX identical
+- P5: TEX=DOCX identical
+- P6: TEX=DOCX identical
+- P7: TEX=DOCX=OLD identical
+- P8: TEX=DOCX identical
+- P9: TEX=DOCX identical
+- P10: 1 diff — DOCX wrong "This finding" should be "These findings" (pronoun consistency with "They" in next sentence); **keep TEX** (diff #10)
+- P11: TEX=DOCX identical
+- P12: TEX=DOCX identical
+- P13: TEX=DOCX=OLD identical
+- P14: TEX=DOCX identical
+- P15: 2 diffs — DOCX missing hyphen in "bounded-confidence" ×2; **keep TEX** (diff #12 type)
+- P16: TEX=DOCX identical
+- P17: TEX=DOCX=OLD identical
+- P18: TEX=DOCX identical
+- P19: 3 diffs — DOCX word order in S1 + missing Zenodo DOI in S4 (diff #13) + math spacing; **keep TEX**
+- P20: TEX=DOCX identical (new in revision)
+- P21: 2 diffs — DOCX wrong attitude=81/distance=19, should be 80/20 (diff #11); **keep TEX**
+- P22: 1 diff — DOCX missing hyphen in "bounded-confidence"; **keep TEX**
+- P23: TEX=DOCX identical (new in revision)
+- P24: TEX=DOCX identical (new in revision)
+- P25: TEX=DOCX identical (new in revision)
+- P26: TEX=DOCX identical (new in revision)
+- P27: TEX=DOCX identical (new in revision)
+- P28: TEX=DOCX identical
+- P29: TEX=DOCX identical
+- P30: TEX=DOCX identical
+- P31: TEX=DOCX identical
+- P32: TEX=DOCX identical
+- P33: TEX=DOCX identical
+- P34: TEX=DOCX identical
+
+### Section 5: Discussion and conclusion (18 paragraphs)
+- P1: TEX=DOCX identical
+- P2: TEX=DOCX identical (new in revision)
+- P3: TEX=DOCX identical (new in revision)
+- P4: 1 diff — DOCX missing "on" in "rather than on" parallel structure (diff #14); **keep TEX**
+- P5: 2 diffs — DOCX wrong "They are" should be "It is" (diff #15) + unclear noun-stack "suppression of network clustering adoption" vs TEX clear "network clustering amplifies adoption suppression" (diff #16); **keep TEX**
+- P6: TEX=DOCX identical (new in revision)
+- P7: TEX=DOCX identical (new in revision)
+- P8: TEX=DOCX identical (new in revision)
+- P9: TEX=DOCX identical
+- P10: 2 diffs — DOCX wrong "was" should be "were" (diff #17) + wrong "to" should be "as part of" (diff #18); **keep TEX**
+- P11: TEX=DOCX identical
+- P12: TEX=DOCX identical (only citation space artifact; new/rewritten in revision)
+- P13: TEX=DOCX identical
+- P14: TEX=DOCX identical
+- P15: TEX=DOCX identical (only citation space artifact; new/rewritten in revision)
+- P16: TEX=DOCX identical
+- P17: TEX=DOCX identical
+- P18: TEX=DOCX identical
+
+### Full manuscript review summary (2026-04-04)
+- **Total paragraphs compared:** Title + Abstract + Intro(8) + Sec2(12) + Sec3(19) + Sec4(34) + Sec5(18) = 93 paragraphs
+- **TEX=DOCX identical:** ~80 paragraphs (majority)
+- **TEX vs DOCX differences found:** ~13 paragraphs with substantive diffs, all already identified and corrected during integration
+- **Critical Flags confirmed:** P3(abstract causality), P22(Deffuant RA reversal), P31(DOI), P35(parameter names) — all TEX correct
+- **Systematic DOCX issues:** math symbol loss (~15 instances), "converged with" ×3, missing hyphens in "bounded-confidence", missing DOIs/URLs, "This finding"/"They are"/"was" pronoun/grammar errors
+- **Conclusion:** manuscript.tex is correct and complete; no additional changes needed
+
 ## Marked-up PDF (latexdiff)
 - Generated `manuscript-diff.tex` and `manuscript-diff.pdf` (40 pages)
 - Command: `latexdiff --type=UNDERLINE --subtype=SAFE --disable-citation-markup manuscript-old.tex manuscript.tex`
@@ -239,7 +361,34 @@
 - DOIs: Zenodo ×2, protocols.io ×1, GitHub ×1 — all correct
 - Information: all parameters, acronyms, experimental details complete
 - Minor note: L577 split infinitive "and to not be" (acceptable in modern academic English)
-- Minor note: BCAT acronym used at L273 before definition at L321 (context clear)
+- ~~Minor note: BCAT acronym used at L273 before definition at L321 (context clear)~~ — FIXED 2026-04-04
+
+## Section-by-Section Proofreading (2026-04-04)
+
+### Fixes applied
+68. L273: "Our proposed BCAT model" → "Our proposed model" (removed undefined BCAT acronym before its definition at L321)
+69. L244: "affect purchase decisions" → "affects purchase decisions" (subject-verb agreement: "the number" is singular)
+
+### Results by section (all checked for: typos, spelling, grammar, terminology consistency, PLOS ONE compliance)
+
+| Section | Lines | Result |
+|---------|-------|--------|
+| Abstract | L224–L226 | PASS — no issues |
+| 1. Introduction | L232–L248 | PASS — 1 fix applied (L244 affect→affects) |
+| 2. Related models | L251–L317 | PASS — 1 fix applied (L273 BCAT removed) |
+| 3. Simulation model | L319–L436 | PASS — no issues |
+| 4. Results | L438–L636 | PASS — no issues |
+| 5. Discussion & conclusion | L639–L675 | PASS — no issues |
+| Acknowledgments | L677–L679 | PASS |
+| Supporting information | L685–L701 | PASS |
+
+### Items verified across all sections
+- **Spelling:** no typos or misspellings found
+- **Grammar:** no errors (L244 affect→affects now fixed)
+- **Terminology consistency:** all parameter names, model names, indicator names (FRI/GSI), network types, mechanism names, experiment codes (MD-A/B/C), scenario numbers consistent across all sections
+- **BCAT acronym:** now first appears at L321 with full definition; no undefined usage remains
+- **Figure/Table/Algorithm references:** all use correct PLOS ONE format (Fig, Eqs, Table, Algorithm); all floats appear after first citation paragraph
+- **PLOS ONE compliance:** unnumbered sections, no embedded graphics commands outside \ifpreview, correct bibliography style, SI naming convention (S1–S4 File), line numbering enabled
 
 ## Next Steps
 1. ~~**Review the integrated PDF**~~ — DONE
