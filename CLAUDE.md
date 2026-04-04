@@ -373,6 +373,12 @@
 72. L298: removed "($\varepsilon = \textit{bounded-confidence}\,/\,100$, where \textit{bounded-confidence} $\in [10, 90]$)" — same reason
 73. L298: removed "(denoted as \textit{convergence-rate} in the implementation)" — same reason
 
+### Note on Table 1 after fixes #70-73
+- After removing Table 2 parameter names, Table 1's Confidence threshold row (HK and Proposed Model both show "Fixed, uniform ε") and Convergence parameter row (Deffuant RA and Proposed Model both show "μ (fixed)") appear identical between models.
+- Confidence threshold: acceptable — structural behavior is genuinely the same; differences captured by other rows (Network structure, Interaction structure).
+- Convergence parameter: Deffuant's μ includes RA weighting while Proposed Model's does not — this distinction is explained in L298 text ("without the relative-agreement weighting") rather than in the table.
+- **Decision: no further changes** — Table 1 serves as a structural comparison; implementation details belong in Section 3 (Table 2).
+
 ### Results by section (all checked for: typos, spelling, grammar, terminology consistency, PLOS ONE compliance)
 
 | Section | Lines | Result |
