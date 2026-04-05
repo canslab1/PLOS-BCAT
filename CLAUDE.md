@@ -402,18 +402,18 @@
 
 ## Next Steps
 1. ~~**Review the integrated PDF**~~ — DONE
-2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (40 pages)
-3. **Before submission:** Change `\previewtrue` to `\previewfalse` on L183 (removes embedded figures from PDF for Editorial Manager)
-4. **Submit to PLOS ONE Editorial Manager:**
+2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (42 pages)
+3. **Submit to PLOS ONE Editorial Manager:**
    - Upload as "Response to Reviewers": `_Response to Reviewers PONE-D-26-01398.docx`
    - Upload as "Revised Article with Changes Highlighted": `manuscript-diff.pdf`
-   - Upload as "Manuscript": `manuscript.pdf` (clean version)
+   - Upload as "Manuscript": `manuscript.pdf` (clean version, with figures embedded)
    - Upload figures: `figures_tif/*.tif` (15 files, if any changed from original submission)
    - Fill in form fields from: `data_availability_statement.txt`, `competing_interests.txt`, `funding_statement.txt`
+   - Author Contributions: handled via Editorial Manager form
    - Supporting Information (S1-S4) will auto-transfer unless replaced
 
 ## Notes
-- `\previewtrue` is currently ON (figures included) — correct for revised submission
-- Author Contributions: handled via Editorial Manager form, not in manuscript.tex
+- `\previewtrue` is ON — keep as-is for this revised submission (figures embedded in PDF)
+- `\previewfalse` only needed if journal production requests figures removed from PDF
 - Backup of pre-integration manuscript: `manuscript-backup-before-integration.tex`
 - Integration workflow notes: `integrate-polished-manuscript.md`
