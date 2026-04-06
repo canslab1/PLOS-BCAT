@@ -5,8 +5,8 @@
 - **Journal:** PLOS ONE
 - **Manuscript ID:** PONE-D-26-01398
 - **Authors:** Chung-Yuan Huang (Chang Gung University), Sheng-Wen Wang (NKUST, corresponding: swwang@nkust.edu.tw)
-- **Status:** All revisions complete; ready for submission to PLOS ONE (as of 2026-04-06)
-- **Deadline:** 2026/04/30
+- **Status:** Revised manuscript submitted to PLOS ONE (2026-04-06)
+- **Submission file:** PONE-D-26-01398_R1.pdf
 
 ## Key DOIs (verified consistent across all files)
 - **Zenodo:** 10.5281/zenodo.19216365 (v1.1.0)
@@ -116,16 +116,13 @@
 - Title: 113 chars (limit 250), Abstract: ~295 words (limit 300)
 - `\previewtrue` ON — figures embedded in PDF for revised submission
 
-## Next Steps
-1. ~~Review the integrated PDF~~ — DONE
-2. ~~Generate marked-up PDF~~ — DONE: `manuscript-diff.pdf` (44 pages)
-3. ~~Verify response letter~~ — DONE
-4. ~~Cross-file consistency check~~ — DONE
-5. **Submit to PLOS ONE Editorial Manager:**
-   - Upload as "Response to Reviewers": `Response to Reviewers.pdf`
-   - Upload as "Revised Article with Changes Highlighted": `manuscript-diff.pdf`
-   - Upload as "Manuscript": `manuscript.pdf`
-   - Upload figures: `figures_tif/*.tif` (15 files)
-   - Fill in form fields from: `data_availability_statement.txt`, `competing_interests.txt`, `funding_statement.txt`
-   - Author Contributions: via Editorial Manager form
-   - Supporting Information (S1-S4): auto-transfer unless replaced
+## Submission History
+1. 2026-01-09: Original manuscript submitted (PONE-D-26-01398)
+2. 2026-03-17: Editor decision — major revision
+3. 2026-04-06: Revised manuscript submitted (PONE-D-26-01398_R1)
+   - Response to Reviewers: `Response to Reviewers.pdf`
+   - Revised Article with Changes Highlighted: `manuscript-diff.pdf` (44 pages)
+   - Manuscript: `manuscript.pdf` (38 pages)
+   - Figures: `figures_tif/*.tif` (15 files)
+   - Supporting Information: S1-S4 (auto-transferred)
+4. Awaiting editor/reviewer decision
