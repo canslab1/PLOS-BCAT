@@ -18,7 +18,7 @@
 - `manuscript.pdf` — Compiled PDF (38 pages, 18 MB, with figures embedded)
 - `references.bib` — 64 entries, all verified for PLOS ONE compliance
 - `plos2025.bst` — PLOS bibliography style
-- `_Response to Reviewers PONE-D-26-01398.docx` — Response to editor + 2 reviewers (15 references, all matching bib)
+- `Response to Reviewers.docx` — Response to editor + 2 reviewers (15 references, all matching bib)
 - `figures/` — 15 PNG files (fig1-fig12, alg1-alg3) for LaTeX preview
 - `figures_tif/` — 15 TIF files (300 DPI, for journal upload), 1:1 with PNG
 - `supporting_information/` — S1_File.xlsx, S2_File.csv, S3_File.csv, S4_File.zip
@@ -31,6 +31,7 @@
 - `manuscript-REVISED.docx` — polished manuscript from proofreading service (input file)
 - `manuscript-backup.tex`, `manuscript-backup.pdf` — older backups
 - `manuscript-old.docx`, `manuscript-old.tex`, `manuscript-Jon.docx` — old versions
+- `Response to Reviewers-old.docx` — pre-polishing version of response letter
 - `integrate-polished-manuscript.md` — integration workflow notes
 - LaTeX build artifacts (*.aux, *.bbl, *.blg, *.log, *.out, *.fdb_latexmk, *.fls, *.synctex.gz)
 
@@ -405,7 +406,7 @@
 1. ~~**Review the integrated PDF**~~ — DONE
 2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (42 pages)
 3. **Submit to PLOS ONE Editorial Manager:**
-   - Upload as "Response to Reviewers": `_Response to Reviewers PONE-D-26-01398.docx`
+   - Upload as "Response to Reviewers": `Response to Reviewers.docx`
    - Upload as "Revised Article with Changes Highlighted": `manuscript-diff.pdf`
    - Upload as "Manuscript": `manuscript.pdf` (clean version, with figures embedded)
    - Upload figures: `figures_tif/*.tif` (15 files, if any changed from original submission)

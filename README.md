@@ -46,7 +46,7 @@ PLOS-BCAT/
 │   ├── S2_File.csv                         #   Mechanism decomposition data (30,000 runs)
 │   ├── S3_File.csv                         #   Finite-size scaling data
 │   └── S4_File.zip                         #   Python analysis scripts (4 scripts)
-├── _Response to Reviewers PONE-D-26-01398.docx  # Response to reviewers letter
+├── Response to Reviewers.docx                  # Response to reviewers letter
 ├── competing_interests.txt                 # For Editorial Manager submission form
 ├── data_availability_statement.txt         # For Editorial Manager submission form
 └── funding_statement.txt                   # For Editorial Manager submission form
