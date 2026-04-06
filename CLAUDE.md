@@ -402,10 +402,34 @@
 - **Figure/Table/Algorithm references:** all use correct PLOS ONE format (Fig, Eqs, Table, Algorithm); all floats appear after first citation paragraph
 - **PLOS ONE compliance:** unnumbered sections, no embedded graphics commands outside \ifpreview, correct bibliography style, SI naming convention (S1–S4 File), line numbering enabled
 
+## Response Letter Verification (2026-04-06)
+
+### Response letter filename
+- Current: `Response to Reviewers.docx`
+- Old (pre-polishing): `Response to Reviewers-old.docx` (in .gitignore)
+
+### Response letter fixes applied by user
+- Part I #1: "Fig1.tif–Fig12.tif" → "fig1.tif–fig12.tif" (match actual filenames)
+- R1-1: "a paragraph argues" → "two paragraphs argue" (match actual two paragraphs at L314-316)
+- R2-1: "BCAT opinion component" → "proposed model" (match Table 1 column header)
+- R2-5: removed "30 replications per configuration" (detail not in manuscript)
+- Valente (1996): "Social Networks, 18(1), 69–89" → "Computational and Mathematical Organization Theory, 2(2), 163–164" (match references.bib)
+- Erl (2005): "Prentice Hall PTR" → "Prentice Hall" (match references.bib)
+- Watts (2003) → Watts (2004): updated all inline citations and reference entry to match new bib entry
+
+### Final verification results (all PASS)
+- **Language:** no grammar errors, no spelling errors
+- **Semantics:** no ambiguity or confusion in any response
+- **Consistency with manuscript.tex:** all claims about additions, modifications, figures, tables, parameters, and numerical values verified 100% consistent
+- **DOIs:** Zenodo 10.5281/zenodo.19216365 (×2), protocols.io 10.17504/protocols.io.261geykydv47/v1 (×1) — all correct, no old DOI
+- **GitHub URLs:** github.com/canslab1/BCAT (×2) — correct
+- **References:** all 15 entries match references.bib (authors, year, title, journal, volume, pages)
+
 ## Next Steps
 1. ~~**Review the integrated PDF**~~ — DONE
 2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (42 pages)
-3. **Submit to PLOS ONE Editorial Manager:**
+3. ~~**Verify response letter**~~ — DONE: all corrections applied, final verification passed
+4. **Submit to PLOS ONE Editorial Manager:**
    - Upload as "Response to Reviewers": `Response to Reviewers.docx`
    - Upload as "Revised Article with Changes Highlighted": `manuscript-diff.pdf`
    - Upload as "Manuscript": `manuscript.pdf` (clean version, with figures embedded)

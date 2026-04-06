@@ -2,7 +2,7 @@
 
 Manuscript source files, figures, and supporting information for the paper:
 
-> Huang, C.-Y., & Wang, S.-W. (2026). Exploring the "Best Game No One Played" Phenomenon Using A Mixed Opinion Dynamics and Innovation Diffusion Model. *PLOS ONE*. (Manuscript ID: PONE-D-26-01398)
+> Huang, C.-Y., & Wang, S.-W. (2026). Using a Mixed Opinion Dynamics and Innovation Diffusion Model to Explore the "Best Game No One Played" Phenomenon. *PLOS ONE*. (Manuscript ID: PONE-D-26-01398)
 
 ## Related Repository
 
