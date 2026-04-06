@@ -372,6 +372,7 @@
 71. Table 1 L291: removed "= \textit{convergence-rate}" from Proposed Model's Convergence parameter cell — same reason
 72. L298: removed "($\varepsilon = \textit{bounded-confidence}\,/\,100$, where \textit{bounded-confidence} $\in [10, 90]$)" — same reason
 73. L298: removed "(denoted as \textit{convergence-rate} in the implementation)" — same reason
+74. references.bib + manuscript.tex: replaced Watts2003 (Six Degrees book) with Watts2004 (A simple model of global cascades on random networks, in Foundations of Social Capital). Citation key changed Watts2003 → Watts2004 across 4 occurrences in manuscript.tex. Response letter (.docx) needs manual update by user.
 
 ### Note on Table 1 after fixes #70-73
 - After removing Table 2 parameter names, Table 1's Confidence threshold row (HK and Proposed Model both show "Fixed, uniform ε") and Convergence parameter row (Deffuant RA and Proposed Model both show "μ (fixed)") appear identical between models.
