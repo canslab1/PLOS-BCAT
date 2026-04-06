@@ -4,13 +4,7 @@ Manuscript ID: PONE-D-26-01398 | Status: Revised manuscript submitted (2026-04-0
 
 ## Related Repository
 
-The BCAT simulation model, raw simulation data, and analysis scripts are hosted separately:
-
-- **Model, Code & Data:** [github.com/canslab1/BCAT](https://github.com/canslab1/BCAT) (MIT License)
-- **Zenodo Archive:** [DOI: 10.5281/zenodo.19216365](https://doi.org/10.5281/zenodo.19216365)
-- **Reproduction Protocol:** [protocols.io](https://www.protocols.io/view/reproducing-simulation-results-for-the-bcat-model-jwrwcpd7f) (DOI: 10.17504/protocols.io.261geykydv47/v1)
-
-To reproduce the simulation results reported in this paper, please visit the [BCAT repository](https://github.com/canslab1/BCAT), which contains the complete simulation system, pre-configured parameter files, raw output data, and analysis scripts.
+The BCAT simulation model, raw simulation data, and analysis scripts are hosted separately at the [BCAT repository](https://github.com/canslab1/BCAT). See the [Data Availability](#data-availability) section below for all links and DOIs.
 
 ## Repository Structure
 
@@ -44,8 +38,8 @@ PLOS-BCAT/
 │   ├── S2_File.csv                         #   Mechanism decomposition data (30,000 runs)
 │   ├── S3_File.csv                         #   Finite-size scaling data
 │   └── S4_File.zip                         #   Python analysis scripts (4 scripts)
-├── Response to Reviewers.docx              # Response to reviewers letter (source)
-├── Response to Reviewers.pdf               # Response to reviewers letter (for upload)
+├── Cover Letter and Response to Reviewers.docx  # Cover letter & response to reviewers (source)
+├── Cover Letter and Response to Reviewers.pdf   # Cover letter & response to reviewers (for upload)
 ├── competing_interests.txt                 # For Editorial Manager submission form
 ├── data_availability_statement.txt         # For Editorial Manager submission form
 └── funding_statement.txt                   # For Editorial Manager submission form
