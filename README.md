@@ -1,5 +1,7 @@
 # PLOS-BCAT — Manuscript Repository
 
+Manuscript ID: PONE-D-26-01398 | Status: Revised manuscript submitted (2026-04-06)
+
 ## Related Repository
 
 The BCAT simulation model, raw simulation data, and analysis scripts are hosted separately:
