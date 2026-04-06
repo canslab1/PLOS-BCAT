@@ -404,8 +404,9 @@
 
 ## Response Letter Verification (2026-04-06)
 
-### Response letter filename
-- Current: `Response to Reviewers.docx`
+### Response letter files
+- Source: `Response to Reviewers.docx`
+- Upload: `Response to Reviewers.pdf` (converted from .docx, for Editorial Manager upload)
 - Old (pre-polishing): `Response to Reviewers-old.docx` (in .gitignore)
 
 ### Response letter fixes applied by user
@@ -427,10 +428,10 @@
 
 ## Next Steps
 1. ~~**Review the integrated PDF**~~ — DONE
-2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (42 pages)
+2. ~~**Generate marked-up PDF**~~ — DONE: `manuscript-diff.pdf` (44 pages)
 3. ~~**Verify response letter**~~ — DONE: all corrections applied, final verification passed
 4. **Submit to PLOS ONE Editorial Manager:**
-   - Upload as "Response to Reviewers": `Response to Reviewers.docx`
+   - Upload as "Response to Reviewers": `Response to Reviewers.pdf`
    - Upload as "Revised Article with Changes Highlighted": `manuscript-diff.pdf`
    - Upload as "Manuscript": `manuscript.pdf` (clean version, with figures embedded)
    - Upload figures: `figures_tif/*.tif` (15 files, if any changed from original submission)
