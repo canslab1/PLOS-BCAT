@@ -1,9 +1,5 @@
 # PLOS-BCAT — Manuscript Repository
 
-Manuscript source files, figures, and supporting information for the paper:
-
-> Huang, C.-Y., & Wang, S.-W. (2026). Using a Mixed Opinion Dynamics and Innovation Diffusion Model to Explore the "Best Game No One Played" Phenomenon. *PLOS ONE*. (Manuscript ID: PONE-D-26-01398)
-
 ## Related Repository
 
 The BCAT simulation model, raw simulation data, and analysis scripts are hosted separately:
