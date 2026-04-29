@@ -29,7 +29,6 @@
 - `supporting_information/` — S1_File.xlsx, S2_File.csv, S3_File.csv, S4_File.zip
 - `data_availability_statement.txt` — GitHub + Zenodo + protocols.io + S1-S4
 - `check_figures_plos_compliance.py` — PLOS figure spec verification script (re-runnable)
-- `make_graphical_abstract.py`, `graphical_abstract.{jpg,png}` — Graphical Abstract for personal/promotional use (not submitted to PLOS)
 
 Note: `competing_interests.txt` and `funding_statement.txt` removed 2026-04-29 — PLOS now confirms via Editorial Manager forms, separate .txt files no longer required.
 
