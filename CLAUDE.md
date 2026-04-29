@@ -145,7 +145,20 @@ Note: `competing_interests.txt` and `funding_statement.txt` removed 2026-04-29 �
    - Files NOT re-uploaded (unchanged from R1): S1-S3, fig1.tif-fig12.tif (12 figures already on PLOS server)
    - Peer Review History: YES (consent to publish review materials)
    - Letter body: confirmed CRediT roles, competing interests, funding, data availability — all unchanged
-7. Pending: PLOS production team review → formal acceptance letter → typesetting → publication scheduling
+7. 2026-04-29: PLOS production team — round-2 technical requirements e-mail (after first submission)
+   - 2 outstanding items: S4_File.zip still could not be opened; "footnote-style" annotations under Table 3 to be removed and incorporated into text
+8. 2026-04-29: Round-2 fixes submitted via Editorial Manager
+   - manuscript.tex (Table 3 area, 4 surgical edits):
+     * Caption extended to absorb 3 footnote-style notes (SE explanation, Parameter Importance equivalence, avg-of-thresholds conversion)
+     * Removed `\textsuperscript{*}` from "Feature Importance" row label
+     * Removed `\textsuperscript{\textdagger}` from "Parameter Importance" row label
+     * Replaced `\footnotesize` (table density sizing) with equivalent `\fontsize{8pt}{9pt}\selectfont` to eliminate literal "footnote" string
+     * Removed `\begin{flushleft}...\end{flushleft}` block containing the 3 explanatory notes
+     * Title-page corresponding-author `\textsuperscript{2*}` preserved (PLOS allows for group authorship status indicators)
+   - manuscript.pdf: recompiled to 32 pages / 1.34 MB
+   - supporting_information/S4_File.zip: rebuilt with Python zipfile module (ZIP_DEFLATED + flat structure, no `S4_File/` wrapper, 17.7 KB). Previous `zip -X` left Unix-origin "stored" compression + wrapper directory which PLOS could not open
+   - references.bib re-uploaded with LaTeX bundle (no content change)
+9. Pending: PLOS production team review → formal acceptance letter → typesetting → publication scheduling
 
 ## Figure Compliance Pre-check (2026-04-28)
 
