@@ -39,3 +39,8 @@ integrate-polished-manuscript.md
 
 # Deleted files staging area
 deleted/
+
+# Stray .py files in supporting_information/ — these are extracted copies
+# of scripts that live inside S4_File.zip (the canonical PLOS upload).
+# Loose .py files here would confuse the supporting-information bundle.
+supporting_information/*.py
