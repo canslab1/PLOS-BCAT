@@ -175,16 +175,17 @@
 %% Include all user-defined macros below
 
 % ---------------------------------------------------------------
-% Preview mode toggle:
-%   \previewtrue  = include figures (for Overleaf / local preview)
-%   \previewfalse = exclude figures (for Editorial Manager submission)
+% Preview mode toggle (controls Figures only; Algorithms 1-3 always inline):
+%   \previewtrue  = include all 12 Figures inline (for Overleaf / local preview)
+%   \previewfalse = exclude Figures from PDF body (for Editorial Manager
+%                   submission; Figures uploaded separately as fig*.tif)
+% Note: Algorithms 1-3 (alg*.png) are always rendered inline because they
+%       are not separately uploaded as Figure files.
 % ---------------------------------------------------------------
 \newif\ifpreview
-\previewtrue   % <-- change to \previewfalse before Editorial Manager submission
+\previewfalse  % <-- set \previewtrue for local preview; OFF (\previewfalse) for Editorial Manager submission
 
-\ifpreview
-  \graphicspath{{figures/}}
-\fi
+\graphicspath{{figures/}}  % needed for algorithm images (and figures when preview is on)
 
 % Custom Algorithm float environment (plaintop places caption above content)
 \usepackage{float}
@@ -367,7 +368,7 @@ BCAT characterizes abstract forms of societal structures as theoretical networks
 \begin{algorithm}[!ht]
 \caption{\textbf{Pascal-style pseudo-code for network model construction.}}
 \label{alg1}
-\ifpreview\includegraphics[width=\textwidth]{alg1.png}\fi
+\includegraphics[width=\textwidth]{alg1.png}
 \end{algorithm}
 
 In addition to scale-free networks created with a Barab{\'a}si and Albert \cite{Barabasi1999} preferential attachment growth algorithm, BCAT uses the widely recognized Watts and Strogatz \cite{Watts1998} small-world network construction algorithm (with rewiring probability as its primary parameter) to create the other three networks. When the user-specified rewiring probability = 0, the network construction algorithm creates a toroidal regular lattice with Moore neighborhood and periodic boundary conditions. The resulting network exhibits high degrees of both clustering and separation. According to network theory, the opposite of a completely ordered regular lattice is a random network. When the user-specified rewiring probability = 1, all network edges are rewired randomly. Our network construction algorithm produces random networks that lack clustering but have low degrees of separation between nodes. When the user-specified rewiring probability is between 0 and 1, the network construction algorithm creates a network exhibiting the small-world characteristics of high degree of clustering and low degree of separation. For ease of visual presentation, we arranged the 400 network nodes connected by 1600 edges as a two-dimensional $20 \times 20$ grid.
@@ -378,7 +379,7 @@ As shown in Algorithm~\ref{alg2}, each BCAT agent has three primary attributes: 
 \begin{algorithm}[!ht]
 \caption{\textbf{NetLogo-style pseudo-code for pioneer agent initialization.}}
 \label{alg2}
-\ifpreview\includegraphics[width=\textwidth]{alg2.png}\fi
+\includegraphics[width=\textwidth]{alg2.png}
 \end{algorithm}
 
 As shown in Fig~\ref{fig3}, agent populations must be created and three primary attributes initialized during phase 1.3 of each simulation run. Agent attitude is set to a normally distributed random integer between 1 and 100, \textit{avg-of-attitudes} and \textit{std-of-attitudes} derived from the parameter setting area of the BCAT user interface (Fig~\ref{fig2}). Similarly, each agent's adoption threshold is set to a normally distributed random integer between 1 and 100 with an \textit{avg-of-thresholds} and \textit{std-of-thresholds}. An agent's adoption threshold does not change after initialization, but attitude varies over time on a scale of 1--100. Values between 1 and 50 indicate negative attitudes toward new issues (1 = strongest disagreement), and values between 51 and 100 indicate positive attitudes (100 = strongest agreement).
@@ -391,7 +392,7 @@ During each opinion exchange phase, individual agents randomly select single nei
 \begin{algorithm}[!ht]
 \caption{\textbf{NetLogo-style pseudo-code for opinion exchange and adoption decision making.}}
 \label{alg3}
-\ifpreview\includegraphics[width=\textwidth]{alg3.png}\fi
+\includegraphics[width=\textwidth]{alg3.png}
 \end{algorithm}
 
 Opinion exchanges between an agent and a randomly chosen neighboring agent can be divided into four scenarios based on adoption status. When one agent has already adopted an idea or product and another has not yet done so, the first is perceived as having a more positive attitude than the second, whose attitude becomes more positive due to a ``user-friendly testimony'' effect. The first agent's positive attitude remains the same during and after the opinion exchange phase. Scenarios 1.1 and 2.2 in Algorithm~\ref{alg3} are both consistent with a one-way persuasion process, indicating that only the not-yet-adopted agent's attitude is affected by the opinion exchange phase.
