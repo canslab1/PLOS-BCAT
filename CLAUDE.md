@@ -157,7 +157,21 @@ Note: `competing_interests.txt` and `funding_statement.txt` removed 2026-04-29 �
    - manuscript.pdf: recompiled to 32 pages / 1.34 MB
    - supporting_information/S4_File.zip: rebuilt with Python zipfile module (ZIP_DEFLATED + flat structure, no `S4_File/` wrapper, 17.7 KB). Previous `zip -X` left Unix-origin "stored" compression + wrapper directory which PLOS could not open
    - references.bib re-uploaded with LaTeX bundle (no content change)
-9. Pending: PLOS production team review → formal acceptance letter → typesetting → publication scheduling
+9. 2026-04-30: PLOS production team — round-3 technical requirements e-mail (recurring S4_File.zip + footnote issues, despite round-2 fixes)
+10. 2026-04-30: Multiple successive EM uploads addressing the same recurring issues:
+    - Round 3: title-page corresponding-author wording revised to `\textsuperscript{*}Corresponding author. E-mail: swwang@nkust.edu.tw` (PLOS-template-compatible explicit wording with superscript asterisk)
+    - Round 4: all asterisk markers removed from title page entirely (`\textsuperscript{2*}` → `\textsuperscript{2}`; corresponding-author line is now plain inline text "Corresponding author: Sheng-Wen Wang. E-mail: ..."); chosen as deliberate departure from PLOS template's asterisk convention
+    - S4_File.zip rebuilt with Python zipfile module: most portable settings (flat structure, MS-DOS / NT FAT origin, all deflated, zero extra fields, PKZip 2.0 minimum, 18,107 bytes, SHA-256 starting `aa6d2f96`)
+    - File-locked (chmod 444) on disk between local build and upload to prevent macOS-side re-zipping
+    - 4 .py scripts uploaded individually as `S4_File-*.py` (defensive backup; byte-identical to the scripts inside S4_File.zip)
+11. 2026-04-30: Discovered EM keeps duplicate file entries (2 × S4_File.zip and 2 × manuscript.pdf), with older problematic copies persisting alongside newly-uploaded corrected copies. Hypothesis: PLOS production typesetting workflow may be picking up the older obsolete copies, explaining why each round's fixes appear ineffective.
+12. 2026-04-30: Authoritative file bundle e-mailed directly to plosone@plos.org (CC: swwang@nkust.edu.tw):
+    - 8 attachments: manuscript.tex, manuscript.pdf, references.bib, S4_File.zip, 4 × S4_File-*.py
+    - Detailed explanation of EM duplicate situation with Description-field disambiguation (date-suffixed = latest correct; no date suffix = obsolete)
+    - SHA-256 hashes provided for each file for verification
+    - Request: use attached files as canonical, discard obsolete EM copies
+    - Total attachment size: 1.5 MB
+13. Pending: PLOS production team response (use attached files? need further re-upload? acceptance letter?)
 
 ## Figure Compliance Pre-check (2026-04-28)
 
