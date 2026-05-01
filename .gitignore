@@ -30,7 +30,7 @@ manuscript-diff.log
 manuscript-diff.out
 
 # Backups
-manuscript-backup-before-integration.tex
+manuscript-backup-*.tex
 manuscript-backup.tex
 manuscript-backup.pdf
 
