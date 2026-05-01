@@ -171,7 +171,28 @@ Note: `competing_interests.txt` and `funding_statement.txt` removed 2026-04-29 �
     - SHA-256 hashes provided for each file for verification
     - Request: use attached files as canonical, discard obsolete EM copies
     - Total attachment size: 1.5 MB
-13. Pending: PLOS production team response (use attached files? need further re-upload? acceptance letter?)
+13. 2026-05-01: PLOS production team — round-5 technical requirements e-mail (EMID:20e1fb2adec1a6fc, due May 04 11:59 PM)
+    - Single outstanding item: "Algorithm are not formatted to PLOS guidelines. Algorithm image must be editable."
+    - Root cause: Algorithms 1-3 were embedded as `\includegraphics{alg*.png}` raster images, not editable text
+14. 2026-05-01: Round-5 fix completed locally, ready for EM upload:
+    - Added `\usepackage{listings}` + custom `NetLogoStyle` language definition (bold keywords, italic gray comments, monospace) to manuscript.tex preamble
+    - Replaced all three `\includegraphics{alg[123].png}` calls with `\begin{lstlisting}...\end{lstlisting}` blocks containing the actual NetLogo-style pseudo-code as fully editable text
+    - Algorithm 3 uses smaller per-listing font (`\fontsize{6.2pt}{7.2pt}`) to keep the long opinion-exchange + adoption-decision-making block on a single page
+    - Updated stale preamble comment about algorithm rendering ("alg*.png inline because not separately uploaded" → "Algorithms 1-3 are typeset directly as editable LaTeX listings")
+    - manuscript.pdf recompiled: 32 pages, 422 KB (same page count as round 4); algorithms now appear at p.8/10/12 as before
+    - Cross-references to `Algorithm~\ref{alg1/2/3}` throughout the body remain valid (labels preserved inside algorithm float environments)
+    - alg1.tif / alg2.tif / alg3.tif under `figures_tif/` are no longer referenced by the manuscript and can be removed from the EM submission queue when production picks up the new files
+    - Local backup: `manuscript-backup-before-alg-conversion.tex` (in .gitignore)
+15. 2026-05-01: Round-5 Final Author Requirements submitted via Editorial Manager (3 files: manuscript.tex / manuscript.pdf / references.bib)
+    - SHA-256 (manuscript.tex): 3b4190003c4c99858c475036c1826712ad50791db9192b19fc74a026fc27ef8f
+    - SHA-256 (manuscript.pdf): a8b1ab9efb2be86d14a4a8af5f304367327cd67606601434abb632020d035e61
+    - SHA-256 (references.bib): 7bf1577985f47bec835885f3c8c613cd33188f077e2d31900e41971a5666253d
+    - Letter Body explicitly notes the 3 alg*.tif files are now obsolete
+16. 2026-05-01: Defensive backup e-mail sent to plosone@plos.org (CC: swwang@nkust.edu.tw)
+    - Same 3 files attached, with SHA-256 hashes for typesetter verification
+    - Subject prefix `Authoritative file bundle for PONE-D-26-01398R1 — round-5 FAR (algorithm editability fix) [EMID:20e1fb2adec1a6fc]`
+    - Mitigates the EM duplicate-file pattern observed in rounds 2-4
+17. Pending: PLOS production team response (formal acceptance letter expected)
 
 ## Figure Compliance Pre-check (2026-04-28)
 
