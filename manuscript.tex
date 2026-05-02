@@ -204,6 +204,9 @@
     round,true,false,and,or,not},
   morecomment=[l]{;},
   sensitive=true,
+  alsoletter={-},   % treat hyphens as part of identifiers so multi-word
+                    % NetLogo primitives (ask-concurrent, turtles-own, etc.)
+                    % match the keyword list as single tokens
 }
 \lstset{
   language=NetLogoStyle,
@@ -493,7 +496,7 @@ to opinion-exchange [ Neighbor's_act Agent's_act Neighbor's_att Agent's_att ]
       ;     because the neighboring agent has already adopted an idea or product, then the agent becomes more positive.
       ; Otherwise,
       ;     both agents adjust their attitudes.
-      ifelse (Neighbor's_att > Agent's_att)
+      ifelse (Neighbor's_att > Agent's_att)                                ; Scenario #1
          [ one-way-persuasion-process-1     Neighbor's_att Agent's_att ]   ; Scenario #1.1: User-friendly testimony
          [ two-way-communication-process    Neighbor's_att Agent's_att ]   ; Scenario #1.2
    ]
@@ -504,7 +507,7 @@ to opinion-exchange [ Neighbor's_act Agent's_act Neighbor's_att Agent's_att ]
       ;     then both agents adjust their attitudes.
       ; Otherwise,
       ;     neighboring agent's attitude becomes more positive.
-      ifelse (Neighbor's_att > Agent's_att)
+      ifelse (Neighbor's_att > Agent's_att)                                ; Scenario #2
          [ two-way-communication-process    Neighbor's_att Agent's_att ]   ; Scenario #2.1
          [ one-way-persuasion-process-2     Neighbor's_att Agent's_att ]   ; Scenario #2.2: User-friendly testimony
    ]
@@ -515,14 +518,14 @@ to opinion-exchange [ Neighbor's_act Agent's_act Neighbor's_att Agent's_att ]
       ;     then the agent's attitude becomes more positive.
       ; Otherwise,
       ;     neighboring agent's attitude becomes more positive.
-      ifelse (Neighbor's_att > Agent's_att)
+      ifelse (Neighbor's_att > Agent's_att)                                ; Scenario #3
          [ one-way-persuasion-process-1     Neighbor's_att Agent's_att ]   ; Scenario #3.1
          [ one-way-persuasion-process-2     Neighbor's_att Agent's_att ]   ; Scenario #3.2
    ]
 
    ; Neither the agent nor its neighboring agent has adopted an idea or product, and both agents adjust their attitudes.
-   if (Neighbor's_act = false and Agent's_act = false and abs(Agent's_att - Neighbor's_att) < bounded-confidence) [
-      two-way-communication-process Neighbor's_att Agent's_att ]            ; Scenario #4
+   if (Neighbor's_act != true and Agent's_act != true and abs(Agent's_att - Neighbor's_att) < bounded-confidence)
+      [ two-way-communication-process    Neighbor's_att Agent's_att ]      ; Scenario #4
 end
 
 ; Convergence-rate is defined as the decreasing distance between an agent's and neighboring agent's attitudes.
