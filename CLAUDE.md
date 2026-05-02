@@ -192,7 +192,21 @@ Note: `competing_interests.txt` and `funding_statement.txt` removed 2026-04-29 �
     - Same 3 files attached, with SHA-256 hashes for typesetter verification
     - Subject prefix `Authoritative file bundle for PONE-D-26-01398R1 — round-5 FAR (algorithm editability fix) [EMID:20e1fb2adec1a6fc]`
     - Mitigates the EM duplicate-file pattern observed in rounds 2-4
-17. Pending: PLOS production team response (formal acceptance letter expected)
+17. 2026-05-02: Verified manuscript.tex against original alg3.png — found 4 fidelity gaps (3 missing `; Scenario #1/#2/#3` annotations on ifelse top lines; Scenario #4 used `= false` instead of original's `!= true`; Scenario #4 bracket placement differed). Also added `alsoletter={-}` to NetLogoStyle so hyphenated NetLogo primitives (`ask-concurrent`, `turtles-own`, `random-normal`, `ifelse-value`, `max-n-of`, `n-of`) render as bold keywords.
+    - Fidelity-fix commit: `16593bd` (pushed to GitHub but **NOT** uploaded to EM, per user decision to wait for PLOS response first)
+    - Logic equivalent; cosmetic / textual fidelity to alg*.png only
+    - These edits can be folded in during the proof-review stage if PLOS objects to the as-accepted version
+18. **2026-05-02: ⭐ Formal acceptance letter received** (EMID:b67b622a465cb728)
+    - "manuscript has been deemed suitable for publication in PLOS One. Congratulations!"
+    - Decision signed on behalf of Academic Editor Dr. Krzysztof Malarz
+    - Manuscript is now in the production / typesetting queue
+    - The accepted version is the round-5 EM upload from 2026-05-01 (SHA-256 `a8b1ab9e…`), NOT the local fidelity-fix commit `16593bd`
+19. Next steps from PLOS:
+    - Production team will prepare the paper for publication ("a few days" review window)
+    - Author proofs will arrive by separate e-mail; that is the moment to apply the local fidelity fixes (commit `16593bd`) if desired
+    - Press embargo: 2 pm Eastern Time on the publication date; press materials must be coordinated with onepress@plos.org within 48 hours from 2026-05-02 12:04 PM Taipei time (i.e., by ~2026-05-04 12:04 PM Taipei) — only act on this if CGU press office wants to prepare a release
+    - Publication-fee invoice will follow after the "completed accept" phase
+    - Phishing watch: any payment request that arrives BEFORE the official invoice should be treated as suspicious (per PLOS notice)
 
 ## Figure Compliance Pre-check (2026-04-28)
 
